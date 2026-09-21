@@ -1,164 +1,166 @@
-# Veille des aides régionales au cinéma — POC
+# French Film Grants Tracker — POC
 
-Squelette du pipeline d'extraction pour la mission de veille des dates de dépôt
-des fonds d'aide régionaux au cinéma. Ce POC couvre **10 sources** (voir
-`config.py`) : les 4 premières testées manuellement (Région Sud, AURA,
-Normandie x2), plus 6 ajoutées ensuite (CNC — national, Paris, Bretagne,
-Grand Est, Pays de la Loire, Occitanie), et une dizaine de patterns
-structurels différents.
+Extraction pipeline skeleton for tracking application deadlines of French
+regional and national film production grants. This POC covers **10
+sources** (see `config.py`): the first 4 tested manually (Région Sud, AURA,
+Normandie x2), plus 6 added afterward (CNC — national, Paris, Bretagne,
+Grand Est, Pays de la Loire, Occitanie), spanning about ten different
+structural patterns.
 
-## Ce qui est fait
+## What's done
 
-- `schema.py` — schéma Pydantic de sortie structurée (`Commission`,
-  `PeriodeCle`, `ActionPrealable`, `ExtractionResult`), pensé pour couvrir :
-  date simple récurrente, sessions multi-étapes, fenêtres de dates (`du X au
-  Y`), et absence totale de date en HTML (renvoi vers un PDF).
-- `prompts.py` — prompt système qui interdit explicitement au LLM d'halluciner
-  une date, distingue date ponctuelle vs fenêtre, et repère les actions
-  préalables obligatoires (RDV, etc.) conditionnelles ou systématiques.
-- `extract.py` — appel à l'API (Anthropic ou Qwen, cf. section dédiée
-  ci-dessous) avec **tool call forcé** sur le schéma Pydantic, plus un filet
-  de sécurité (`_reparer_structure`) qui corrige automatiquement plusieurs
-  écarts structurels observés en pratique sur Qwen Flash (champs égarés,
-  commissions scindées en fragments, valeurs manquantes).
-- `fetch.py` — récupération du contenu : fetch direct (`httpx`) ou via
-  **Jina Reader** (`r.jina.ai`) pour les sites protégés par un WAF anti-bot,
-  + fallback d'extraction de texte PDF natif (`pypdf`).
-- `config.py` — registre des **10 sources** testées (9 régionales + le CNC,
-  aide nationale hors périmètre strict), avec pour chacune : URL, besoin ou
-  non de Jina Reader, fixture offline associée, et notes sur le piège
-  structurel qu'elle illustre.
-- **`state.py`** — gestion d'état et déduplication : compare chaque
-  extraction au dernier état connu (`data/state.json`) et classe chaque
-  commission en `nouveau` / `modifie` / `inchange` / `clos`. Seuls les 3
-  premiers statuts (jamais `inchange`) doivent déclencher une notification —
-  c'est le point explicitement demandé par le cahier des charges ("ne pas
-  notifier les commissions inchangées ou closes"). Produit aussi
-  `data/site_data.json`, la base JSON propre et plate destinée au futur site
-  (filtres, sélection, export calendrier).
-- `test_extraction.py` — rejoue l'extraction sur les 10 textes déjà capturés
-  dans `test_data/` (aucune requête vers les sites sources, seulement vers
-  l'API) — **c'est le point d'entrée à lancer en premier** pour valider le
-  LLM.
-- **`test_state.py`** — test de la logique de dédup, **100% hors-ligne,
-  aucun appel API, zéro coût** — à lancer à tout moment pour vérifier ou
-  faire évoluer `state.py` sans dépendre du LLM.
-- `main.py` — pipeline complet (fetch réel + extraction + mise à jour de
-  l'état + écriture de `data/site_data.json`) sur les 10 sources du
-  registre — à lancer une fois l'extraction validée en offline.
+- `schema.py` — Pydantic schema for structured output (`Commission`,
+  `PeriodeCle`, `ActionPrealable`, `ExtractionResult`), designed to cover:
+  simple recurring dates, multi-step sessions, date windows (`from X to
+  Y`), and total absence of dates in the HTML (pointing to a PDF instead).
+- `prompts.py` — system prompt that explicitly forbids the LLM from
+  hallucinating a date, distinguishes a single date from a window, and
+  detects mandatory prerequisite actions (appointments, etc.) as
+  conditional or systematic.
+- `extract.py` — API call (Anthropic or Qwen, see dedicated section below)
+  with a **forced tool call** on the Pydantic schema, plus a safety net
+  (`_reparer_structure`) that automatically fixes several structural
+  quirks observed in practice on Qwen Flash (misplaced fields, commissions
+  split into fragments, missing values).
+- `fetch.py` — content retrieval: direct fetch (`httpx`) or via **Jina
+  Reader** (`r.jina.ai`) for sites protected by an anti-bot WAF, plus a
+  native PDF text extraction fallback (`pypdf`).
+- `config.py` — registry of the **10 tested sources** (9 regional + the
+  CNC, a national grant outside the strict scope), each with: URL, whether
+  it needs Jina Reader, its offline fixture, and notes on the structural
+  pitfall it illustrates.
+- **`state.py`** — state management and deduplication: compares each
+  extraction to the last known state (`data/state.json`) and classifies
+  each commission as `nouveau` (new) / `modifie` (changed) / `inchange`
+  (unchanged) / `clos` (closed). Only the first 3 statuses (never
+  `inchange`) should trigger a notification — this was an explicit
+  requirement ("don't notify on unchanged or closed commissions"). Also
+  produces `data/site_data.json`, the clean, flat JSON base meant for the
+  future website (filters, selection, calendar export).
+- `test_extraction.py` — replays extraction on the 10 texts already
+  captured in `test_data/` (no request to the source sites, only to the
+  API) — **the entry point to run first** to validate the LLM.
+- **`test_state.py`** — tests the dedup logic, **100% offline, no API
+  call, zero cost** — can be run anytime to verify or evolve `state.py`
+  without depending on the LLM.
+- `main.py` — full pipeline (real fetch + extraction + state update +
+  writing `data/site_data.json`) across the 10 registry sources — to run
+  once extraction has been validated offline.
 
-## Ce qui est volontairement hors scope de ce POC
+## Deliberately out of scope for this POC
 
-Ces points sont identifiés mais pas encore codés (à faire une fois
-l'extraction et la dédup validées) :
+These points are identified but not yet implemented (to do once
+extraction and dedup are validated):
 
-- Fallback PDF branché automatiquement dans `main.py` (le code existe dans
-  `fetch.py`, mais le déclenchement conditionnel n'est pas encore relié —
-  concerne au moins Normandie et Bretagne, qui n'ont aucune date en HTML).
-- Site web statique lisant `data/site_data.json` (filtres par
-  région/typologie, sélection, export `.ics` côté client).
-- Workflow GitHub Actions + GitHub Secrets.
-- Extension aux régions métropolitaines manquantes (ALCA Nouvelle-Aquitaine,
+- PDF fallback wired automatically into `main.py` (the code exists in
+  `fetch.py`, but the conditional trigger isn't connected yet — affects at
+  least Normandie and Bretagne, which have no dates in their HTML).
+- Static website reading `data/site_data.json` (filters by
+  region/category, selection, client-side `.ics` export).
+- GitHub Actions workflow + GitHub Secrets.
+- Extension to the remaining metropolitan regions (ALCA Nouvelle-Aquitaine,
   Pictanovo Hauts-de-France, Ciclic Centre-Val de Loire, etc.).
 
-## Installation
+## Setup
 
 ```bash
 python -m venv venv
-source venv/bin/activate  # ou venv\Scripts\activate sous Windows
+source venv/bin/activate  # or venv\Scripts\activate on Windows
 pip install -r requirements.txt
-cp .env.example .env      # puis renseigne ta clé dans .env
+cp .env.example .env      # then fill in your key in .env
 ```
 
-Le projet ne charge pas automatiquement `.env` (pas de `python-dotenv` pour
-rester minimal) — exporte la variable avant de lancer les scripts :
+The project doesn't load `.env` automatically (no `python-dotenv`, to
+keep things minimal) — export the variable before running the scripts:
 
 ```bash
 export ANTHROPIC_API_KEY=sk-ant-...        # macOS/Linux
 $env:ANTHROPIC_API_KEY="sk-ant-..."        # PowerShell
 ```
 
-## Choisir le provider LLM (Anthropic ou Qwen)
+## Choosing the LLM provider (Anthropic or Qwen)
 
-Le cahier des charges accepte "type GPT-4o-mini ou Claude Haiku" — `extract.py`
-supporte les deux, sélectionnables via la variable `PROVIDER` :
+The brief accepts "GPT-4o-mini or Claude Haiku"-type models — `extract.py`
+supports both, selectable via the `PROVIDER` variable:
 
 ```powershell
-# Anthropic (par défaut) — nécessite ANTHROPIC_API_KEY
+# Anthropic (default) — requires ANTHROPIC_API_KEY
 $env:PROVIDER="anthropic"
 $env:ANTHROPIC_API_KEY="sk-ant-..."
 
-# Qwen (QwenCloud/DashScope) — nécessite DASHSCOPE_API_KEY
+# Qwen (QwenCloud/DashScope) — requires DASHSCOPE_API_KEY
 $env:PROVIDER="qwen"
 $env:DASHSCOPE_API_KEY="sk-ws-..."
 ```
 
-Les deux passent par un tool call forcé sur le même schéma Pydantic
-(`schema.py`), donc le résultat est structurellement identique quel que soit
-le provider choisi — pratique pour comparer la qualité d'extraction des deux
-sur les mêmes 4 fixtures.
+Both go through a forced tool call on the same Pydantic schema
+(`schema.py`), so the output is structurally identical regardless of the
+chosen provider — handy for comparing extraction quality between the two
+on the same fixtures.
 
-## Lancer en local
+## Running locally
 
-**0. Dry run (0 centime dépensé)** — vérifie toute la plomberie (lecture des
-fixtures, construction du prompt, validation Pydantic) sans appeler l'API.
-Affiche aussi une estimation grossière du coût par appel :
+**0. Dry run (0 cost)** — checks the whole plumbing (fixture reading,
+prompt building, Pydantic validation) without calling the API. Also
+prints a rough cost estimate per call:
 
 ```bash
 export DRY_RUN=true
 python test_extraction.py
-unset DRY_RUN   # ou $env:DRY_RUN="false" sous PowerShell, avant l'étape suivante
+unset DRY_RUN   # or $env:DRY_RUN="false" on PowerShell, before the next step
 ```
 
-**1. Tester l'extraction hors-ligne (recommandé en premier)** — rejoue le LLM
-sur les 4 textes déjà capturés, sans dépendre de la disponibilité des sites :
+**1. Test extraction offline (recommended first)** — replays the LLM on
+the 10 texts already captured, without depending on site availability:
 
 ```bash
 python test_extraction.py
 ```
 
-Compare la sortie JSON à ce qui est décrit dans les notes de `config.py` pour
-chaque source — en particulier :
-- Région Sud : le RDV préalable doit ressortir comme **conditionnel**.
-- AURA : les sessions "date communiquée ultérieurement" ne doivent **pas**
-  avoir de date inventée.
-- Normandie (page principale) : `aucune_date_trouvee` doit être `true`, avec
-  `lien_pdf_calendrier` rempli.
-- Normandie (sous-domaine) : 3 sessions × 4 étapes, avec de vraies **fenêtres**
-  (`date_debut` + `date_fin`) sur le RDV et le dépôt.
+Compare the JSON output to what's described in `config.py`'s notes for
+each source — in particular:
+- Région Sud: the prerequisite appointment should come out as
+  **conditional**.
+- AURA: sessions with "date to be announced" must **not** get an invented
+  date.
+- Normandie (main page): `aucune_date_trouvee` (no date found) should be
+  `true`, with `lien_pdf_calendrier` filled in.
+- Normandie (subdomain): 3 sessions × 4 steps, with real **windows**
+  (`date_debut` + `date_fin`) for the appointment and the submission.
 
-**2. Tester la dédup/état (recommandé, aucun coût)** — logique pure, aucun
-appel API, vérifie les 4 statuts (nouveau/modifié/inchangé/clos) sur des
-données synthétiques :
+**2. Test the dedup/state logic (recommended, zero cost)** — pure logic,
+no API call, checks the 4 statuses (new/changed/unchanged/closed) on
+synthetic data:
 
 ```bash
 python test_state.py
 ```
 
-**3. Tester le pipeline complet (fetch réel + extraction + dédup)** :
+**3. Test the full pipeline (real fetch + extraction + dedup)**:
 
 ```bash
 python main.py
 ```
 
-Écrit/actualise `data/state.json` (l'état persistant, à committer dans le
-repo — c'est la mémoire d'un run à l'autre) et `data/site_data.json` (la
-base JSON propre, plate, destinée au futur site).
+Writes/updates `data/state.json` (the persistent state, meant to be
+committed to the repo — it's the memory carried from one run to the next)
+and `data/site_data.json` (the clean, flat JSON base for the future
+website).
 
 ## Structure
 
 ```
 veille-cinema/
-├── config.py              # registre des 10 sources testées
-├── schema.py               # modèles Pydantic
-├── prompts.py               # prompt système + template utilisateur
-├── extract.py                # appel API Anthropic/Qwen (tool call forcé)
-├── fetch.py                   # fetch direct / Jina Reader / PDF
-├── state.py                    # dédup/état + génération de site_data.json
-├── main.py                      # pipeline complet (réseau)
-├── test_extraction.py            # test LLM offline (fixtures, coûte des tokens)
-├── test_state.py                  # test dédup offline (0 coût, 0 API)
-├── test_data/                      # 10 pages capturées manuellement
+├── config.py              # registry of the 10 tested sources
+├── schema.py               # Pydantic models
+├── prompts.py               # system prompt + user template
+├── extract.py                # Anthropic/Qwen API call (forced tool call)
+├── fetch.py                   # direct fetch / Jina Reader / PDF
+├── state.py                    # dedup/state + site_data.json generation
+├── main.py                      # full pipeline (network)
+├── test_extraction.py            # offline LLM test (fixtures, costs tokens)
+├── test_state.py                  # offline dedup test (0 cost, 0 API)
+├── test_data/                      # 10 manually captured pages
 │   ├── region_sud.txt
 │   ├── aura.txt
 │   ├── normandie_principale.txt
@@ -169,9 +171,9 @@ veille-cinema/
 │   ├── grand_est.txt
 │   ├── pays_de_la_loire.txt
 │   └── occitanie.txt
-├── data/                            # généré par main.py (à committer)
-│   ├── state.json                    # état persistant (mémoire des runs)
-│   └── site_data.json                # base propre pour le futur site
+├── data/                            # generated by main.py (to commit)
+│   ├── state.json                    # persistent state (run-to-run memory)
+│   └── site_data.json                # clean base for the future website
 ├── requirements.txt
 ├── .env.example
 └── .gitignore
