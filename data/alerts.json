@@ -1,0 +1,203 @@
+{
+  "generated_at": "2026-09-28",
+  "alerts": [
+    {
+      "type": "nouvelle",
+      "region": "Île-de-France",
+      "fonds": "Aide au film court en Seine-Saint-Denis",
+      "organisme": "Cinémas 93 / Département de la Seine-Saint-Denis",
+      "label": "Annonce des résultats de la présélection",
+      "date_fin": "2026-10-05",
+      "url_source": "https://www.cinemas93.org/accompagnement-de-la-creation/aide-au-film-court/"
+    },
+    {
+      "type": "nouvelle",
+      "region": "Île-de-France",
+      "fonds": "Aide au film court en Seine-Saint-Denis",
+      "organisme": "Cinémas 93 / Département de la Seine-Saint-Denis",
+      "label": "Commission plénière",
+      "date_fin": "2026-10-12",
+      "url_source": "https://www.cinemas93.org/accompagnement-de-la-creation/aide-au-film-court/"
+    },
+    {
+      "type": "nouvelle",
+      "region": "Île-de-France",
+      "fonds": "Aide au film court en Seine-Saint-Denis",
+      "organisme": "Cinémas 93 / Département de la Seine-Saint-Denis",
+      "label": "Annonce des résultats définitifs",
+      "date_fin": "2027-01-01",
+      "url_source": "https://www.cinemas93.org/accompagnement-de-la-creation/aide-au-film-court/"
+    },
+    {
+      "type": "vient_de_fermer",
+      "region": "Normandie",
+      "fonds": "Fonds de soutien à la création et à la production cinéma et audiovisuel Région Normandie/CNC",
+      "organisme": "Normandie Images",
+      "label": "commission de présélection",
+      "date_fin": "2026-10-27",
+      "url_source": "https://www.normandieimages.fr/creation-production/fonds-d-aides/14-creation-et-production/fonds-d-aide/26-production-de-court-metrage-cinema"
+    },
+    {
+      "type": "vient_de_fermer",
+      "region": "Normandie",
+      "fonds": "Fonds de soutien à la création et à la production cinéma et audiovisuel Région Normandie/CNC",
+      "organisme": "Normandie Images",
+      "label": "commission plénière",
+      "date_fin": "2026-11-19",
+      "url_source": "https://www.normandieimages.fr/creation-production/fonds-d-aides/14-creation-et-production/fonds-d-aide/26-production-de-court-metrage-cinema"
+    },
+    {
+      "type": "vient_de_fermer",
+      "region": "Normandie",
+      "fonds": "Fonds de soutien à la création et à la production cinéma et audiovisuel Région Normandie/CNC",
+      "organisme": "Normandie Images",
+      "label": "RV préalables",
+      "date_fin": "2027-01-22",
+      "url_source": "https://www.normandieimages.fr/creation-production/fonds-d-aides/14-creation-et-production/fonds-d-aide/26-production-de-court-metrage-cinema"
+    },
+    {
+      "type": "vient_de_fermer",
+      "region": "Normandie",
+      "fonds": "Fonds de soutien à la création et à la production cinéma et audiovisuel Région Normandie/CNC",
+      "organisme": "Normandie Images",
+      "label": "dépôt des dossiers",
+      "date_fin": "2027-02-11",
+      "url_source": "https://www.normandieimages.fr/creation-production/fonds-d-aides/14-creation-et-production/fonds-d-aide/26-production-de-court-metrage-cinema"
+    },
+    {
+      "type": "vient_de_fermer",
+      "region": "Normandie",
+      "fonds": "Fonds de soutien à la création et à la production cinéma et audiovisuel Région Normandie/CNC",
+      "organisme": "Normandie Images",
+      "label": "commission de présélection",
+      "date_fin": "2027-03-16",
+      "url_source": "https://www.normandieimages.fr/creation-production/fonds-d-aides/14-creation-et-production/fonds-d-aide/26-production-de-court-metrage-cinema"
+    },
+    {
+      "type": "vient_de_fermer",
+      "region": "Normandie",
+      "fonds": "Fonds de soutien à la création et à la production cinéma et audiovisuel Région Normandie/CNC",
+      "organisme": "Normandie Images",
+      "label": "commission plénière",
+      "date_fin": "2027-03-30",
+      "url_source": "https://www.normandieimages.fr/creation-production/fonds-d-aides/14-creation-et-production/fonds-d-aide/26-production-de-court-metrage-cinema"
+    },
+    {
+      "type": "vient_de_fermer",
+      "region": "Normandie",
+      "fonds": "Fonds de soutien à la création et à la production cinéma et audiovisuel Région Normandie/CNC",
+      "organisme": "Normandie Images",
+      "label": "RV préalables",
+      "date_fin": "2027-04-30",
+      "url_source": "https://www.normandieimages.fr/creation-production/fonds-d-aides/14-creation-et-production/fonds-d-aide/26-production-de-court-metrage-cinema"
+    },
+    {
+      "type": "vient_de_fermer",
+      "region": "Normandie",
+      "fonds": "Fonds de soutien à la création et à la production cinéma et audiovisuel Région Normandie/CNC",
+      "organisme": "Normandie Images",
+      "label": "dépôt des dossiers",
+      "date_fin": "2027-05-19",
+      "url_source": "https://www.normandieimages.fr/creation-production/fonds-d-aides/14-creation-et-production/fonds-d-aide/26-production-de-court-metrage-cinema"
+    },
+    {
+      "type": "vient_de_fermer",
+      "region": "Normandie",
+      "fonds": "Fonds de soutien à la création et à la production cinéma et audiovisuel Région Normandie/CNC",
+      "organisme": "Normandie Images",
+      "label": "commission de présélection",
+      "date_fin": "2027-06-22",
+      "url_source": "https://www.normandieimages.fr/creation-production/fonds-d-aides/14-creation-et-production/fonds-d-aide/26-production-de-court-metrage-cinema"
+    },
+    {
+      "type": "vient_de_fermer",
+      "region": "Normandie",
+      "fonds": "Fonds de soutien à la création et à la production cinéma et audiovisuel Région Normandie/CNC",
+      "organisme": "Normandie Images",
+      "label": "commission plénière",
+      "date_fin": "2027-07-06",
+      "url_source": "https://www.normandieimages.fr/creation-production/fonds-d-aides/14-creation-et-production/fonds-d-aide/26-production-de-court-metrage-cinema"
+    },
+    {
+      "type": "vient_de_fermer",
+      "region": "Occitanie",
+      "fonds": "Aide à la création audiovisuelle (développement, production, diffusion)",
+      "organisme": "Région Occitanie / Pyrénées-Méditerranée",
+      "label": "Dépôt des dossiers - Animation (CM, LM, AV, XR)",
+      "date_fin": "2027-02-01",
+      "url_source": "https://www.laregion.fr/Cinema-Audiovisuel-Multimedia-Aide-a-la-creation-audiovisuelle"
+    },
+    {
+      "type": "vient_de_fermer",
+      "region": "Occitanie",
+      "fonds": "Aide à la création audiovisuelle (développement, production, diffusion)",
+      "organisme": "Région Occitanie / Pyrénées-Méditerranée",
+      "label": "Dépôt des dossiers - Fiction (LM-AV)",
+      "date_fin": "2026-12-01",
+      "url_source": "https://www.laregion.fr/Cinema-Audiovisuel-Multimedia-Aide-a-la-creation-audiovisuelle"
+    },
+    {
+      "type": "vient_de_fermer",
+      "region": "Occitanie",
+      "fonds": "Aide à la création audiovisuelle (développement, production, diffusion)",
+      "organisme": "Région Occitanie / Pyrénées-Méditerranée",
+      "label": "Dépôt des dossiers - Fiction (CM, XR)",
+      "date_fin": "2026-12-15",
+      "url_source": "https://www.laregion.fr/Cinema-Audiovisuel-Multimedia-Aide-a-la-creation-audiovisuelle"
+    },
+    {
+      "type": "vient_de_fermer",
+      "region": "National",
+      "fonds": "Aide avant réalisation à la production de films de court métrage - autres films (AVR2)",
+      "organisme": "CNC",
+      "label": "Réunion « premier dépôt »",
+      "date_fin": "2026-10-09",
+      "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116"
+    },
+    {
+      "type": "vient_de_fermer",
+      "region": "National",
+      "fonds": "Aide avant réalisation à la production de films de court métrage - autres films (AVR2)",
+      "organisme": "CNC",
+      "label": "Comité de chiffrage NOVEMBRE 2026 - Date unique de dépôt",
+      "date_fin": "2026-10-19",
+      "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116"
+    },
+    {
+      "type": "vient_de_fermer",
+      "region": "National",
+      "fonds": "Aide avant réalisation à la production de films de court métrage - autres films (AVR2)",
+      "organisme": "CNC",
+      "label": "Comité de chiffrage NOVEMBRE 2026",
+      "date_fin": "2026-11-23",
+      "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116"
+    },
+    {
+      "type": "vient_de_fermer",
+      "region": "National",
+      "fonds": "Aide avant réalisation à la production de films de court métrage - autres films (AVR2)",
+      "organisme": "CNC",
+      "label": "Réunion « premier dépôt »",
+      "date_fin": "2026-11-06",
+      "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116"
+    },
+    {
+      "type": "vient_de_fermer",
+      "region": "National",
+      "fonds": "Aide avant réalisation à la production de films de court métrage - autres films (AVR2)",
+      "organisme": "CNC",
+      "label": "Réunion « premier dépôt »",
+      "date_fin": "2026-12-11",
+      "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116"
+    },
+    {
+      "type": "vient_de_fermer",
+      "region": "National",
+      "fonds": "Aide avant réalisation à la production de films de court métrage - autres films (AVR2)",
+      "organisme": "CNC",
+      "label": "Comité de chiffrage SEPTEMBRE 2026 (seconde date)",
+      "date_fin": "2026-10-14",
+      "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116"
+    }
+  ]
+}

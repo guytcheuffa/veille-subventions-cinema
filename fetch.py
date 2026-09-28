@@ -21,6 +21,40 @@ JINA_READER_BASE = "https://r.jina.ai/"
 TIMEOUT = 30
 
 
+class PageInutilisable(Exception):
+    """La page reçue n'est pas la page attendue : vérification anti-robot,
+    accès refusé, contenu quasi vide ou mauvaise page (ex: page d'accueil)."""
+
+
+# Signatures des pages de blocage, cherchées en tête de contenu (cas réels :
+# Bretagne et Grand Est renvoient « Just a moment... Performing security
+# verification » / « 403 Forbidden » via Jina Reader).
+_SIGNATURES_BLOCAGE = (
+    "just a moment", "performing security verification", "enable javascript and cookies",
+    "requiring captcha", "returned error 403", "returned error 401", "access denied",
+    "attention required", "verifying you are human", "checking your browser",
+)
+_TAILLE_MINIMALE = 400  # une vraie page d'aide fait bien plus
+
+
+def verifier_contenu(texte: str, attendu: tuple[str, ...] = ()) -> None:
+    """Lève PageInutilisable si `texte` n'est manifestement pas la page
+    attendue. `attendu` : mots-clés dont AU MOINS UN doit figurer (ex:
+    « dépôt », « session ») — utile quand le site renvoie une autre page en
+    silence (AURA : page d'accueil à la place de la fiche de l'aide)."""
+    debut = texte[:1200].lower()
+    for signature in _SIGNATURES_BLOCAGE:
+        if signature in debut:
+            raise PageInutilisable(f"page de blocage anti-robot détectée (« {signature} »)")
+    if len(texte.strip()) < _TAILLE_MINIMALE:
+        raise PageInutilisable(f"contenu quasi vide ({len(texte.strip())} caractères)")
+    if attendu and not any(mot.lower() in texte.lower() for mot in attendu):
+        raise PageInutilisable(
+            f"ce n'est pas la page attendue (aucun des mots {list(attendu)} n'y figure : "
+            "probablement une autre page renvoyée à la place)"
+        )
+
+
 def fetch_page(url: str, use_jina: bool = False) -> str:
     """Retourne le contenu texte/markdown de la page à l'URL donnée."""
     target = f"{JINA_READER_BASE}{url}" if use_jina else url

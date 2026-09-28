@@ -21,6 +21,9 @@ class Source:
     needs_jina: bool
     offline_fixture: str  # chemin relatif dans test_data/
     notes: str = ""
+    # Au moins un de ces mots doit figurer dans la page reçue, sinon elle est
+    # jugée inutilisable (le site a renvoyé une autre page, ex: son accueil).
+    attendu: tuple[str, ...] = ()
 
 
 SOURCES: list[Source] = [
@@ -39,6 +42,7 @@ SOURCES: list[Source] = [
         organisme="Région Auvergne-Rhône-Alpes",
         url="https://www.auvergnerhonealpes.fr/aides/produire-un-court-metrage",
         needs_jina=True,
+        attendu=("dépôt", "session", "commission"),
         offline_fixture="test_data/aura.txt",
         notes="Protégé par un WAF anti-bot : un fetch direct redirige vers "
         "/shield?u=... — Jina Reader obligatoire. Sessions multi-étapes avec "
@@ -96,9 +100,13 @@ SOURCES: list[Source] = [
         region="Bretagne",
         organisme="Région Bretagne",
         url="https://www.bretagne.bzh/aides/fiches/cinema-facca-production-court-metrage/",
-        needs_jina=False,
+        needs_jina=True,
         offline_fixture="test_data/bretagne.txt",
-        notes="AUCUNE date en HTML, calendrier uniquement dans un PDF lié "
+        notes="Protégé par un WAF anti-bot (même pattern qu'AURA et Grand "
+        "Est) : le fetch direct renvoie 403 Forbidden — Jina Reader "
+        "obligatoire (confirmé sur un run réel le 2026-09-27, alors que "
+        "l'accès direct fonctionnait encore au moment des tests initiaux). "
+        "AUCUNE date en HTML, calendrier uniquement dans un PDF lié "
         "('Calendrier-Court-metrage-2026-2027') -> même pattern que Normandie "
         "principale (aucune_date_trouvee=true + lien_pdf_calendrier rempli). "
         "RDV préalable SYSTÉMATIQUE (formulaire Google Forms dédié).",
@@ -137,5 +145,85 @@ SOURCES: list[Source] = [
         "avec son propre calendrier annuel. Le mandat porte sur le court "
         "métrage : la ligne pertinente est 'Fiction (CM, XR)'. Bon test pour "
         "vérifier que le LLM ne mélange pas les dates des différents genres.",
+    ),
+    Source(
+        region="Centre-Val de Loire",
+        organisme="Ciclic",
+        url="https://ciclic.fr/aides-accompagnement/catalogue-des-aides/contrat-dobjectifs-et-de-moyens-com-audiovisuel",
+        needs_jina=False,
+        offline_fixture="test_data/ciclic.txt",
+        notes="3 dépôts par an, chacun en fenêtre (ex: 'du 01 au 10 octobre "
+        "2025 midi') + date de commission séparée. RDV/accueil de tournage "
+        "recommandé en amont mais pas formulé comme une action préalable "
+        "obligatoire au sens strict (pas de conséquence d'inéligibilité "
+        "explicite) — bon test pour ne pas sur-interpréter 'il est demandé "
+        "de solliciter' comme un RDV systématique de type Normandie.",
+    ),
+    Source(
+        region="Île-de-France",
+        organisme="Cinémas 93 (Département Seine-Saint-Denis)",
+        url="https://www.cinemas93.org/accompagnement-de-la-creation/aide-au-film-court/",
+        needs_jina=False,
+        offline_fixture="test_data/cinema93.txt",
+        notes="Page très longue et verbeuse (règlement complet inclus) — bon "
+        "test de capacité à isoler le bloc 'Inscription et calendrier' "
+        "pertinent au milieu de beaucoup de texte non pertinent (FAQ, "
+        "archives, résultats passés). 1-2 sessions/an, pas de RDV préalable "
+        "obligatoire (juste un webinaire optionnel).",
+    ),
+    Source(
+        region="Bourgogne-Franche-Comté",
+        organisme="Région Bourgogne-Franche-Comté",
+        url="https://www.bourgognefranchecomte.fr/node/278",
+        needs_jina=False,
+        offline_fixture="test_data/bourgogne_franche_comte.txt",
+        notes="2 fenêtres récurrentes SANS année explicite (1er-28 février, "
+        "1er-31 juillet) — teste la règle 10 du prompt (choisir la prochaine "
+        "occurrence). Dates de commission non communiquées à l'avance (juste "
+        "'en avril'/'en septembre', sans jour). Pas de numerus clausus "
+        "explicitement mentionné.",
+    ),
+    Source(
+        region="Grand Est",
+        organisme="Eurométropole de Strasbourg",
+        url="https://culture.strasbourg.eu/pro/discipline-domaine/audiovisuel-cinema/fonds-soutien-production/",
+        needs_jina=False,
+        offline_fixture="test_data/strasbourg.txt",
+        notes="3 dates ponctuelles récurrentes SANS année (15 nov, 15 mars, "
+        "15 juin). ATTENTION : ce fonds couvre TOUT l'audiovisuel (séries "
+        "TV, documentaires, longs métrages...), pas seulement le court "
+        "métrage — bon test pour vérifier que le LLM restitue fidèlement "
+        "'typologie_oeuvre' sans réduire abusivement au seul court métrage. "
+        "Cumulable avec l'aide Région Grand Est (source séparée du "
+        "registre) : à ne pas dédupliquer entre elles, ce sont deux "
+        "financements distincts.",
+    ),
+    Source(
+        region="Hauts-de-France",
+        organisme="Pictanovo",
+        url="https://www.pictanovo.com/fond/court-metrage/",
+        needs_jina=False,
+        offline_fixture="test_data/pictanovo.txt",
+        notes="Format le plus propre et structuré du registre : sessions "
+        "numérotées ('#3 Comité de lecture Court Métrage 2026') avec date de "
+        "dépôt + date de comité clairement séparées. RDV préalable "
+        "obligatoire (pré-dossier par mail requis avant tout rendez-vous). "
+        "Bon cas de référence pour un run de non-régression rapide.",
+    ),
+    Source(
+        region="Nouvelle-Aquitaine",
+        organisme="ALCA Nouvelle-Aquitaine",
+        url="https://alca-nouvelle-aquitaine.fr/fr/cinema-audiovisuel/fonds-de-soutien-au-cinema-et-l-audiovisuel/l-aide-la-production",
+        needs_jina=False,
+        offline_fixture="test_data/alca_nouvelle_aquitaine.txt",
+        notes="Calendrier complet uniquement en PDF (2 PDF distincts : "
+        "calendrier auditions + calendrier dépôts) -> même pattern que "
+        "Normandie/Bretagne (aucune_date_trouvee=true + lien_pdf_calendrier "
+        "rempli). PIÈGE : contrairement à Normandie/Bretagne, le texte "
+        "contient quand même UNE date exploitable en clair ('prochaine "
+        "session, du 11 janvier 2027') — bon test pour voir si le LLM sait "
+        "extraire cette date isolée tout en signalant aussi le PDF pour le "
+        "calendrier complet, plutôt que de tout classer en "
+        "aucune_date_trouvee par réflexe.",
     ),
 ]

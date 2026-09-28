@@ -125,9 +125,9 @@
   "6c76c644057bdcbe": {
     "commission": {
       "region": "Normandie",
-      "fonds": "Fonds Numérique (Fonds d'aide au numérique)",
+      "fonds": "Fonds d'aide Normandie Images",
       "organisme": "Normandie Images",
-      "typologie_oeuvre": "non précisé",
+      "typologie_oeuvre": "",
       "etape_filiere": "autre",
       "session_label": "Session 2 - 2027",
       "etapes": [
@@ -158,7 +158,7 @@
       ],
       "actions_prealables": [
         {
-          "type_action": "prise de rendez-vous téléphonique/préalable",
+          "type_action": "prise de rendez-vous préalable",
           "condition_declenchement": "systématique",
           "fenetre": {
             "label": "rendez-vous préalables",
@@ -166,31 +166,29 @@
             "date_fin": "2027-01-22",
             "heure_limite": null
           },
-          "consequence_si_non_respect": "Pas de dépôt possible : le dépôt des dossiers n'est autorisé qu'« après accord » obtenu lors du rendez-vous préalable.",
+          "consequence_si_non_respect": "Dépôt des dossiers seulement possible \"Après accord\" suite au rendez-vous préalable",
           "lien_reservation": null
         }
       ],
-      "conditions_eliminatoires": [
-        "Le dépôt du dossier n'est recevable qu'après accord donné lors d'un rendez-vous préalable obligatoire."
-      ],
+      "conditions_eliminatoires": [],
       "montant_min_eur": null,
       "montant_max_eur": null,
       "lien_formulaire": null,
       "url_source": "https://inscriptionsfondsaide.normandieimages.net/fonds-num/26",
-      "date_extraction": "2026-09-15"
+      "date_extraction": "2026-09-28"
     },
-    "etapes_hash": "395531a920c232c072283bc93a116c3dff430ff9",
+    "etapes_hash": "7a36fc9e4c5fcbad91f36849ef0d527670dd6acc",
     "first_seen": "2026-09-15",
-    "last_updated": "2026-09-15",
-    "last_checked": "2026-09-15",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
     "clos": true
   },
   "218d6d09b86718e8": {
     "commission": {
       "region": "Normandie",
-      "fonds": "Fonds Numérique (Fonds d'aide au numérique)",
+      "fonds": "Fonds d'aide Normandie Images",
       "organisme": "Normandie Images",
-      "typologie_oeuvre": "non précisé",
+      "typologie_oeuvre": "",
       "etape_filiere": "autre",
       "session_label": "Session 3 - 2027",
       "etapes": [
@@ -221,7 +219,7 @@
       ],
       "actions_prealables": [
         {
-          "type_action": "prise de rendez-vous téléphonique/préalable",
+          "type_action": "prise de rendez-vous préalable",
           "condition_declenchement": "systématique",
           "fenetre": {
             "label": "rendez-vous préalables",
@@ -229,189 +227,174 @@
             "date_fin": "2027-04-30",
             "heure_limite": null
           },
-          "consequence_si_non_respect": "Pas de dépôt possible : le dépôt des dossiers n'est autorisé qu'« après accord » obtenu lors du rendez-vous préalable.",
+          "consequence_si_non_respect": "Dépôt des dossiers seulement possible \"Après accord\" suite au rendez-vous préalable",
           "lien_reservation": null
         }
       ],
-      "conditions_eliminatoires": [
-        "Le dépôt du dossier n'est recevable qu'après accord donné lors d'un rendez-vous préalable obligatoire."
-      ],
+      "conditions_eliminatoires": [],
       "montant_min_eur": null,
       "montant_max_eur": null,
       "lien_formulaire": null,
       "url_source": "https://inscriptionsfondsaide.normandieimages.net/fonds-num/26",
-      "date_extraction": "2026-09-15"
+      "date_extraction": "2026-09-28"
     },
-    "etapes_hash": "94cf6b7ce0c3c04e0fbf4af29b5dc4ab09d2bdf6",
+    "etapes_hash": "3a214d068e72cb67a13f44a1f5a19db752b24f45",
     "first_seen": "2026-09-15",
-    "last_updated": "2026-09-15",
-    "last_checked": "2026-09-15",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
     "clos": true
   },
   "43ed015a9075a1da": {
     "commission": {
       "region": "National",
-      "fonds": "Aide avant réalisation à la production de films de court métrage (AVR2)",
+      "fonds": "Aide avant réalisation à la production de films de court métrage (AVR1)",
       "organisme": "CNC",
-      "typologie_oeuvre": "autres films de court métrage (hors premiers films)",
+      "typologie_oeuvre": "premiers films de court métrage",
       "etape_filiere": "production",
       "session_label": "Session 1 - 2027",
       "etapes": [
         {
-          "label": "dépôt des dossiers - Session 1 - 2027 (comité de lecture AVR2)",
+          "label": "dépôt des dossiers",
           "date_debut": null,
-          "date_fin": "2026-11-16",
+          "date_fin": "2026-11-20",
           "heure_limite": "18:00"
         },
         {
-          "label": "résultats à partir du - Session 1 - 2027",
+          "label": "résultats comité de lecture à partir du",
           "date_debut": null,
           "date_fin": "2027-01-25",
           "heure_limite": null
-        }
-      ],
-      "actions_prealables": [
-        {
-          "type_action": "prise de rendez-vous / inscription à une réunion « premier dépôt »",
-          "condition_declenchement": "systématique (avant chaque nouveau dépôt)",
-          "fenetre": {
-            "label": "Réunion « premier dépôt » (visioconférence 09h00-10h00)",
-            "date_debut": null,
-            "date_fin": "2026-12-11",
-            "heure_limite": null
-          },
-          "consequence_si_non_respect": "votre candidature ne pourra être traitée",
-          "lien_reservation": "https://www.demarches-simplifiees.fr/commencer/inscription-a-la-visioconference-reunion-premier-d"
-        }
-      ],
-      "conditions_eliminatoires": [
-        "Postuler impérativement avec la dernière version du formulaire de demande Excel + le dossier artistique PDF, sinon la candidature ne pourra être prise en compte.",
-        "Intégrer au dossier la note sur le recours à l'intelligence artificielle (IA) dans le cadre du projet présenté (nouvelle pièce obligatoire).",
-        "Le lien de dépôt FTP n'est actif que lors des jours de dépôt précis, de 10h à 18h."
-      ],
-      "montant_min_eur": null,
-      "montant_max_eur": null,
-      "lien_formulaire": null,
-      "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116",
-      "date_extraction": "2026-09-15"
-    },
-    "etapes_hash": "fdec1e755a24d5ea8592aa23af88a101116ec212",
-    "first_seen": "2026-09-15",
-    "last_updated": "2026-09-15",
-    "last_checked": "2026-09-15",
-    "clos": true
-  },
-  "3298b0dfe8220dcd": {
-    "commission": {
-      "region": "National",
-      "fonds": "Aide avant réalisation à la production de films de court métrage (AVR1)",
-      "organisme": "CNC",
-      "typologie_oeuvre": "court métrage - premiers films",
-      "etape_filiere": "production",
-      "session_label": "Commission plénière AVR1",
-      "etapes": [
-        {
-          "label": "Commission plénière AVR1 - Septembre 2026 (résultats à partir du)",
-          "date_debut": null,
-          "date_fin": "2026-09-14",
-          "heure_limite": null
         },
         {
-          "label": "Commission plénière AVR1 - Octobre 2026 (résultats à partir du)",
-          "date_debut": null,
-          "date_fin": "2026-10-30",
-          "heure_limite": null
-        },
-        {
-          "label": "Commission plénière AVR1 - Décembre 2026 (résultats à partir du)",
+          "label": "commission plénière AVR 1 (décembre 2026), résultats à partir du",
           "date_debut": null,
           "date_fin": "2026-12-18",
           "heure_limite": null
         }
       ],
-      "actions_prealables": [],
+      "actions_prealables": [
+        {
+          "type_action": "réunion « premier dépôt » en visioconférence",
+          "condition_declenchement": "systématique pour un premier dépôt",
+          "fenetre": {
+            "label": "réunion premier dépôt",
+            "date_debut": null,
+            "date_fin": "2026-11-06",
+            "heure_limite": "10:00"
+          },
+          "consequence_si_non_respect": "inscription préalable requise avant dépôt",
+          "lien_reservation": "https://www.demarches-simplifiees.fr/commencer/inscription-a-la-visioconference-reunion-premier-d"
+        }
+      ],
       "conditions_eliminatoires": [
-        "Le lien de dépôt FTP n'est actif que le jour du dépôt prévu, de 10h à 18h",
-        "Le dossier doit comporter deux fichiers : formulaire de demande Excel + dossier artistique PDF",
-        "Merci de postuler avec la dernière version du formulaire de demande, sinon votre candidature ne pourra être prise en compte",
-        "Une note sur le recours à l'intelligence artificielle (IA) dans le cadre du projet présenté doit être intégrée au dossier"
+        "numerus clausus : dépôt en AVR1 et en fiction uniquement, seules les 80 premières candidatures complètes seront prises en compte",
+        "postuler avec la dernière version du formulaire de demande, sinon la candidature ne pourra être prise en compte"
       ],
       "montant_min_eur": null,
       "montant_max_eur": null,
       "lien_formulaire": null,
       "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116",
-      "date_extraction": "2026-09-15"
+      "date_extraction": "2026-09-28"
     },
-    "etapes_hash": "9631709c62d6b24156bfdc19c8119614606bda71",
+    "etapes_hash": "68d8ae46d1bcee01a236ca89b041c2b63461d8ba",
     "first_seen": "2026-09-15",
-    "last_updated": "2026-09-15",
-    "last_checked": "2026-09-15",
-    "clos": true
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "3298b0dfe8220dcd": {
+    "commission": {
+      "region": "National",
+      "fonds": "Aide avant réalisation à la production de films de court métrage (AVR2)",
+      "organisme": "CNC",
+      "typologie_oeuvre": "autres films de court métrage",
+      "etape_filiere": "production",
+      "session_label": "Session 6 - 2026",
+      "etapes": [
+        {
+          "label": "résultats comité de lecture à partir du",
+          "date_debut": null,
+          "date_fin": "2026-11-16",
+          "heure_limite": null
+        },
+        {
+          "label": "commission plénière AVR 2 (octobre 2026), résultats à partir du",
+          "date_debut": null,
+          "date_fin": "2026-10-30",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "postuler avec la dernière version du formulaire de demande, sinon la candidature ne pourra être prise en compte"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "54a64386c901c921d2f7478acd50bacd85b3ee50",
+    "first_seen": "2026-09-15",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
   },
   "f2bf6d7cda6acf41": {
     "commission": {
       "region": "National",
       "fonds": "Aide avant réalisation à la production de films de court métrage (AVR2)",
       "organisme": "CNC",
-      "typologie_oeuvre": "court métrage - autres films",
+      "typologie_oeuvre": "autres films de court métrage",
       "etape_filiere": "production",
-      "session_label": "Commission plénière AVR2",
+      "session_label": "Session 5 - 2026",
       "etapes": [
         {
-          "label": "Commission plénière AVR2 - Septembre 2026 (résultats à partir du)",
+          "label": "dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2026-06-17",
+          "heure_limite": "18:00"
+        },
+        {
+          "label": "résultats comité de lecture à partir du",
           "date_debut": null,
           "date_fin": "2026-09-21",
-          "heure_limite": null
-        },
-        {
-          "label": "Commission plénière AVR2 - Octobre 2026 (résultats à partir du)",
-          "date_debut": null,
-          "date_fin": "2026-10-30",
-          "heure_limite": null
-        },
-        {
-          "label": "Commission plénière AVR2 - Décembre 2026 (résultats à partir du)",
-          "date_debut": null,
-          "date_fin": "2026-12-09",
           "heure_limite": null
         }
       ],
       "actions_prealables": [],
       "conditions_eliminatoires": [
-        "Le lien de dépôt FTP n'est actif que le jour du dépôt prévu, de 10h à 18h",
-        "Le dossier doit comporter deux fichiers : formulaire de demande Excel + dossier artistique PDF",
-        "Merci de postuler avec la dernière version du formulaire de demande, sinon votre candidature ne pourra être prise en compte",
-        "Une note sur le recours à l'intelligence artificielle (IA) dans le cadre du projet présenté doit être intégrée au dossier"
+        "postuler avec la dernière version du formulaire de demande, sinon la candidature ne pourra être prise en compte"
       ],
       "montant_min_eur": null,
       "montant_max_eur": null,
       "lien_formulaire": null,
       "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116",
-      "date_extraction": "2026-09-15"
+      "date_extraction": "2026-09-28"
     },
-    "etapes_hash": "b760b1f3967c3f6543605d864986f8f3744490a2",
+    "etapes_hash": "8d759f1f48348a84101e4c6882a328ffb502ac85",
     "first_seen": "2026-09-15",
-    "last_updated": "2026-09-15",
-    "last_checked": "2026-09-15",
-    "clos": true
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
   },
   "5737dc1adad5cf1a": {
     "commission": {
       "region": "National",
-      "fonds": "Aide avant réalisation à la production de films de court métrage (chiffrage)",
+      "fonds": "Comité de chiffrage AVR (projets ayant reçu une promesse d'aide à la commission plénière)",
       "organisme": "CNC",
-      "typologie_oeuvre": "court métrage",
+      "typologie_oeuvre": "court métrage (AVR1 et AVR2)",
       "etape_filiere": "production",
-      "session_label": "Comité de chiffrage - Novembre 2026",
+      "session_label": "Session novembre 2026",
       "etapes": [
         {
-          "label": "Date unique de dépôt pour le comité de chiffrage - Session Novembre 2026",
+          "label": "Date unique de dépôt pour le comité de chiffrage",
           "date_debut": null,
           "date_fin": "2026-10-19",
           "heure_limite": null
         },
         {
-          "label": "Comité de chiffrage - Session Novembre 2026",
+          "label": "Comité de chiffrage",
           "date_debut": null,
           "date_fin": "2026-11-23",
           "heure_limite": null
@@ -420,27 +403,27 @@
       "actions_prealables": [],
       "conditions_eliminatoires": [
         "Réservé aux projets ayant reçu une promesse d'aide à la commission plénière",
-        "Date unique de dépôt pour le comité de chiffrage, non reportable"
+        "Calendrier prévisionnel établi en amont sur un an, les dates sont susceptibles de changer"
       ],
       "montant_min_eur": null,
       "montant_max_eur": null,
       "lien_formulaire": null,
       "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116",
-      "date_extraction": "2026-09-15"
+      "date_extraction": "2026-09-28"
     },
-    "etapes_hash": "56c3ab3cf9d6d7ba103a80bf1a7f7516ab54ce35",
+    "etapes_hash": "6309b442f78ce6d52a48d6a274330d8a7b8301e6",
     "first_seen": "2026-09-15",
-    "last_updated": "2026-09-15",
-    "last_checked": "2026-09-15",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
     "clos": true
   },
   "96d30ab0f2672c11": {
     "commission": {
       "region": "Paris",
-      "fonds": "Fonds de soutien aux Nouveaux Médias",
+      "fonds": "Fonds d'aide aux projets nouveaux médias",
       "organisme": "Mission Cinéma - Ville de Paris",
-      "typologie_oeuvre": "projets nouveaux médias / transmédia (séries digitales, narrations interactives, applications, films en réalité virtuelle, etc.)",
-      "etape_filiere": "developpement",
+      "typologie_oeuvre": "projets nouveaux médias / transmédia (fiction, animation, documentaire, expérimental)",
+      "etape_filiere": "ecriture",
       "session_label": "Première session 2026",
       "etapes": [
         {
@@ -464,20 +447,21 @@
       ],
       "actions_prealables": [],
       "conditions_eliminatoires": [
-        "Œuvres pour les nouveaux médias, nouvelles formes de narration spécifiquement destinées à une diffusion sur un ou plusieurs supports numériques (internet, écrans mobiles, applications, etc.), quel qu'en soit le genre (fiction, animation, documentaire, expérimental)",
-        "Toute entreprise de production établie en France ou ayant un établissement secondaire en France, intervenant au titre de producteur ou coproducteur délégué majoritaire (sur présentation du contrat)",
+        "Œuvres pour nouveaux médias, nouvelles formes de narration spécifiquement destinées à une diffusion sur un ou plusieurs supports numériques (internet, écrans mobiles, applications, etc.)",
+        "Quel qu'en soit le genre (fiction, animation, documentaire, expérimental) et la forme (séries digitales, narrations interactives, applications, films en réalité virtuelle, etc.)",
+        "Entreprise de production établie en France ou ayant un établissement secondaire en France, intervenant au titre de producteur ou coproducteur délégué majoritaire (sur présentation du contrat)",
         "Les projets portés par une association ou un candidat à titre individuel (auteur ou réalisateur) ne sont pas éligibles"
       ],
       "montant_min_eur": null,
       "montant_max_eur": 40000,
       "lien_formulaire": "https://teleservices.paris.fr/nouveauxmedia/",
       "url_source": "https://www.paris.fr/pages/les-actions-de-paris-pour-le-cinema-2313",
-      "date_extraction": "2026-09-15"
+      "date_extraction": "2026-09-28"
     },
-    "etapes_hash": "0324235e6f6d8fc885ab578b8b255dc679df579e",
+    "etapes_hash": "d7cde657e5f0e63a266a1b88f09d8ddb66a86c9b",
     "first_seen": "2026-09-15",
-    "last_updated": "2026-09-15",
-    "last_checked": "2026-09-15",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
     "clos": true
   },
   "561376778a60be70": {
@@ -485,7 +469,7 @@
       "region": "Paris",
       "fonds": "Fonds de soutien au court métrage",
       "organisme": "Mission Cinéma - Ville de Paris",
-      "typologie_oeuvre": "court métrage (tous genres, durée inférieure à 60 mn)",
+      "typologie_oeuvre": "court métrage",
       "etape_filiere": "production",
       "session_label": "Deuxième session 2026",
       "etapes": [
@@ -510,7 +494,7 @@
       ],
       "actions_prealables": [],
       "conditions_eliminatoires": [
-        "Films courts d'une durée inférieure à 60 mn",
+        "Tous les films courts d'une durée inférieure à 60 mn",
         "Tournage prévu principalement à Paris",
         "Le soutien s'adresse à toute entreprise de production cinématographique ou audiovisuelle établie en France, intervenant au titre de producteur ou coproducteur majoritaire",
         "Les projets portés par une association ou un candidat à titre individuel (auteur ou réalisateur) ne sont pas éligibles"
@@ -519,12 +503,12 @@
       "montant_max_eur": 20000,
       "lien_formulaire": "https://teleservices.paris.fr/courtmetrage/",
       "url_source": "https://www.paris.fr/pages/les-actions-de-paris-pour-le-cinema-2313",
-      "date_extraction": "2026-09-15"
+      "date_extraction": "2026-09-27"
     },
-    "etapes_hash": "fb792597cb512822c190fafd2266f44588aa6b21",
+    "etapes_hash": "7dee6b80bf51fbbc2f80342a707dcce7b2c42907",
     "first_seen": "2026-09-15",
-    "last_updated": "2026-09-15",
-    "last_checked": "2026-09-15",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-27",
     "clos": true
   },
   "8c681998a0d0cdc6": {
@@ -532,7 +516,7 @@
       "region": "Paris",
       "fonds": "Fonds de soutien au court métrage",
       "organisme": "Mission Cinéma - Ville de Paris",
-      "typologie_oeuvre": "court métrage (tous genres, durée inférieure à 60 mn)",
+      "typologie_oeuvre": "court métrage",
       "etape_filiere": "production",
       "session_label": "Troisième session 2026",
       "etapes": [
@@ -557,7 +541,7 @@
       ],
       "actions_prealables": [],
       "conditions_eliminatoires": [
-        "Films courts d'une durée inférieure à 60 mn",
+        "Tous les films courts d'une durée inférieure à 60 mn",
         "Tournage prévu principalement à Paris",
         "Le soutien s'adresse à toute entreprise de production cinématographique ou audiovisuelle établie en France, intervenant au titre de producteur ou coproducteur majoritaire",
         "Les projets portés par une association ou un candidat à titre individuel (auteur ou réalisateur) ne sont pas éligibles"
@@ -566,21 +550,21 @@
       "montant_max_eur": 20000,
       "lien_formulaire": "https://teleservices.paris.fr/courtmetrage/",
       "url_source": "https://www.paris.fr/pages/les-actions-de-paris-pour-le-cinema-2313",
-      "date_extraction": "2026-09-15"
+      "date_extraction": "2026-09-27"
     },
-    "etapes_hash": "90357756616cc9367a0e79132a1d4c1797ce8a7d",
+    "etapes_hash": "ce4ddf14faee54f277edb18469b42ce8521ef5f9",
     "first_seen": "2026-09-15",
-    "last_updated": "2026-09-15",
-    "last_checked": "2026-09-15",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-27",
     "clos": true
   },
   "0d53b0b2ad16551f": {
     "commission": {
       "region": "Paris",
-      "fonds": "Fonds de soutien aux Nouveaux Médias",
+      "fonds": "Fonds d'aide aux projets nouveaux médias",
       "organisme": "Mission Cinéma - Ville de Paris",
-      "typologie_oeuvre": "projets nouveaux médias / transmédia (séries digitales, narrations interactives, applications, films en réalité virtuelle, etc.)",
-      "etape_filiere": "developpement",
+      "typologie_oeuvre": "projets nouveaux médias / transmédia (fiction, animation, documentaire, expérimental)",
+      "etape_filiere": "ecriture",
       "session_label": "Seconde session 2026",
       "etapes": [
         {
@@ -604,29 +588,30 @@
       ],
       "actions_prealables": [],
       "conditions_eliminatoires": [
-        "Œuvres pour les nouveaux médias, nouvelles formes de narration spécifiquement destinées à une diffusion sur un ou plusieurs supports numériques (internet, écrans mobiles, applications, etc.), quel qu'en soit le genre (fiction, animation, documentaire, expérimental)",
-        "Toute entreprise de production établie en France ou ayant un établissement secondaire en France, intervenant au titre de producteur ou coproducteur délégué majoritaire (sur présentation du contrat)",
+        "Œuvres pour nouveaux médias, nouvelles formes de narration spécifiquement destinées à une diffusion sur un ou plusieurs supports numériques (internet, écrans mobiles, applications, etc.)",
+        "Quel qu'en soit le genre (fiction, animation, documentaire, expérimental) et la forme (séries digitales, narrations interactives, applications, films en réalité virtuelle, etc.)",
+        "Entreprise de production établie en France ou ayant un établissement secondaire en France, intervenant au titre de producteur ou coproducteur délégué majoritaire (sur présentation du contrat)",
         "Les projets portés par une association ou un candidat à titre individuel (auteur ou réalisateur) ne sont pas éligibles"
       ],
       "montant_min_eur": null,
       "montant_max_eur": 40000,
       "lien_formulaire": "https://teleservices.paris.fr/nouveauxmedia/",
       "url_source": "https://www.paris.fr/pages/les-actions-de-paris-pour-le-cinema-2313",
-      "date_extraction": "2026-09-15"
+      "date_extraction": "2026-09-28"
     },
-    "etapes_hash": "92f3f7c0389bb5a3a3b67205eb8f6486f8069634",
+    "etapes_hash": "c4936489ccdd55e292e11f878074ba4309c8bfaf",
     "first_seen": "2026-09-15",
-    "last_updated": "2026-09-15",
-    "last_checked": "2026-09-15",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
     "clos": true
   },
   "cbfdbf359b3441a8": {
     "commission": {
       "region": "Pays de la Loire",
       "fonds": "Fonds d'aide à la création cinématographique, audiovisuelle et numérique",
-      "organisme": "Région Pays de la Loire - Direction Culture, Sport et Patrimoine",
-      "typologie_oeuvre": "longs métrages, fictions télévisées, magazines, documentaires, courts métrages et œuvres numériques",
-      "etape_filiere": "production",
+      "organisme": "Région Pays de la Loire",
+      "typologie_oeuvre": "œuvres de développement (pilotes, réécriture de scénarios de fictions, développement de projets)",
+      "etape_filiere": "developpement",
       "session_label": null,
       "etapes": [
         {
@@ -638,26 +623,25 @@
         {
           "label": "dépôt des dossiers",
           "date_debut": null,
-          "date_fin": "2027-02-08",
+          "date_fin": "2026-05-26",
           "heure_limite": null
         }
       ],
       "actions_prealables": [],
       "conditions_eliminatoires": [
-        "Le dépôt des dossiers doit être dématérialisé via l'outil Portail des Aides",
-        "L'ensemble des éléments déposés doit être adressé en parallèle en un seul fichier PDF à l'adresse e-mail indiquée"
+        "Aides au développement destinées à financer la réalisation de pilotes, la réécriture de scénarios de fictions, le développement de projets."
       ],
       "montant_min_eur": null,
       "montant_max_eur": null,
       "lien_formulaire": "https://les-aides.paysdelaloire.fr/aides/#/prod/connecte/CREATION_CINE/depot/simple",
       "url_source": "https://www.paysdelaloire.fr/les-aides/fonds-daide-la-creation-cinematographique-audiovisuelle-et-numerique",
-      "date_extraction": "2026-09-15"
+      "date_extraction": "2026-09-28"
     },
-    "etapes_hash": "274db775f6ede04d3a664800e0eb4c6dcefb8169",
+    "etapes_hash": "8d95f51c7622b2e50cd85aba36af65b2ff465b2e",
     "first_seen": "2026-09-15",
-    "last_updated": "2026-09-15",
-    "last_checked": "2026-09-15",
-    "clos": true
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
   },
   "ce601d12ed5d21f9": {
     "commission": {
@@ -852,14 +836,14 @@
       "region": "Pays de la Loire",
       "fonds": "Fonds d'aide à la création cinématographique, audiovisuelle et numérique",
       "organisme": "Région Pays de la Loire",
-      "typologie_oeuvre": "longs métrages, fictions télévisées, magazines, documentaires, courts métrages et œuvres numériques ; aides au développement (pilotes, réécriture de scénarios de fictions, développement de projets)",
-      "etape_filiere": "autre",
+      "typologie_oeuvre": "longs métrages, fictions télévisées, magazines, documentaires, courts métrages et œuvres numériques",
+      "etape_filiere": "production",
       "session_label": null,
       "etapes": [
         {
           "label": "dépôt des dossiers",
           "date_debut": null,
-          "date_fin": "2026-02-09",
+          "date_fin": "2026-10-05",
           "heure_limite": null
         },
         {
@@ -867,60 +851,36 @@
           "date_debut": null,
           "date_fin": "2026-05-26",
           "heure_limite": null
-        },
-        {
-          "label": "dépôt des dossiers",
-          "date_debut": null,
-          "date_fin": "2026-10-05",
-          "heure_limite": null
         }
       ],
       "actions_prealables": [],
       "conditions_eliminatoires": [
-        "La demande est dématérialisée via l'outil Portail des Aides",
-        "L'ensemble des éléments déposés doit être adressé en parallèle en un seul fichier pdf à cinema@paysdelaloire.fr"
+        "La Région aide la production de longs métrages, fictions télévisées, magazines, documentaires, courts métrages et œuvres numériques, en partenariat avec le CNC.",
+        "Aides au développement destinées à financer la réalisation de pilotes, la réécriture de scénarios de fictions, le développement de projets."
       ],
       "montant_min_eur": null,
       "montant_max_eur": null,
       "lien_formulaire": "https://les-aides.paysdelaloire.fr/aides/#/prod/connecte/CREATION_CINE/depot/simple",
       "url_source": "https://www.paysdelaloire.fr/les-aides/fonds-daide-la-creation-cinematographique-audiovisuelle-et-numerique",
-      "date_extraction": "2026-09-15"
+      "date_extraction": "2026-09-28"
     },
-    "etapes_hash": "f12c11d6c6f03624485ff14472b2e01d65ae33fb",
+    "etapes_hash": "8d95f51c7622b2e50cd85aba36af65b2ff465b2e",
     "first_seen": "2026-09-15",
-    "last_updated": "2026-09-15",
-    "last_checked": "2026-09-15",
-    "clos": true
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
   },
   "376f9ba28bac5d21": {
     "commission": {
       "region": "Occitanie",
       "fonds": "Aide à la création audiovisuelle (développement, production, diffusion)",
-      "organisme": "Région Occitanie / Pyrénées-Méditerranée - Direction de la Culture et du Patrimoine",
-      "typologie_oeuvre": "Fiction (LM-AV)",
-      "etape_filiere": "production",
+      "organisme": "Région Occitanie / Pyrénées-Méditerranée",
+      "typologie_oeuvre": "documentaire (court-métrage, long-métrage, audiovisuel, narration spécifique/XR)",
+      "etape_filiere": "developpement",
       "session_label": null,
       "etapes": [
         {
-          "label": "dépôt des dossiers - Fiction LM/AV",
-          "date_debut": null,
-          "date_fin": "2025-12-01",
-          "heure_limite": null
-        },
-        {
-          "label": "dépôt des dossiers - Fiction LM/AV",
-          "date_debut": null,
-          "date_fin": "2026-05-01",
-          "heure_limite": null
-        },
-        {
-          "label": "dépôt des dossiers - Fiction LM/AV",
-          "date_debut": null,
-          "date_fin": "2026-07-01",
-          "heure_limite": null
-        },
-        {
-          "label": "dépôt des dossiers - Fiction LM/AV",
+          "label": "dépôt des dossiers - documentaire (CM, LM, AV, XR)",
           "date_debut": null,
           "date_fin": "2026-12-01",
           "heure_limite": null
@@ -928,20 +888,3341 @@
       ],
       "actions_prealables": [],
       "conditions_eliminatoires": [
-        "Le projet doit présenter un lien culturel évident avec la région",
-        "Les œuvres non éligibles sont listées en annexe du texte complet ; seules les œuvres de création sont éligibles",
-        "Pour le soutien en phase de pré-production ou de production, le tournage ne devra pas avoir commencé avant la date de dépôt de la demande (à l'exception des documentaires nécessitant des prises de vues anticipées)"
+        "Le projet doit présenter un lien culturel évident avec la région (les conditions varient en fonction de la nature et de la phase du projet, se reporter aux annexes).",
+        "Les projets doivent être présentés par la production déléguée ou la coproduction déléguée.",
+        "Pour le soutien en phase de pré-production ou de production, le tournage ne devra pas avoir commencé avant la date de dépôt de la demande (à l'exception des documentaires nécessitant des prises de vues anticipées de par leur sujet).",
+        "Seules les œuvres de création sont éligibles."
       ],
       "montant_min_eur": null,
       "montant_max_eur": null,
       "lien_formulaire": "https://mesaidesenligne.laregion.fr/aides/#/croccitanie/connecte/F_DCP_CREATAV/depot/simple",
       "url_source": "https://www.laregion.fr/Cinema-Audiovisuel-Multimedia-Aide-a-la-creation-audiovisuelle",
-      "date_extraction": "2026-09-15"
+      "date_extraction": "2026-09-27"
     },
-    "etapes_hash": "39af39098a8994af52af6320c60b5ceabd822f17",
+    "etapes_hash": "b17c3d75f588abc471ed0180269530873fb43a94",
     "first_seen": "2026-09-15",
-    "last_updated": "2026-09-15",
-    "last_checked": "2026-09-15",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-27",
     "clos": true
+  },
+  "49c9007cdf01d828": {
+    "commission": {
+      "region": "Provence-Alpes-Côte d'Azur",
+      "fonds": "Soutien à la production de court métrage de fiction",
+      "organisme": "Région Sud - Provence-Alpes-Côte d'Azur",
+      "typologie_oeuvre": "court métrage de fiction",
+      "etape_filiere": "production",
+      "session_label": null,
+      "etapes": [
+        {
+          "label": "dépôt des demandes (calendrier permanent)",
+          "date_debut": null,
+          "date_fin": "2027-01-31",
+          "heure_limite": null
+        },
+        {
+          "label": "dépôt des demandes (calendrier permanent)",
+          "date_debut": null,
+          "date_fin": "2027-04-15",
+          "heure_limite": null
+        },
+        {
+          "label": "dépôt des demandes (calendrier permanent)",
+          "date_debut": null,
+          "date_fin": "2026-09-30",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "prise de rendez-vous téléphonique préalable avec le chargé de mission responsable",
+          "condition_declenchement": "si le demandeur a acquis une ou plusieurs aides à la production de la part d'autres collectivités territoriales pour le même projet",
+          "fenetre": null,
+          "consequence_si_non_respect": "le dossier sera considéré comme inéligible",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [
+        "Le projet doit avoir un lien culturel ou géographique avec Provence-Alpes-Côte d'Azur",
+        "Le projet doit avoir un temps de fabrication significatif sur le territoire régional",
+        "Le tournage/fabrication ne doit pas avoir commencé au moment du dépôt de la demande",
+        "Ne pas dépasser les seuils d'intensité d'aides publiques déterminés par le Règlement général des aides financières du CNC",
+        "Générer des dépenses à hauteur de 125 % de la subvention sur le territoire régional dans la limite de 80 % du budget de production",
+        "Avoir établi un plan d'actions visant à réduire l'impact écologique de la fabrication de l'œuvre",
+        "Avoir réalisé un bilan carbone prévisionnel dès lors qu'un outil de mesure est mis à disposition par le CNC",
+        "Justifier de 10 % du budget du film hors part producteur et participation acquis lors du dépôt du dossier (apports en industrie éligibles seulement à hauteur de 9 %)",
+        "Un contrat d'auteur (contrat d'option non éligible) devra être fourni avec un minimum garanti à 1 500 € pour l'auteur-réalisateur",
+        "Dans le cas d'une coproduction, le contrat de coproduction est obligatoire (mémo deal ou courrier non éligible) avec mention du montant en numéraire et en industrie apporté par le coproducteur",
+        "Le demandeur ne peut avoir plus de trois aides régionales en cours sans signe d'avancement"
+      ],
+      "montant_min_eur": 15000,
+      "montant_max_eur": 30000,
+      "lien_formulaire": "https://aidesenligne.maregionsud.fr/aides/#/crsud/connecte/F_S_I_CM_ED/depot/simple",
+      "url_source": "https://www.maregionsud.fr/vos-aides/detail/soutien-a-la-production-de-court-metrage-de-fiction",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "90a5d96a1f6798c9c6eab4c40a47c5c07a929c2f",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "207f5876adc60382": {
+    "commission": {
+      "region": "Normandie",
+      "fonds": "Fonds Numérique Normandie Images",
+      "organisme": "Normandie Images",
+      "typologie_oeuvre": "œuvre numérique",
+      "etape_filiere": "autre",
+      "session_label": "Session 1 - 2027",
+      "etapes": [
+        {
+          "label": "rendez-vous préalables",
+          "date_debut": "2026-08-24",
+          "date_fin": "2026-09-04",
+          "heure_limite": null
+        },
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": "2026-09-07",
+          "date_fin": "2026-09-24",
+          "heure_limite": null
+        },
+        {
+          "label": "Présélection",
+          "date_debut": null,
+          "date_fin": "2026-10-27",
+          "heure_limite": null
+        },
+        {
+          "label": "Plénière",
+          "date_debut": null,
+          "date_fin": "2026-11-19",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "prise de rendez-vous préalable",
+          "condition_declenchement": "systématique",
+          "fenetre": {
+            "label": "rendez-vous préalables",
+            "date_debut": "2026-08-24",
+            "date_fin": "2026-09-04",
+            "heure_limite": null
+          },
+          "consequence_si_non_respect": "Pas d'accord pour le dépôt du dossier (le dépôt n'est possible qu'après accord)",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [
+        "Le dépôt des dossiers n'est possible qu'après un rendez-vous préalable ayant donné lieu à un accord"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://inscriptionsfondsaide.normandieimages.net/fonds-num/26",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "d258c97ae622c320f8ce5ca188ed5fa782c06ccf",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "bdb648324c00240b": {
+    "commission": {
+      "region": "Normandie",
+      "fonds": "Fonds Numérique Normandie Images",
+      "organisme": "Normandie Images",
+      "typologie_oeuvre": "œuvre numérique",
+      "etape_filiere": "autre",
+      "session_label": "Session 2 - 2027",
+      "etapes": [
+        {
+          "label": "rendez-vous préalables",
+          "date_debut": "2027-01-06",
+          "date_fin": "2027-01-22",
+          "heure_limite": null
+        },
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": "2027-02-03",
+          "date_fin": "2027-02-11",
+          "heure_limite": null
+        },
+        {
+          "label": "Présélection",
+          "date_debut": null,
+          "date_fin": "2027-03-16",
+          "heure_limite": null
+        },
+        {
+          "label": "Plénière",
+          "date_debut": null,
+          "date_fin": "2027-03-30",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "prise de rendez-vous préalable",
+          "condition_declenchement": "systématique",
+          "fenetre": {
+            "label": "rendez-vous préalables",
+            "date_debut": "2027-01-06",
+            "date_fin": "2027-01-22",
+            "heure_limite": null
+          },
+          "consequence_si_non_respect": "Pas d'accord pour le dépôt du dossier (le dépôt n'est possible qu'après accord)",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [
+        "Le dépôt des dossiers n'est possible qu'après un rendez-vous préalable ayant donné lieu à un accord"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://inscriptionsfondsaide.normandieimages.net/fonds-num/26",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "7a36fc9e4c5fcbad91f36849ef0d527670dd6acc",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "9bd8476f2d742ccd": {
+    "commission": {
+      "region": "Normandie",
+      "fonds": "Fonds Numérique Normandie Images",
+      "organisme": "Normandie Images",
+      "typologie_oeuvre": "œuvre numérique",
+      "etape_filiere": "autre",
+      "session_label": "Session 3 - 2027",
+      "etapes": [
+        {
+          "label": "rendez-vous préalables",
+          "date_debut": "2027-04-19",
+          "date_fin": "2027-04-30",
+          "heure_limite": null
+        },
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": "2027-05-12",
+          "date_fin": "2027-05-19",
+          "heure_limite": null
+        },
+        {
+          "label": "Présélection",
+          "date_debut": null,
+          "date_fin": "2027-06-22",
+          "heure_limite": null
+        },
+        {
+          "label": "Plénière",
+          "date_debut": null,
+          "date_fin": "2027-07-06",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "prise de rendez-vous préalable",
+          "condition_declenchement": "systématique",
+          "fenetre": {
+            "label": "rendez-vous préalables",
+            "date_debut": "2027-04-19",
+            "date_fin": "2027-04-30",
+            "heure_limite": null
+          },
+          "consequence_si_non_respect": "Pas d'accord pour le dépôt du dossier (le dépôt n'est possible qu'après accord)",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [
+        "Le dépôt des dossiers n'est possible qu'après un rendez-vous préalable ayant donné lieu à un accord"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://inscriptionsfondsaide.normandieimages.net/fonds-num/26",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "3a214d068e72cb67a13f44a1f5a19db752b24f45",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "38fe632bb5aae75b": {
+    "commission": {
+      "region": "National",
+      "fonds": "Aide avant réalisation à la production de films de court métrage (AVR1)",
+      "organisme": "CNC",
+      "typologie_oeuvre": "premiers films de court métrage",
+      "etape_filiere": "production",
+      "session_label": "Session 5 - 2026",
+      "etapes": [
+        {
+          "label": "dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2026-06-18",
+          "heure_limite": "18:00"
+        },
+        {
+          "label": "résultats comité de lecture à partir du",
+          "date_debut": null,
+          "date_fin": "2026-09-28",
+          "heure_limite": null
+        },
+        {
+          "label": "commission plénière AVR 1 (septembre 2026), résultats à partir du",
+          "date_debut": null,
+          "date_fin": "2026-09-14",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "réunion « premier dépôt » en visioconférence",
+          "condition_declenchement": "systématique pour un premier dépôt",
+          "fenetre": {
+            "label": "réunion premier dépôt",
+            "date_debut": null,
+            "date_fin": "2026-10-09",
+            "heure_limite": "10:00"
+          },
+          "consequence_si_non_respect": "candidature ne pouvant être traitée si le formulaire/la note IA ne sont pas conformes ; inscription préalable à la réunion requise avant dépôt",
+          "lien_reservation": "https://www.demarches-simplifiees.fr/commencer/inscription-a-la-visioconference-reunion-premier-d"
+        },
+        {
+          "type_action": "utilisation de la dernière version du formulaire de demande",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "votre candidature ne pourra être prise en compte",
+          "lien_reservation": null
+        },
+        {
+          "type_action": "intégration au dossier de la note sur le recours à l'intelligence artificielle (IA)",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "dossier incomplet",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [
+        "numerus clausus : dépôt en AVR1 et en fiction uniquement, seules les 80 premières candidatures complètes seront prises en compte",
+        "postuler avec la dernière version du formulaire de demande, sinon la candidature ne pourra être prise en compte",
+        "la demande doit être constituée de deux fichiers : formulaire de demande Excel + dossier artistique PDF",
+        "les liens de dépôt ne sont actifs que lors des jours de dépôt, de 10h à 18h"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "3e16b579919142cfb5876b402c22fc135163ccfa",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "c3659e3ecaa898c2": {
+    "commission": {
+      "region": "National",
+      "fonds": "Aide avant réalisation à la production de films de court métrage (AVR1)",
+      "organisme": "CNC",
+      "typologie_oeuvre": "premiers films de court métrage",
+      "etape_filiere": "production",
+      "session_label": "Session 6 - 2026",
+      "etapes": [
+        {
+          "label": "dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2026-09-04",
+          "heure_limite": "18:00"
+        },
+        {
+          "label": "résultats comité de lecture à partir du",
+          "date_debut": null,
+          "date_fin": "2026-11-30",
+          "heure_limite": null
+        },
+        {
+          "label": "commission plénière AVR 1 (octobre 2026), résultats à partir du",
+          "date_debut": null,
+          "date_fin": "2026-10-30",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "numerus clausus : dépôt en AVR1 et en fiction uniquement, seules les 80 premières candidatures complètes seront prises en compte",
+        "postuler avec la dernière version du formulaire de demande, sinon la candidature ne pourra être prise en compte"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "0987bf4a9edca92bf49d2df84dda4e21e569ee6f",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "2fef7e5ba17ec2d1": {
+    "commission": {
+      "region": "Paris",
+      "fonds": "Fonds de soutien au court métrage",
+      "organisme": "Mission Cinéma - Ville de Paris",
+      "typologie_oeuvre": "court métrage (tous genres)",
+      "etape_filiere": "production",
+      "session_label": "Troisième session 2026",
+      "etapes": [
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": "2026-09-01",
+          "date_fin": "2026-09-24",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de lecture",
+          "date_debut": null,
+          "date_fin": "2025-11-30",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de sélection",
+          "date_debut": null,
+          "date_fin": "2025-12-31",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Tous les films courts",
+        "Durée inférieure à 60 mn",
+        "Tournage prévu principalement à Paris",
+        "Le soutien à la production s'adresse à toute entreprise de production cinématographique ou audiovisuelle établie en France, intervenant au titre de producteur ou coproducteur majoritaire",
+        "Les projets portés par une association ou un candidat à titre individuel (auteur ou réalisateur) ne sont pas éligibles"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": 20000,
+      "lien_formulaire": "https://teleservices.paris.fr/courtmetrage/",
+      "url_source": "https://www.paris.fr/pages/les-actions-de-paris-pour-le-cinema-2313",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "68d25c21b641cd9cb160e3c37a10a74fe75d083d",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "ffde181303df7521": {
+    "commission": {
+      "region": "Paris",
+      "fonds": "Fonds de soutien aux Nouveaux Médias",
+      "organisme": "Ville de Paris - Mission Cinéma",
+      "typologie_oeuvre": "projets transmédia / nouveaux médias (fiction, animation, documentaire, expérimental)",
+      "etape_filiere": "developpement",
+      "session_label": "Seconde session 2026",
+      "etapes": [
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": "2026-10-01",
+          "date_fin": "2026-10-29",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de lecture",
+          "date_debut": null,
+          "date_fin": "2026-11-30",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de sélection",
+          "date_debut": null,
+          "date_fin": "2026-12-31",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Œuvres pour les nouveaux médias, nouvelles formes de narration destinées à une diffusion sur un ou plusieurs supports numériques (internet, écrans mobiles, applications, etc.), quel qu'en soit le genre (fiction, animation, documentaire, expérimental)",
+        "Toute entreprise de production établie en France ou ayant un établissement secondaire en France, intervenant au titre de producteur ou coproducteur délégué majoritaire (sur présentation du contrat)",
+        "Les projets portés par une association ou un candidat à titre individuel (auteur ou réalisateur) ne sont pas éligibles"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": 40000,
+      "lien_formulaire": "https://teleservices.paris.fr/nouveauxmedia/",
+      "url_source": "https://www.paris.fr/pages/les-actions-de-paris-pour-le-cinema-2313",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "92f3f7c0389bb5a3a3b67205eb8f6486f8069634",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-27",
+    "clos": true
+  },
+  "bca63e9730801680": {
+    "commission": {
+      "region": "Pays de la Loire",
+      "fonds": "Fonds d'aide à la création cinématographique, audiovisuelle et numérique",
+      "organisme": "Région Pays de la Loire - Direction Culture, Sport et Patrimoine",
+      "typologie_oeuvre": "longs métrages, fictions télévisées, magazines, documentaires, courts métrages et œuvres numériques (aide à la production) ; aides au développement (pilotes, réécriture de scénarios de fictions, développement de projets)",
+      "etape_filiere": "production",
+      "session_label": null,
+      "etapes": [
+        {
+          "label": "dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2026-10-05",
+          "heure_limite": null
+        },
+        {
+          "label": "dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2027-02-09",
+          "heure_limite": null
+        },
+        {
+          "label": "dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2027-05-26",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "La demande est dématérialisée via le Portail des Aides et doit être accompagnée, en parallèle, de l'ensemble des éléments déposés adressés en un seul fichier pdf à l'adresse cinema@regionpaysdelaloire.fr."
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://les-aides.paysdelaloire.fr/aides/#/prod/connecte/CREATION_CINE/depot/simple",
+      "url_source": "https://www.paysdelaloire.fr/les-aides/fonds-daide-la-creation-cinematographique-audiovisuelle-et-numerique",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "5dac4126192e63d78d61dd03a3aa47f6fe0b14de",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-27",
+    "clos": true
+  },
+  "a3fd08550addd062": {
+    "commission": {
+      "region": "Occitanie",
+      "fonds": "Aide à la création audiovisuelle (développement, production, diffusion)",
+      "organisme": "Région Occitanie / Pyrénées-Méditerranée",
+      "typologie_oeuvre": "courts et longs métrages d'animation, documentaire, fiction, œuvres audiovisuelles TV/web, narrations spécifiques XR/transmédia",
+      "etape_filiere": "developpement",
+      "session_label": null,
+      "etapes": [
+        {
+          "label": "Dépôt des dossiers - Animation (CM, LM, AV, XR)",
+          "date_debut": null,
+          "date_fin": "2027-02-01",
+          "heure_limite": null
+        },
+        {
+          "label": "Dépôt des dossiers - Documentaire (CM, LM, AV, XR)",
+          "date_debut": null,
+          "date_fin": "2026-09-01",
+          "heure_limite": null
+        },
+        {
+          "label": "Dépôt des dossiers - Documentaire (CM, LM, AV, XR)",
+          "date_debut": null,
+          "date_fin": "2026-12-01",
+          "heure_limite": null
+        },
+        {
+          "label": "Dépôt des dossiers - Fiction (CM, XR)",
+          "date_debut": null,
+          "date_fin": "2026-06-01",
+          "heure_limite": null
+        },
+        {
+          "label": "Dépôt des dossiers - Fiction (CM, XR)",
+          "date_debut": null,
+          "date_fin": "2026-12-15",
+          "heure_limite": null
+        },
+        {
+          "label": "Dépôt des dossiers - Fiction (LM-AV)",
+          "date_debut": null,
+          "date_fin": "2026-07-01",
+          "heure_limite": null
+        },
+        {
+          "label": "Dépôt des dossiers - Fiction (LM-AV)",
+          "date_debut": null,
+          "date_fin": "2026-12-01",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Le projet doit présenter un lien culturel évident avec la région.",
+        "Les projets doivent être présentés par la production déléguée ou la coproduction déléguée (entreprise de production prenant l'initiative et la responsabilité financière, artistique et technique de la réalisation de l'œuvre).",
+        "Pour le soutien en phase de pré-production ou de production, le tournage ne devra pas avoir commencé avant la date de dépôt de la demande (à l'exception des documentaires nécessitant des prises de vues anticipées de par leur sujet).",
+        "Seules les œuvres de création sont éligibles.",
+        "Pour les œuvres audiovisuelles destinées à une diffusion TV ou web : le projet doit répondre aux critères des aides automatiques ou sélectives à la production du CNC et rechercher l'engagement d'un diffuseur (chaîne de télévision) ou d'un web-diffuseur (agrément CSA pour le web-diffuseur)."
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://www.laregion.fr/Cinema-Audiovisuel-Multimedia-Aide-a-la-creation-audiovisuelle",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "1c73d9346514871359930a0b650681adae24861a",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": true
+  },
+  "21c5661c87f4289d": {
+    "commission": {
+      "region": "Occitanie",
+      "fonds": "Aide à la création audiovisuelle (développement, production, diffusion)",
+      "organisme": "Région Occitanie / Pyrénées-Méditerranée",
+      "typologie_oeuvre": "fiction court-métrage et narration spécifique/XR",
+      "etape_filiere": "developpement",
+      "session_label": null,
+      "etapes": [
+        {
+          "label": "dépôt des dossiers - fiction (CM, XR)",
+          "date_debut": null,
+          "date_fin": "2026-12-15",
+          "heure_limite": null
+        },
+        {
+          "label": "dépôt des dossiers - fiction (CM, XR)",
+          "date_debut": null,
+          "date_fin": "2027-06-01",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Le projet doit présenter un lien culturel évident avec la région (les conditions varient en fonction de la nature et de la phase du projet, se reporter aux annexes).",
+        "Les projets doivent être présentés par la production déléguée ou la coproduction déléguée.",
+        "Pour le soutien en phase de pré-production ou de production, le tournage ne devra pas avoir commencé avant la date de dépôt de la demande (à l'exception des documentaires nécessitant des prises de vues anticipées de par leur sujet).",
+        "Seules les œuvres de création sont éligibles."
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://mesaidesenligne.laregion.fr/aides/#/croccitanie/connecte/F_DCP_CREATAV/depot/simple",
+      "url_source": "https://www.laregion.fr/Cinema-Audiovisuel-Multimedia-Aide-a-la-creation-audiovisuelle",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "fb419fc9f6eed40a1cdb8e9d93428d90edbc9c95",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-27",
+    "clos": true
+  },
+  "4ec4833c6496badd": {
+    "commission": {
+      "region": "Centre-Val de Loire",
+      "fonds": "Contrat d'Objectifs et de Moyens (COM) Audiovisuel",
+      "organisme": "Ciclic Centre-Val de Loire",
+      "typologie_oeuvre": "documentaire, fiction courte (unitaire ou sérielle), animation courte (unitaire ou sérielle)",
+      "etape_filiere": "production",
+      "session_label": "1er dépôt",
+      "etapes": [
+        {
+          "label": "dépôt des dossiers - 1er dépôt",
+          "date_debut": "2025-10-01",
+          "date_fin": "2025-10-10",
+          "heure_limite": "12:00"
+        },
+        {
+          "label": "commission - 1er dépôt",
+          "date_debut": null,
+          "date_fin": "2025-12-08",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Le projet doit être porté soit par un auteur ou un réalisateur ayant sa résidence principale sur le territoire régional, soit par une structure de production établie sur le territoire régional, soit présenter un lien culturel et artistique fort avec la région Centre-Val de Loire (sujet, personnages et/ou temps de fabrication significatif sur le territoire régional)",
+        "Le projet doit être porté par une structure de production ou une association dont l'objet principal est la production d'œuvres audiovisuelles",
+        "Le producteur doit assumer la responsabilité financière, technique et artistique du projet et présenter un contrat de cession de droits signé avec le ou les auteur(s)/réalisateur(s) du projet",
+        "Le tournage des projets documentaires ne devra pas être terminé à la date des comités éditoriaux",
+        "Le tournage des projets de fiction et d'animation ne devra pas avoir commencé à la date des comités éditoriaux",
+        "Dans le cas où le seul lien avec le territoire serait le tournage du film en Région Centre-Val de Loire, les porteurs de projets soutenus s'engagent à dépenser 100% des soutiens obtenus en Région Centre-Val de Loire"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://ciclic.fr/cinema-audiovisuel/aides-selectives/un-contrat-d-objectifs-et-de-moyens-avec-les-televisions-de-la-region",
+      "url_source": "https://ciclic.fr/aides-accompagnement/catalogue-des-aides/contrat-dobjectifs-et-de-moyens-com-audiovisuel",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "52b170a98867b067a48b3ba9f0ceadf976595350",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "a748ed10c36d556a": {
+    "commission": {
+      "region": "Centre-Val de Loire",
+      "fonds": "Contrat d'Objectifs et de Moyens (COM) Audiovisuel",
+      "organisme": "Ciclic Centre-Val de Loire",
+      "typologie_oeuvre": "documentaire, fiction courte (unitaire ou sérielle), animation courte (unitaire ou sérielle)",
+      "etape_filiere": "production",
+      "session_label": "2e dépôt",
+      "etapes": [
+        {
+          "label": "dépôt des dossiers - 2e dépôt",
+          "date_debut": "2026-01-26",
+          "date_fin": "2026-01-30",
+          "heure_limite": "12:00"
+        },
+        {
+          "label": "commission - 2e dépôt",
+          "date_debut": null,
+          "date_fin": "2026-03-30",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Le projet doit être porté soit par un auteur ou un réalisateur ayant sa résidence principale sur le territoire régional, soit par une structure de production établie sur le territoire régional, soit présenter un lien culturel et artistique fort avec la région Centre-Val de Loire (sujet, personnages et/ou temps de fabrication significatif sur le territoire régional)",
+        "Le projet doit être porté par une structure de production ou une association dont l'objet principal est la production d'œuvres audiovisuelles",
+        "Le producteur doit assumer la responsabilité financière, technique et artistique du projet et présenter un contrat de cession de droits signé avec le ou les auteur(s)/réalisateur(s) du projet",
+        "Le tournage des projets documentaires ne devra pas être terminé à la date des comités éditoriaux",
+        "Le tournage des projets de fiction et d'animation ne devra pas avoir commencé à la date des comités éditoriaux",
+        "Dans le cas où le seul lien avec le territoire serait le tournage du film en Région Centre-Val de Loire, les porteurs de projets soutenus s'engagent à dépenser 100% des soutiens obtenus en Région Centre-Val de Loire"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://ciclic.fr/cinema-audiovisuel/aides-selectives/un-contrat-d-objectifs-et-de-moyens-avec-les-televisions-de-la-region",
+      "url_source": "https://ciclic.fr/aides-accompagnement/catalogue-des-aides/contrat-dobjectifs-et-de-moyens-com-audiovisuel",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "41e7f4f85382f47d583106c3951509d0c03bb8e8",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "0bd76b0699d16ee3": {
+    "commission": {
+      "region": "Centre-Val de Loire",
+      "fonds": "Contrat d'Objectifs et de Moyens (COM) Audiovisuel",
+      "organisme": "Ciclic Centre-Val de Loire",
+      "typologie_oeuvre": "documentaire, fiction courte (unitaire ou sérielle), animation courte (unitaire ou sérielle)",
+      "etape_filiere": "production",
+      "session_label": "3e dépôt",
+      "etapes": [
+        {
+          "label": "dépôt des dossiers - 3e dépôt",
+          "date_debut": "2026-04-20",
+          "date_fin": "2026-04-24",
+          "heure_limite": "12:00"
+        },
+        {
+          "label": "commission - 3e dépôt",
+          "date_debut": null,
+          "date_fin": "2026-06-26",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Le projet doit être porté soit par un auteur ou un réalisateur ayant sa résidence principale sur le territoire régional, soit par une structure de production établie sur le territoire régional, soit présenter un lien culturel et artistique fort avec la région Centre-Val de Loire (sujet, personnages et/ou temps de fabrication significatif sur le territoire régional)",
+        "Le projet doit être porté par une structure de production ou une association dont l'objet principal est la production d'œuvres audiovisuelles",
+        "Le producteur doit assumer la responsabilité financière, technique et artistique du projet et présenter un contrat de cession de droits signé avec le ou les auteur(s)/réalisateur(s) du projet",
+        "Le tournage des projets documentaires ne devra pas être terminé à la date des comités éditoriaux",
+        "Le tournage des projets de fiction et d'animation ne devra pas avoir commencé à la date des comités éditoriaux",
+        "Dans le cas où le seul lien avec le territoire serait le tournage du film en Région Centre-Val de Loire, les porteurs de projets soutenus s'engagent à dépenser 100% des soutiens obtenus en Région Centre-Val de Loire"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://ciclic.fr/cinema-audiovisuel/aides-selectives/un-contrat-d-objectifs-et-de-moyens-avec-les-televisions-de-la-region",
+      "url_source": "https://ciclic.fr/aides-accompagnement/catalogue-des-aides/contrat-dobjectifs-et-de-moyens-com-audiovisuel",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "ec388e54792d36d04fa452ba4265e8cf20a82e77",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "0b1963e231afb9a0": {
+    "commission": {
+      "region": "Île-de-France",
+      "fonds": "Aide au film court en Seine-Saint-Denis",
+      "organisme": "Cinémas 93 / Département de la Seine-Saint-Denis",
+      "typologie_oeuvre": "court métrage : fiction, documentaire de création, film expérimental, essai, animation, vidéo d'artiste (tous supports, durée inférieure ou égale à 60 minutes)",
+      "etape_filiere": "post-production",
+      "session_label": "Session 2 - 2026",
+      "etapes": [
+        {
+          "label": "Ouverture des inscriptions",
+          "date_debut": null,
+          "date_fin": "2026-06-15",
+          "heure_limite": null
+        },
+        {
+          "label": "Date limite de dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2026-08-19",
+          "heure_limite": null
+        },
+        {
+          "label": "Commission de présélection",
+          "date_debut": "2026-09-07",
+          "date_fin": "2026-09-30",
+          "heure_limite": null
+        },
+        {
+          "label": "Annonce des résultats de la présélection",
+          "date_debut": null,
+          "date_fin": "2026-10-11",
+          "heure_limite": null
+        },
+        {
+          "label": "Commission plénière",
+          "date_debut": null,
+          "date_fin": "2026-10-18",
+          "heure_limite": null
+        },
+        {
+          "label": "Annonce des résultats définitifs",
+          "date_debut": null,
+          "date_fin": "2027-01-31",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "Inscription en ligne préalable avant l'envoi du dossier complet",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "L'envoi du dossier complet doit être précédé d'une inscription en ligne, à défaut le dossier ne pourra pas être recevable.",
+          "lien_reservation": null
+        },
+        {
+          "type_action": "Participation à un webinaire ou rendez-vous personnalisé proposé en amont du dépôt de dossiers",
+          "condition_declenchement": "uniquement pour les primo-candidats dont les projets sont portés par des structures ou personnes en lien avec le territoire de la Seine-Saint-Denis",
+          "fenetre": null,
+          "consequence_si_non_respect": "Non précisé dans le texte (il s'agit d'une proposition d'accompagnement en amont, sans conséquence explicite d'inéligibilité mentionnée).",
+          "lien_reservation": null
+        },
+        {
+          "type_action": "Webinaire d'information sur l'Aide au film court",
+          "condition_declenchement": "systématique (ouvert à tous, organisé par le Département)",
+          "fenetre": {
+            "label": "Webinaire d'information",
+            "date_debut": null,
+            "date_fin": "2026-07-16",
+            "heure_limite": "15:00"
+          },
+          "consequence_si_non_respect": "Non précisé dans le texte (participation facultative, connexion via Teams le jour même).",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [
+        "Films non finalisés et n'ayant jamais fait l'objet d'une diffusion publique de toute sorte (télévisuelle, vidéo-projection, salle, festival, exposition, installation…), jusqu'à la signature de la convention de diffusion.",
+        "Durée définitive estimée du film achevé (générique compris) supérieure à 60 minutes.",
+        "Œuvres dont le montant maximum de financements publics et télévisuels acquis pour la production est supérieur ou égal à 60 000 €.",
+        "Films ayant obtenu l'aide avant réalisation ou l'aide au programme de production du CNC.",
+        "Films ayant obtenu une aide après-réalisation d'une autre collectivité territoriale.",
+        "Films ayant obtenu une subvention du fonds de soutien audiovisuel supérieure à 25 000 euros.",
+        "Cinéastes dont une œuvre a été soutenue au titre de l'Aide au film court il y a moins de 3 ans.",
+        "Films d'école, films institutionnels ou de commande, films publicitaires, reportages télévisuels, pilotes et unitaires de séries, émissions télévisuelles, vidéo-clips, captations de spectacles et films non-linéaires.",
+        "Projets refusés lors d'une session antérieure ne peuvent pas être représentés, sauf exception pour les projets en lien avec la Seine-Saint-Denis ayant bénéficié d'un accompagnement individuel (marraine/parrain) et sur avis favorable de la commission plénière.",
+        "Un·e producteur·trice et/ou réalisateur·trice ne peut pas présenter un nouveau projet s'il·elle n'est pas en règle avec ses obligations contractuelles vis-à-vis du Département et/ou du partenaire coordinateur, nées d'un projet antérieur aidé.",
+        "Le financement du projet ne doit pas dépasser 80% d'aides publiques (art. 411-9 du Code du cinéma et de l'image animée)."
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": 20000,
+      "lien_formulaire": "https://framaforms.org/aide-au-film-court-inscriptions-session-2-2026-1607934512",
+      "url_source": "https://www.cinemas93.org/accompagnement-de-la-creation/aide-au-film-court/",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "f3079ef463c6202d028d104ff02afeef5047ab85",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-27",
+    "clos": true
+  },
+  "20733f8784d57b68": {
+    "commission": {
+      "region": "Bourgogne-Franche-Comté",
+      "fonds": "Aide à la production cinématographique de courts métrages",
+      "organisme": "Région Bourgogne-Franche-Comté",
+      "typologie_oeuvre": "court métrage de fiction, animation ou documentaire",
+      "etape_filiere": "production",
+      "session_label": null,
+      "etapes": [
+        {
+          "label": "dépôt des dossiers - 1ère session",
+          "date_debut": "2027-02-01",
+          "date_fin": "2027-02-28",
+          "heure_limite": null
+        },
+        {
+          "label": "dépôt des dossiers - 2ème session",
+          "date_debut": "2027-07-01",
+          "date_fin": "2027-07-31",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Le dossier doit respecter le règlement d'intervention qui expose l'ensemble des critères d'éligibilité et les modalités de financement (documents à télécharger sur la page).",
+        "Les dossiers déposés qui ne respecteraient pas le règlement ne seront pas instruits.",
+        "Pas de numerus clausus."
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://subventions.bourgognefranchecomte.fr/sub/tiers/aides/details/?sigle=CINE-CM",
+      "url_source": "https://www.bourgognefranchecomte.fr/node/278",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "f13835b5c470de6d42effaff50b9e772b4cc0454",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "95351fe82cc7ce22": {
+    "commission": {
+      "region": "Grand Est",
+      "fonds": "Fonds de soutien à la production audiovisuelle et cinématographique",
+      "organisme": "Ville et Eurométropole de Strasbourg",
+      "typologie_oeuvre": "œuvres cinématographiques ou audiovisuelles, de fiction, d’animation ou de documentaire, destinés au cinéma, à la télévision, au web ou à des formats transmedia (hors jeux vidéo)",
+      "etape_filiere": "production",
+      "session_label": null,
+      "etapes": [
+        {
+          "label": "dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2026-11-15",
+          "heure_limite": null
+        },
+        {
+          "label": "dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2027-03-15",
+          "heure_limite": null
+        },
+        {
+          "label": "dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2027-06-15",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Les demandes doivent être déposées par la société de production déléguée, constituée sous forme de sociétés commerciales (les associations ne sont pas éligibles)",
+        "Le projet doit inclure une part significative de sa fabrication sur le territoire de l'Eurométropole de Strasbourg",
+        "Pour un projet audiovisuel, le déposant est le producteur ayant obtenu l'engagement du diffuseur français et/ou celui sollicitant un soutien du CNC"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://demarches.strasbourg.eu/culture-loisirs/aide-production-audiovisuelle/",
+      "url_source": "https://culture.strasbourg.eu/pro/discipline-domaine/audiovisuel-cinema/fonds-soutien-production/",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "bcec210daa9ad3c7702a43090f5968f0692e5068",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "a51f30371fd5fe1e": {
+    "commission": {
+      "region": "Hauts-de-France",
+      "fonds": "Court métrage",
+      "organisme": "Pictanovo",
+      "typologie_oeuvre": "court métrage cinématographique (hors animation) d'une durée inférieure ou égale à 60 minutes",
+      "etape_filiere": "production",
+      "session_label": "#3 Comité de lecture Court Métrage 2026",
+      "etapes": [
+        {
+          "label": "Date limite de dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2026-09-03",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de lecture",
+          "date_debut": null,
+          "date_fin": "2026-10-14",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "prise de rendez-vous avec le coordinateur de projets",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "le dossier ne peut pas être examiné par le comité de lecture avant d'être soumis",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [
+        "œuvres cinématographiques hors animation",
+        "durée inférieure ou égale à 60 minutes",
+        "portées par des sociétés de production",
+        "envoi préalable par mail d'un pré-dossier administratif et artistique obligatoire pour obtenir un rendez-vous"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://pictabox.pcscloud.net/Pictanovo",
+      "url_source": "https://www.pictanovo.com/fond/court-metrage/",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "75c5f79359c0c38e33a859c5ce1a85761c6f8f48",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "a40fb2773bf0420b": {
+    "commission": {
+      "region": "Hauts-de-France",
+      "fonds": "Court métrage",
+      "organisme": "Pictanovo",
+      "typologie_oeuvre": "court métrage cinématographique (hors animation) d'une durée inférieure ou égale à 60 minutes",
+      "etape_filiere": "production",
+      "session_label": "#1 Comité de lecture Court Métrage 2027",
+      "etapes": [
+        {
+          "label": "Date limite de dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2027-01-19",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de lecture",
+          "date_debut": null,
+          "date_fin": "2027-02-23",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "prise de rendez-vous avec le coordinateur de projets",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "le dossier ne peut pas être examiné par le comité de lecture avant d'être soumis",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [
+        "œuvres cinématographiques hors animation",
+        "durée inférieure ou égale à 60 minutes",
+        "portées par des sociétés de production",
+        "envoi préalable par mail d'un pré-dossier administratif et artistique obligatoire pour obtenir un rendez-vous"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://pictabox.pcscloud.net/Pictanovo",
+      "url_source": "https://www.pictanovo.com/fond/court-metrage/",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "874b370efbaef6d9be64be1f15ab8958b825616f",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "10a8ec6a174533bb": {
+    "commission": {
+      "region": "Hauts-de-France",
+      "fonds": "Court métrage",
+      "organisme": "Pictanovo",
+      "typologie_oeuvre": "court métrage cinématographique (hors animation) d'une durée inférieure ou égale à 60 minutes",
+      "etape_filiere": "production",
+      "session_label": "#2 Comité de lecture Court Métrage 2027",
+      "etapes": [
+        {
+          "label": "Date limite de dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2027-04-14",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de lecture",
+          "date_debut": null,
+          "date_fin": "2027-06-03",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "prise de rendez-vous avec le coordinateur de projets",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "le dossier ne peut pas être examiné par le comité de lecture avant d'être soumis",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [
+        "œuvres cinématographiques hors animation",
+        "durée inférieure ou égale à 60 minutes",
+        "portées par des sociétés de production",
+        "envoi préalable par mail d'un pré-dossier administratif et artistique obligatoire pour obtenir un rendez-vous"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://pictabox.pcscloud.net/Pictanovo",
+      "url_source": "https://www.pictanovo.com/fond/court-metrage/",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "553f19ab6a7569bcedbdb7272a5d6edfb3a6dc9a",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "75eca6f195c8f58d": {
+    "commission": {
+      "region": "Hauts-de-France",
+      "fonds": "Court métrage",
+      "organisme": "Pictanovo",
+      "typologie_oeuvre": "court métrage cinématographique (hors animation) d'une durée inférieure ou égale à 60 minutes",
+      "etape_filiere": "production",
+      "session_label": "#3 Comité de lecture Court Métrage 2027",
+      "etapes": [
+        {
+          "label": "Date limite de dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2027-09-07",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de lecture",
+          "date_debut": null,
+          "date_fin": "2027-10-14",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "prise de rendez-vous avec le coordinateur de projets",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "le dossier ne peut pas être examiné par le comité de lecture avant d'être soumis",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [
+        "œuvres cinématographiques hors animation",
+        "durée inférieure ou égale à 60 minutes",
+        "portées par des sociétés de production",
+        "envoi préalable par mail d'un pré-dossier administratif et artistique obligatoire pour obtenir un rendez-vous"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://pictabox.pcscloud.net/Pictanovo",
+      "url_source": "https://www.pictanovo.com/fond/court-metrage/",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "ac5848b056de50fdd9c83930e325c69d0ea6afab",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "7b411db104582388": {
+    "commission": {
+      "region": "Nouvelle-Aquitaine",
+      "fonds": "Fonds de soutien au cinéma et à l'audiovisuel - Aide à la production",
+      "organisme": "ALCA Nouvelle-Aquitaine",
+      "typologie_oeuvre": "longs métrages, courts métrages ou œuvres audiovisuelles destinés à une diffusion publique dans des conditions professionnelles",
+      "etape_filiere": "production",
+      "session_label": null,
+      "etapes": [
+        {
+          "label": "dépôt des dossiers (prochaine session)",
+          "date_debut": null,
+          "date_fin": "2027-01-11",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Le montant des dépenses de production réalisées en région Nouvelle-Aquitaine doit être au minimum égal à un pourcentage du montant de l'aide demandée : Long métrage de fiction : au moins 120 % ; Long métrage documentaire : au moins 120 % ; Long métrage d'animation : au moins 160 % ; Court métrage – volet général : au moins 120 % ; Court métrage – volet émergence régionale : au moins 100 % ; Documentaire unitaire, série documentaire, magazine d'intérêt culturel et recréation spectacle vivant : au moins 120 % ; Unitaire et série d'animation ou de fiction : au moins 160 % de dépenses directes hors imprévus et frais financiers.",
+        "L'aide s'adresse exclusivement aux sociétés de production porteuses de projets."
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://alca.odoo.com/survey/start/17f92165-116c-42fe-b371-b69297aaf97f",
+      "url_source": "https://alca-nouvelle-aquitaine.fr/fr/cinema-audiovisuel/fonds-de-soutien-au-cinema-et-l-audiovisuel/l-aide-la-production",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "6dc3d140410f56c1489565c2031c96bde3f332bb",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "7fc11fae6ed789f5": {
+    "commission": {
+      "region": "Normandie",
+      "fonds": "Fonds Normandie Images",
+      "organisme": "Normandie Images",
+      "typologie_oeuvre": "autre",
+      "etape_filiere": "autre",
+      "session_label": "Session 1 - 2027",
+      "etapes": [
+        {
+          "label": "rendez-vous préalables",
+          "date_debut": "2026-08-24",
+          "date_fin": "2026-09-04",
+          "heure_limite": null
+        },
+        {
+          "label": "dépôt des dossiers",
+          "date_debut": "2026-09-07",
+          "date_fin": "2026-09-24",
+          "heure_limite": null
+        },
+        {
+          "label": "présélection",
+          "date_debut": null,
+          "date_fin": "2026-10-27",
+          "heure_limite": null
+        },
+        {
+          "label": "plénière",
+          "date_debut": null,
+          "date_fin": "2026-11-19",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "prise de rendez-vous préalable",
+          "condition_declenchement": "systématique",
+          "fenetre": {
+            "label": "rendez-vous préalables",
+            "date_debut": "2026-08-24",
+            "date_fin": "2026-09-04",
+            "heure_limite": null
+          },
+          "consequence_si_non_respect": "dépôt des dossiers impossible (dépôt conditionné par l'accord préalable)",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://inscriptionsfondsaide.normandieimages.net/fonds-num/26",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "d258c97ae622c320f8ce5ca188ed5fa782c06ccf",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
+    "clos": true
+  },
+  "30f0ea100e5e0eb2": {
+    "commission": {
+      "region": "Normandie",
+      "fonds": "Fonds Normandie Images",
+      "organisme": "Normandie Images",
+      "typologie_oeuvre": "autre",
+      "etape_filiere": "autre",
+      "session_label": "Session 2 - 2027",
+      "etapes": [
+        {
+          "label": "rendez-vous préalables",
+          "date_debut": "2027-01-06",
+          "date_fin": "2027-01-22",
+          "heure_limite": null
+        },
+        {
+          "label": "dépôt des dossiers",
+          "date_debut": "2027-02-03",
+          "date_fin": "2027-02-11",
+          "heure_limite": null
+        },
+        {
+          "label": "présélection",
+          "date_debut": null,
+          "date_fin": "2027-03-16",
+          "heure_limite": null
+        },
+        {
+          "label": "plénière",
+          "date_debut": null,
+          "date_fin": "2027-03-30",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "prise de rendez-vous préalable",
+          "condition_declenchement": "systématique",
+          "fenetre": {
+            "label": "rendez-vous préalables",
+            "date_debut": "2027-01-06",
+            "date_fin": "2027-01-22",
+            "heure_limite": null
+          },
+          "consequence_si_non_respect": "dépôt des dossiers impossible (dépôt conditionné par l'accord préalable)",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://inscriptionsfondsaide.normandieimages.net/fonds-num/26",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "7a36fc9e4c5fcbad91f36849ef0d527670dd6acc",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
+    "clos": true
+  },
+  "c51f896a44c14246": {
+    "commission": {
+      "region": "Normandie",
+      "fonds": "Fonds Normandie Images",
+      "organisme": "Normandie Images",
+      "typologie_oeuvre": "autre",
+      "etape_filiere": "autre",
+      "session_label": "Session 3 - 2027",
+      "etapes": [
+        {
+          "label": "rendez-vous préalables",
+          "date_debut": "2027-04-19",
+          "date_fin": "2027-04-30",
+          "heure_limite": null
+        },
+        {
+          "label": "dépôt des dossiers",
+          "date_debut": "2027-05-12",
+          "date_fin": "2027-05-19",
+          "heure_limite": null
+        },
+        {
+          "label": "présélection",
+          "date_debut": null,
+          "date_fin": "2027-06-16",
+          "heure_limite": null
+        },
+        {
+          "label": "plénière",
+          "date_debut": null,
+          "date_fin": "2027-06-30",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "prise de rendez-vous préalable",
+          "condition_declenchement": "systématique",
+          "fenetre": {
+            "label": "rendez-vous préalables",
+            "date_debut": "2027-04-19",
+            "date_fin": "2027-04-30",
+            "heure_limite": null
+          },
+          "consequence_si_non_respect": "dépôt des dossiers impossible (dépôt conditionné par l'accord préalable)",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://inscriptionsfondsaide.normandieimages.net/fonds-num/26",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "333bc64351b79ad1485dbd65d35d2a9d221ec7b4",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
+    "clos": true
+  },
+  "f232355df4880d2f": {
+    "commission": {
+      "region": "National",
+      "fonds": "Aide avant réalisation à la production de films de court métrage (AVR1)",
+      "organisme": "CNC",
+      "typologie_oeuvre": "premiers films de court métrage",
+      "etape_filiere": "production",
+      "session_label": "Session 3 - 2026",
+      "etapes": [
+        {
+          "label": "Réunion « premier dépôt »",
+          "date_debut": null,
+          "date_fin": "2026-01-09",
+          "heure_limite": "10:00"
+        },
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2026-02-18",
+          "heure_limite": "18:00"
+        },
+        {
+          "label": "Résultats comité de lecture",
+          "date_debut": null,
+          "date_fin": "2026-04-27",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "Réunion « premier dépôt » (visioconférence obligatoire avant tout dépôt)",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "non précisé explicitement dans le texte",
+          "lien_reservation": "https://www.demarches-simplifiees.fr/commencer/inscription-a-la-visioconference-reunion-premier-d"
+        }
+      ],
+      "conditions_eliminatoires": [
+        "Le dépôt doit se faire avec la dernière version du formulaire de demande, sinon la candidature ne pourra être prise en compte.",
+        "Une note sur le recours à l'intelligence artificielle (IA) dans le cadre du projet présenté doit être intégrée au dossier.",
+        "Concernant le dépôt en AVR1 et en fiction uniquement : numerus clausus, seules les 80 premières candidatures complètes seront prises en compte."
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "902f75dc88d572e8fd30d826f7f5b2dd9764328f",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-27",
+    "clos": true
+  },
+  "f8cd6dc4a9bd8ed5": {
+    "commission": {
+      "region": "Paris",
+      "fonds": "Fonds de soutien au court métrage",
+      "organisme": "Ville de Paris - Mission Cinéma",
+      "typologie_oeuvre": "court métrage (tous genres, durée inférieure à 60 mn)",
+      "etape_filiere": "production",
+      "session_label": "Première session 2026",
+      "etapes": [
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": "2026-01-01",
+          "date_fin": "2026-01-29",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de lecture",
+          "date_debut": null,
+          "date_fin": "2026-03-31",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de sélection",
+          "date_debut": null,
+          "date_fin": "2026-05-31",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Films courts d'une durée inférieure à 60 mn",
+        "Tournage prévu principalement à Paris",
+        "S'adresse à toute entreprise de production cinématographique ou audiovisuelle établie en France, intervenant au titre de producteur ou coproducteur majoritaire",
+        "Les projets portés par une association ou un candidat à titre individuel (auteur ou réalisateur) ne sont pas éligibles"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": 20000,
+      "lien_formulaire": "https://teleservices.paris.fr/courtmetrage/",
+      "url_source": "https://www.paris.fr/pages/les-actions-de-paris-pour-le-cinema-2313",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "1067278a832ae682c1c301ff3f82efa99c10f763",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
+    "clos": true
+  },
+  "6fb3c553ea2e345e": {
+    "commission": {
+      "region": "Paris",
+      "fonds": "Fonds de soutien au court métrage",
+      "organisme": "Ville de Paris - Mission Cinéma",
+      "typologie_oeuvre": "court métrage (tous genres, durée inférieure à 60 mn)",
+      "etape_filiere": "production",
+      "session_label": "Deuxième session 2026",
+      "etapes": [
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": "2026-04-01",
+          "date_fin": "2026-04-30",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de lecture",
+          "date_debut": null,
+          "date_fin": "2026-06-30",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de sélection",
+          "date_debut": null,
+          "date_fin": "2026-07-31",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Films courts d'une durée inférieure à 60 mn",
+        "Tournage prévu principalement à Paris",
+        "S'adresse à toute entreprise de production cinématographique ou audiovisuelle établie en France, intervenant au titre de producteur ou coproducteur majoritaire",
+        "Les projets portés par une association ou un candidat à titre individuel (auteur ou réalisateur) ne sont pas éligibles"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": 20000,
+      "lien_formulaire": "https://teleservices.paris.fr/courtmetrage/",
+      "url_source": "https://www.paris.fr/pages/les-actions-de-paris-pour-le-cinema-2313",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "7dee6b80bf51fbbc2f80342a707dcce7b2c42907",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": true
+  },
+  "b0f763965a89e7f7": {
+    "commission": {
+      "region": "Paris",
+      "fonds": "Fonds de soutien au court métrage",
+      "organisme": "Ville de Paris - Mission Cinéma",
+      "typologie_oeuvre": "court métrage (tous genres, durée inférieure à 60 mn)",
+      "etape_filiere": "production",
+      "session_label": "Troisième session 2026",
+      "etapes": [
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": "2026-09-01",
+          "date_fin": "2026-09-24",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de lecture",
+          "date_debut": null,
+          "date_fin": "2026-11-30",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de sélection",
+          "date_debut": null,
+          "date_fin": "2026-12-31",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Films courts d'une durée inférieure à 60 mn",
+        "Tournage prévu principalement à Paris",
+        "S'adresse à toute entreprise de production cinématographique ou audiovisuelle établie en France, intervenant au titre de producteur ou coproducteur majoritaire",
+        "Les projets portés par une association ou un candidat à titre individuel (auteur ou réalisateur) ne sont pas éligibles"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": 20000,
+      "lien_formulaire": "https://teleservices.paris.fr/courtmetrage/",
+      "url_source": "https://www.paris.fr/pages/les-actions-de-paris-pour-le-cinema-2313",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "ce4ddf14faee54f277edb18469b42ce8521ef5f9",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": true
+  },
+  "6a43eb12dfdfff4b": {
+    "commission": {
+      "region": "Paris",
+      "fonds": "Fonds de soutien aux Nouveaux Médias",
+      "organisme": "Mission Cinéma - Ville de Paris",
+      "typologie_oeuvre": "projets nouveaux médias / transmédia (fiction, animation, documentaire, expérimental)",
+      "etape_filiere": "developpement",
+      "session_label": "Première session 2026",
+      "etapes": [
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": "2026-03-16",
+          "date_fin": "2026-04-16",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de lecture",
+          "date_debut": null,
+          "date_fin": "2024-06-30",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de sélection",
+          "date_debut": null,
+          "date_fin": "2024-07-31",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Œuvres pour les nouveaux médias, nouvelles formes de narration spécifiquement destinées à une diffusion sur un ou plusieurs supports numériques (internet, écrans mobiles, applications, etc.)",
+        "Toute entreprise de production établie en France ou ayant un établissement secondaire en France, et intervenant au titre de producteur ou coproducteur délégué majoritaire (sur présentation du contrat)",
+        "Les projets portés par une association ou un candidat à titre individuel (auteur ou réalisateur) ne sont pas éligibles"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": 40000,
+      "lien_formulaire": "https://teleservices.paris.fr/nouveauxmedia/",
+      "url_source": "https://www.paris.fr/pages/les-actions-de-paris-pour-le-cinema-2313",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "def5bae32a0da584e368400191cba506a92625e5",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "c1692143dd872d7b": {
+    "commission": {
+      "region": "Paris",
+      "fonds": "Fonds de soutien aux Nouveaux Médias",
+      "organisme": "Mission Cinéma - Ville de Paris",
+      "typologie_oeuvre": "projets nouveaux médias / transmédia (fiction, animation, documentaire, expérimental)",
+      "etape_filiere": "developpement",
+      "session_label": "Seconde session 2026",
+      "etapes": [
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": "2026-10-01",
+          "date_fin": "2026-10-29",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de lecture",
+          "date_debut": null,
+          "date_fin": "2025-11-30",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de sélection",
+          "date_debut": null,
+          "date_fin": "2025-12-31",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Œuvres pour les nouveaux médias, nouvelles formes de narration spécifiquement destinées à une diffusion sur un ou plusieurs supports numériques (internet, écrans mobiles, applications, etc.)",
+        "Toute entreprise de production établie en France ou ayant un établissement secondaire en France, et intervenant au titre de producteur ou coproducteur délégué majoritaire (sur présentation du contrat)",
+        "Les projets portés par une association ou un candidat à titre individuel (auteur ou réalisateur) ne sont pas éligibles"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": 40000,
+      "lien_formulaire": "https://teleservices.paris.fr/nouveauxmedia/",
+      "url_source": "https://www.paris.fr/pages/les-actions-de-paris-pour-le-cinema-2313",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "73eddb53c72c4c9e123d81528ca588a8cd16ac15",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "1dda6aac69c2bca7": {
+    "commission": {
+      "region": "Pays de la Loire",
+      "fonds": "Fonds d'aide à la création cinématographique, audiovisuelle et numérique",
+      "organisme": "Région Pays de la Loire",
+      "typologie_oeuvre": "longs métrages, fictions télévisées, magazines, documentaires, courts métrages et œuvres numériques",
+      "etape_filiere": "production",
+      "session_label": "Session du 5 octobre 2026",
+      "etapes": [
+        {
+          "label": "dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2026-10-05",
+          "heure_limite": null
+        },
+        {
+          "label": "dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2027-02-09",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Bénéficiaires : associations ou entreprises",
+        "Projets éligibles : longs métrages, fictions télévisées, magazines, documentaires, courts métrages et œuvres numériques (production), ainsi que les aides au développement (pilotes, réécriture de scénarios de fictions, développement de projets)",
+        "Dépôt dématérialisé via le Portail des Aides, en parallèle d'un envoi de l'ensemble des éléments déposés en un seul fichier pdf à cinema@paysdelaloire.fr"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://les-aides.paysdelaloire.fr/aides/#/prod/connecte/CREATION_CINE/depot/simple",
+      "url_source": "https://www.paysdelaloire.fr/les-aides/fonds-daide-la-creation-cinematographique-audiovisuelle-et-numerique",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "66ac8b949464f674df559a9f841b44f3e8e2700f",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-27",
+    "clos": true
+  },
+  "fc798422d54ea462": {
+    "commission": {
+      "region": "Pays de la Loire",
+      "fonds": "Fonds d'aide à la création cinématographique, audiovisuelle et numérique",
+      "organisme": "Région Pays de la Loire",
+      "typologie_oeuvre": "développement de projets, pilotes, réécriture de scénarios de fictions",
+      "etape_filiere": "developpement",
+      "session_label": "Session du 5 octobre 2026",
+      "etapes": [
+        {
+          "label": "dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2026-10-05",
+          "heure_limite": null
+        },
+        {
+          "label": "dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2027-02-09",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Bénéficiaires : associations ou entreprises",
+        "Projets éligibles : longs métrages, fictions télévisées, magazines, documentaires, courts métrages et œuvres numériques (production), ainsi que les aides au développement (pilotes, réécriture de scénarios de fictions, développement de projets)",
+        "Dépôt dématérialisé via le Portail des Aides, en parallèle d'un envoi de l'ensemble des éléments déposés en un seul fichier pdf à cinema@paysdelaloire.fr"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://les-aides.paysdelaloire.fr/aides/#/prod/connecte/CREATION_CINE/depot/simple",
+      "url_source": "https://www.paysdelaloire.fr/les-aides/fonds-daide-la-creation-cinematographique-audiovisuelle-et-numerique",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "66ac8b949464f674df559a9f841b44f3e8e2700f",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-27",
+    "clos": true
+  },
+  "98a495a4d897d6b3": {
+    "commission": {
+      "region": "Occitanie",
+      "fonds": "Aide à la création audiovisuelle (développement, production, diffusion)",
+      "organisme": "Région Occitanie / Pyrénées-Méditerranée",
+      "typologie_oeuvre": "fiction long-métrage et audiovisuel",
+      "etape_filiere": "developpement",
+      "session_label": null,
+      "etapes": [
+        {
+          "label": "dépôt des dossiers - fiction (LM-AV)",
+          "date_debut": null,
+          "date_fin": "2026-12-01",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Le projet doit présenter un lien culturel évident avec la région (les conditions varient en fonction de la nature et de la phase du projet, se reporter aux annexes).",
+        "Les projets doivent être présentés par la production déléguée ou la coproduction déléguée.",
+        "Pour le soutien en phase de pré-production ou de production, le tournage ne devra pas avoir commencé avant la date de dépôt de la demande (à l'exception des documentaires nécessitant des prises de vues anticipées de par leur sujet).",
+        "Seules les œuvres de création sont éligibles."
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://mesaidesenligne.laregion.fr/aides/#/croccitanie/connecte/F_DCP_CREATAV/depot/simple",
+      "url_source": "https://www.laregion.fr/Cinema-Audiovisuel-Multimedia-Aide-a-la-creation-audiovisuelle",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "b17c3d75f588abc471ed0180269530873fb43a94",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-27",
+    "clos": true
+  },
+  "e01d396b58170f26": {
+    "commission": {
+      "region": "Occitanie",
+      "fonds": "Aide à la création audiovisuelle (développement, production, diffusion)",
+      "organisme": "Région Occitanie / Pyrénées-Méditerranée",
+      "typologie_oeuvre": "courts et longs métrages d'animation, documentaire, fiction, œuvres audiovisuelles TV/web, narrations spécifiques XR/transmédia",
+      "etape_filiere": "production",
+      "session_label": null,
+      "etapes": [
+        {
+          "label": "Dépôt des dossiers - Animation (CM, LM, AV, XR)",
+          "date_debut": null,
+          "date_fin": "2027-02-01",
+          "heure_limite": null
+        },
+        {
+          "label": "Dépôt des dossiers - Documentaire (CM, LM, AV, XR)",
+          "date_debut": null,
+          "date_fin": "2026-09-01",
+          "heure_limite": null
+        },
+        {
+          "label": "Dépôt des dossiers - Documentaire (CM, LM, AV, XR)",
+          "date_debut": null,
+          "date_fin": "2026-12-01",
+          "heure_limite": null
+        },
+        {
+          "label": "Dépôt des dossiers - Fiction (CM, XR)",
+          "date_debut": null,
+          "date_fin": "2026-06-01",
+          "heure_limite": null
+        },
+        {
+          "label": "Dépôt des dossiers - Fiction (CM, XR)",
+          "date_debut": null,
+          "date_fin": "2026-12-15",
+          "heure_limite": null
+        },
+        {
+          "label": "Dépôt des dossiers - Fiction (LM-AV)",
+          "date_debut": null,
+          "date_fin": "2026-07-01",
+          "heure_limite": null
+        },
+        {
+          "label": "Dépôt des dossiers - Fiction (LM-AV)",
+          "date_debut": null,
+          "date_fin": "2026-12-01",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Le projet doit présenter un lien culturel évident avec la région.",
+        "Les projets doivent être présentés par la production déléguée ou la coproduction déléguée (entreprise de production prenant l'initiative et la responsabilité financière, artistique et technique de la réalisation de l'œuvre).",
+        "Pour le soutien en phase de pré-production ou de production, le tournage ne devra pas avoir commencé avant la date de dépôt de la demande (à l'exception des documentaires nécessitant des prises de vues anticipées de par leur sujet).",
+        "Seules les œuvres de création sont éligibles.",
+        "Pour les œuvres audiovisuelles destinées à une diffusion TV ou web : le projet doit répondre aux critères des aides automatiques ou sélectives à la production du CNC et rechercher l'engagement d'un diffuseur (chaîne de télévision) ou d'un web-diffuseur (agrément CSA pour le web-diffuseur)."
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://www.laregion.fr/Cinema-Audiovisuel-Multimedia-Aide-a-la-creation-audiovisuelle",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "1c73d9346514871359930a0b650681adae24861a",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": true
+  },
+  "698b87a49558478d": {
+    "commission": {
+      "region": "Île-de-France",
+      "fonds": "Aide au film court en Seine-Saint-Denis",
+      "organisme": "Cinémas 93 / Département de la Seine-Saint-Denis",
+      "typologie_oeuvre": "court métrage : fiction, documentaire de création, films expérimentaux, films essais, animation, vidéos d'artistes, films prototypes",
+      "etape_filiere": "post-production",
+      "session_label": "Session 2 - 2026",
+      "etapes": [
+        {
+          "label": "Ouverture des inscriptions",
+          "date_debut": null,
+          "date_fin": "2026-06-15",
+          "heure_limite": null
+        },
+        {
+          "label": "Date limite de dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2026-08-19",
+          "heure_limite": null
+        },
+        {
+          "label": "Commission de présélection",
+          "date_debut": "2026-09-07",
+          "date_fin": "2026-09-30",
+          "heure_limite": null
+        },
+        {
+          "label": "Annonce des résultats de la présélection",
+          "date_debut": null,
+          "date_fin": "2026-10-05",
+          "heure_limite": null
+        },
+        {
+          "label": "Commission plénière",
+          "date_debut": null,
+          "date_fin": "2026-10-12",
+          "heure_limite": null
+        },
+        {
+          "label": "Annonce des résultats définitifs",
+          "date_debut": null,
+          "date_fin": "2027-01-01",
+          "heure_limite": null
+        },
+        {
+          "label": "Prochain webinaire (information/préparation à la candidature)",
+          "date_debut": null,
+          "date_fin": "2026-07-16",
+          "heure_limite": "15:00"
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "inscription en ligne préalable à l'envoi du dossier complet",
+          "condition_declenchement": "systématique pour toute candidature",
+          "fenetre": null,
+          "consequence_si_non_respect": "l'envoi du dossier sans inscription en ligne préalable n'est pas recevable",
+          "lien_reservation": "https://framaforms.org/aide-au-film-court-inscriptions-session-2-2026-1607934512"
+        },
+        {
+          "type_action": "rendez-vous personnalisé ou a minima participation à un webinaire",
+          "condition_declenchement": "uniquement pour les primo-candidats dont les projets sont portés par des structures ou personnes en lien avec le territoire de la Seine-Saint-Denis",
+          "fenetre": {
+            "label": "prochain webinaire",
+            "date_debut": null,
+            "date_fin": "2026-07-16",
+            "heure_limite": "15:00"
+          },
+          "consequence_si_non_respect": "non précisé",
+          "lien_reservation": "https://teams.microsoft.com/l/meetup-join/19%3ameeting_ZTVjMmE4ZjgtMzlmMi00YzBlLWEzOGYtNDU0OGE1ZjRjNTg3%40thread.v2/0?context=%7b%22Tid%22%3a%2213578e9b-93f3-46f6-9407-d490ee3c0eec%22%2c%22Oid%22%3a%223a6cabe5-89f5-4d46-9586-ac6514b0c274%22%7d"
+        }
+      ],
+      "conditions_eliminatoires": [
+        "cinéastes dont une œuvre a été soutenue au titre de l'Aide au film court il y a moins de 3 ans",
+        "les films qui ont obtenu l'aide avant réalisation ou l'aide au programme de production du CNC",
+        "les films qui ont obtenu une aide après-réalisation d'une autre collectivité territoriale",
+        "les films qui ont obtenu une subvention du fonds de soutien audiovisuel supérieure à 25 000 euros",
+        "les œuvres dont le montant maximum de financements publics et télévisuels acquis pour la production du film est supérieur ou égal à 60 000 €",
+        "les films d'école, institutionnels ou de commande, publicitaires, reportages télévisuels, pilotes et unitaires de séries, émissions télévisuelles, vidéo clips, captations de spectacles et films non-linéaires",
+        "les films ayant déjà fait l'objet d'une diffusion publique de toute sorte (télévisuelle, vidéo projection, salle, festival, exposition, installation…)",
+        "film d'une durée supérieure à 60 minutes (durée estimée du film achevé, générique compris)",
+        "film non présenté par une structure de production (société, micro société, auto-entrepreneur ou association) disposant d'un établissement stable sur le territoire français avec un n° de SIRET",
+        "un·e producteur·trice et/ou un·e réalisateur·trice ne peut pas présenter un nouveau projet s'il·elle n'est pas en règle avec ses obligations contractuelles vis-à-vis du Département pour un projet antérieur aidé",
+        "les films refusés ne peuvent pas être représentés (sauf exception sur avis favorable de la commission plénière pour les projets refusés en lien avec la Seine-Saint-Denis, sous réserve d'un accompagnement individuel par une cellule de marraine/parrain)"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": 20000,
+      "lien_formulaire": "https://framaforms.org/aide-au-film-court-inscriptions-session-2-2026-1607934512",
+      "url_source": "https://www.cinemas93.org/accompagnement-de-la-creation/aide-au-film-court/",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "9ea16200db2ae5b74e70415b329e03eeee174acc",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "1c1c207b06c8f78c": {
+    "commission": {
+      "region": "Grand Est",
+      "fonds": "Fonds de soutien à la production audiovisuelle et cinématographique",
+      "organisme": "Ville et Eurométropole de Strasbourg",
+      "typologie_oeuvre": "œuvres cinématographiques ou audiovisuelles, de fiction, d'animation ou de documentaire (cinéma, télévision, web, transmedia)",
+      "etape_filiere": "production",
+      "session_label": null,
+      "etapes": [
+        {
+          "label": "dépôt des dossiers (commission prévue en janvier-février de l'année suivante)",
+          "date_debut": null,
+          "date_fin": "2026-11-15",
+          "heure_limite": null
+        },
+        {
+          "label": "dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2027-03-15",
+          "heure_limite": null
+        },
+        {
+          "label": "dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2027-06-15",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "La demande doit être déposée par la société de production déléguée constituée sous forme de sociétés commerciales (les associations ne sont pas éligibles)",
+        "Pour un projet audiovisuel, le déposant est le producteur ayant obtenu l'engagement du diffuseur français et/ou celui sollicitant un soutien du CNC",
+        "Les projets doivent inclure une part significative de leur fabrication sur le territoire de l'Eurométropole de Strasbourg"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://demarches.strasbourg.eu/culture-loisirs/aide-production-audiovisuelle/",
+      "url_source": "https://culture.strasbourg.eu/pro/discipline-domaine/audiovisuel-cinema/fonds-soutien-production/",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "bcec210daa9ad3c7702a43090f5968f0692e5068",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
+    "clos": true
+  },
+  "3805f8284ea1208d": {
+    "commission": {
+      "region": "Nouvelle-Aquitaine",
+      "fonds": "Fonds de soutien au cinéma et à l'audiovisuel - Aide à la production",
+      "organisme": "ALCA Nouvelle-Aquitaine",
+      "typologie_oeuvre": "longs métrages, courts métrages ou œuvres audiovisuelles destinés à une diffusion publique (fiction, documentaire, animation)",
+      "etape_filiere": "production",
+      "session_label": null,
+      "etapes": [
+        {
+          "label": "dépôt des dossiers (prochaine session)",
+          "date_debut": null,
+          "date_fin": "2027-01-11",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Le montant des dépenses de production réalisées en région Nouvelle-Aquitaine doit être au minimum égal à un pourcentage du montant de l'aide demandée selon le barème : Long métrage de fiction / documentaire / court métrage volet général / documentaire unitaire, série documentaire, magazine d'intérêt culturel et recréation spectacle vivant : au moins 120 % ; Long métrage d'animation / unitaire et série d'animation ou de fiction : au moins 160 % de dépenses directes hors imprévus et frais financiers ; Court métrage – volet émergence régionale : au moins 100 %",
+        "Réservé exclusivement aux sociétés de production porteuses de projets destinés à une diffusion publique dans des conditions professionnelles"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://alca.odoo.com/survey/start/17f92165-116c-42fe-b371-b69297aaf97f",
+      "url_source": "https://alca-nouvelle-aquitaine.fr/fr/cinema-audiovisuel/fonds-de-soutien-au-cinema-et-l-audiovisuel/l-aide-la-production",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "6dc3d140410f56c1489565c2031c96bde3f332bb",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": true
+  },
+  "59cfd75f9ced79a3": {
+    "commission": {
+      "region": "Centre-Val de Loire",
+      "fonds": "Contrat d'Objectifs et de Moyens (COM) Audiovisuel",
+      "organisme": "Ciclic Centre-Val de Loire",
+      "typologie_oeuvre": "documentaire, fiction et animation (écriture/développement, préachat de films courts, post-production)",
+      "etape_filiere": "production",
+      "session_label": "1er dépôt",
+      "etapes": [],
+      "actions_prealables": [
+        {
+          "type_action": "solliciter en amont des dépôts l'accueil de tournage de Ciclic Centre-Val de Loire (jerome.parlange@ciclic.fr) afin d'identifier les lieux de tournages et les équipes techniques disponibles",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "non précisé dans le texte",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [
+        "Le projet doit être porté soit par un auteur ou réalisateur ayant sa résidence principale sur le territoire régional, soit par une structure de production établie sur le territoire régional, soit présenter un lien culturel et artistique fort avec la région Centre-Val de Loire (sujet, personnages et/ou temps de fabrication significatif sur le territoire régional)",
+        "Être porté par une structure de production ou une association dont l'objet principal est la production d'œuvres audiovisuelles ; le producteur doit assumer la responsabilité financière, technique et artistique du projet et présenter un contrat de cession de droits signé avec le ou les auteur(s)/réalisateur(s)",
+        "Le tournage des projets documentaires ne doit pas être terminé à la date des comités éditoriaux",
+        "Le tournage des projets de fiction et d'animation ne doit pas avoir commencé à la date des comités éditoriaux"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://ciclic.fr/aides-accompagnement/catalogue-des-aides/contrat-dobjectifs-et-de-moyens-com-audiovisuel",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "97d170e1550eee4afc0af065b78cda302a97674c",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-27",
+    "clos": true
+  },
+  "bcfbb4774fac568a": {
+    "commission": {
+      "region": "Centre-Val de Loire",
+      "fonds": "Contrat d'Objectifs et de Moyens (COM) Audiovisuel",
+      "organisme": "Ciclic Centre-Val de Loire",
+      "typologie_oeuvre": "documentaire, fiction et animation (écriture/développement, préachat de films courts, post-production)",
+      "etape_filiere": "production",
+      "session_label": "2e dépôt",
+      "etapes": [],
+      "actions_prealables": [
+        {
+          "type_action": "solliciter en amont des dépôts l'accueil de tournage de Ciclic Centre-Val de Loire (jerome.parlange@ciclic.fr) afin d'identifier les lieux de tournages et les équipes techniques disponibles",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "non précisé dans le texte",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [
+        "Le projet doit être porté soit par un auteur ou réalisateur ayant sa résidence principale sur le territoire régional, soit par une structure de production établie sur le territoire régional, soit présenter un lien culturel et artistique fort avec la région Centre-Val de Loire (sujet, personnages et/ou temps de fabrication significatif sur le territoire régional)",
+        "Être porté par une structure de production ou une association dont l'objet principal est la production d'œuvres audiovisuelles ; le producteur doit assumer la responsabilité financière, technique et artistique du projet et présenter un contrat de cession de droits signé avec le ou les auteur(s)/réalisateur(s)",
+        "Le tournage des projets documentaires ne doit pas être terminé à la date des comités éditoriaux",
+        "Le tournage des projets de fiction et d'animation ne doit pas avoir commencé à la date des comités éditoriaux"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://ciclic.fr/aides-accompagnement/catalogue-des-aides/contrat-dobjectifs-et-de-moyens-com-audiovisuel",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "97d170e1550eee4afc0af065b78cda302a97674c",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-27",
+    "clos": true
+  },
+  "1cc366dd24363e3f": {
+    "commission": {
+      "region": "Centre-Val de Loire",
+      "fonds": "Contrat d'Objectifs et de Moyens (COM) Audiovisuel",
+      "organisme": "Ciclic Centre-Val de Loire",
+      "typologie_oeuvre": "documentaire, fiction et animation (écriture/développement, préachat de films courts, post-production)",
+      "etape_filiere": "production",
+      "session_label": "3e dépôt",
+      "etapes": [],
+      "actions_prealables": [
+        {
+          "type_action": "solliciter en amont des dépôts l'accueil de tournage de Ciclic Centre-Val de Loire (jerome.parlange@ciclic.fr) afin d'identifier les lieux de tournages et les équipes techniques disponibles",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "non précisé dans le texte",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [
+        "Le projet doit être porté soit par un auteur ou réalisateur ayant sa résidence principale sur le territoire régional, soit par une structure de production établie sur le territoire régional, soit présenter un lien culturel et artistique fort avec la région Centre-Val de Loire (sujet, personnages et/ou temps de fabrication significatif sur le territoire régional)",
+        "Être porté par une structure de production ou une association dont l'objet principal est la production d'œuvres audiovisuelles ; le producteur doit assumer la responsabilité financière, technique et artistique du projet et présenter un contrat de cession de droits signé avec le ou les auteur(s)/réalisateur(s)",
+        "Le tournage des projets documentaires ne doit pas être terminé à la date des comités éditoriaux",
+        "Le tournage des projets de fiction et d'animation ne doit pas avoir commencé à la date des comités éditoriaux"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://ciclic.fr/aides-accompagnement/catalogue-des-aides/contrat-dobjectifs-et-de-moyens-com-audiovisuel",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "97d170e1550eee4afc0af065b78cda302a97674c",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-27",
+    "clos": true
+  },
+  "7a48cf64ee6eea48": {
+    "commission": {
+      "region": "Nouvelle-Aquitaine",
+      "fonds": "Fonds de soutien au cinéma et à l'audiovisuel de la Région Nouvelle-Aquitaine",
+      "organisme": "Région Nouvelle-Aquitaine (Alca)",
+      "typologie_oeuvre": "Animation, court métrage de fiction, documentaire, long métrage de fiction, fiction audiovisuelle",
+      "etape_filiere": "production",
+      "session_label": "Session Avril",
+      "etapes": [
+        {
+          "label": "Date limite de dépôt LM Fiction - Session Avril",
+          "date_debut": null,
+          "date_fin": "2027-03-30",
+          "heure_limite": null
+        },
+        {
+          "label": "Date limite de dépôt Animation, CM Fiction, Documentaire, Fiction AV - Session Avril",
+          "date_debut": null,
+          "date_fin": "2027-04-05",
+          "heure_limite": null
+        },
+        {
+          "label": "Date limite de dépôt Animation, CM Fiction, Documentaire, LM Fiction - Session Septembre",
+          "date_debut": null,
+          "date_fin": "2027-09-06",
+          "heure_limite": null
+        },
+        {
+          "label": "Date limite de dépôt Fiction AV - Session Septembre",
+          "date_debut": null,
+          "date_fin": "2027-09-20",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "contacter les services instructeurs minimum 3 semaines avant le dépôt",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "non précisé (recommandation formulée comme 'il est recommandé')",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://alca-nouvelle-aquitaine.fr/fr/cinema-audiovisuel/fonds-de-soutien-au-cinema-et-l-audiovisuel/l-aide-la-production",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "0a742678e8fa2c563eee605b8a7a30325993ea2e",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
+    "clos": true
+  },
+  "6d52cc243c02aaa4": {
+    "commission": {
+      "region": "Nouvelle-Aquitaine",
+      "fonds": "Fonds de soutien au cinéma et à l'audiovisuel de la Région Nouvelle-Aquitaine",
+      "organisme": "Région Nouvelle-Aquitaine (Alca)",
+      "typologie_oeuvre": "Animation, court métrage de fiction, documentaire, long métrage de fiction, fiction audiovisuelle",
+      "etape_filiere": "production",
+      "session_label": "Session Septembre",
+      "etapes": [
+        {
+          "label": "Date limite de dépôt LM Fiction - Session Avril",
+          "date_debut": null,
+          "date_fin": "2027-03-30",
+          "heure_limite": null
+        },
+        {
+          "label": "Date limite de dépôt Animation, CM Fiction, Documentaire, Fiction AV - Session Avril",
+          "date_debut": null,
+          "date_fin": "2027-04-05",
+          "heure_limite": null
+        },
+        {
+          "label": "Date limite de dépôt Animation, CM Fiction, Documentaire, LM Fiction - Session Septembre",
+          "date_debut": null,
+          "date_fin": "2027-09-06",
+          "heure_limite": null
+        },
+        {
+          "label": "Date limite de dépôt Fiction AV - Session Septembre",
+          "date_debut": null,
+          "date_fin": "2027-09-20",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "contacter les services instructeurs minimum 3 semaines avant le dépôt",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "non précisé (recommandation formulée comme 'il est recommandé')",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://alca-nouvelle-aquitaine.fr/fr/cinema-audiovisuel/fonds-de-soutien-au-cinema-et-l-audiovisuel/l-aide-la-production",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "0a742678e8fa2c563eee605b8a7a30325993ea2e",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
+    "clos": true
+  },
+  "52f85dc4b69dc1ee": {
+    "commission": {
+      "region": "National",
+      "fonds": "Aide avant réalisation à la production de films de court métrage (AVR1)",
+      "organisme": "CNC",
+      "typologie_oeuvre": "premiers films de court métrage",
+      "etape_filiere": "production",
+      "session_label": "Session 1 - 2026",
+      "etapes": [
+        {
+          "label": "Réunion « premier dépôt »",
+          "date_debut": null,
+          "date_fin": "2025-11-03",
+          "heure_limite": "10:00"
+        },
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2025-11-17",
+          "heure_limite": "18:00"
+        },
+        {
+          "label": "Résultats comité de lecture",
+          "date_debut": null,
+          "date_fin": "2026-01-30",
+          "heure_limite": null
+        },
+        {
+          "label": "Commission plénière AVR1 - Janvier 2026",
+          "date_debut": null,
+          "date_fin": "2026-01-27",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "Réunion « premier dépôt » (visioconférence obligatoire avant tout dépôt)",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "non précisé explicitement dans le texte",
+          "lien_reservation": "https://www.demarches-simplifiees.fr/commencer/inscription-a-la-visioconference-reunion-premier-d"
+        }
+      ],
+      "conditions_eliminatoires": [
+        "Le dépôt doit se faire avec la dernière version du formulaire de demande, sinon la candidature ne pourra être prise en compte.",
+        "Une note sur le recours à l'intelligence artificielle (IA) dans le cadre du projet présenté doit être intégrée au dossier.",
+        "Concernant le dépôt en AVR1 et en fiction uniquement : numerus clausus, seules les 80 premières candidatures complètes seront prises en compte."
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "a27e5c1776a42d7ba5050bed8d0bfe0d26771740",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-27",
+    "clos": true
+  },
+  "37556b8030eece18": {
+    "commission": {
+      "region": "National",
+      "fonds": "Aide avant réalisation à la production de films de court métrage (AVR1)",
+      "organisme": "CNC",
+      "typologie_oeuvre": "premiers films de court métrage",
+      "etape_filiere": "production",
+      "session_label": "Session 2 - 2026",
+      "etapes": [
+        {
+          "label": "Réunion « premier dépôt »",
+          "date_debut": null,
+          "date_fin": "2025-12-01",
+          "heure_limite": "10:00"
+        },
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2026-01-06",
+          "heure_limite": "18:00"
+        },
+        {
+          "label": "Résultats comité de lecture",
+          "date_debut": null,
+          "date_fin": "2026-03-30",
+          "heure_limite": null
+        },
+        {
+          "label": "Commission plénière AVR1 - Mars 2026",
+          "date_debut": null,
+          "date_fin": "2026-03-30",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "Réunion « premier dépôt » (visioconférence obligatoire avant tout dépôt)",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "non précisé explicitement dans le texte",
+          "lien_reservation": "https://www.demarches-simplifiees.fr/commencer/inscription-a-la-visioconference-reunion-premier-d"
+        }
+      ],
+      "conditions_eliminatoires": [
+        "Le dépôt doit se faire avec la dernière version du formulaire de demande, sinon la candidature ne pourra être prise en compte.",
+        "Une note sur le recours à l'intelligence artificielle (IA) dans le cadre du projet présenté doit être intégrée au dossier.",
+        "Concernant le dépôt en AVR1 et en fiction uniquement : numerus clausus, seules les 80 premières candidatures complètes seront prises en compte."
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "c84dc144ea48b3069522334bd13bf53fa1680b55",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-27",
+    "clos": true
+  },
+  "274df59d50e65a64": {
+    "commission": {
+      "region": "National",
+      "fonds": "Aide avant réalisation à la production de films de court métrage (AVR1)",
+      "organisme": "CNC",
+      "typologie_oeuvre": "premiers films de court métrage",
+      "etape_filiere": "production",
+      "session_label": "Session 4 - 2026",
+      "etapes": [
+        {
+          "label": "Réunion « premier dépôt »",
+          "date_debut": null,
+          "date_fin": "2026-02-20",
+          "heure_limite": "10:00"
+        },
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2026-04-16",
+          "heure_limite": "18:00"
+        },
+        {
+          "label": "Résultats comité de lecture",
+          "date_debut": null,
+          "date_fin": "2026-06-29",
+          "heure_limite": null
+        },
+        {
+          "label": "Commission plénière AVR1 - Juin 2026",
+          "date_debut": null,
+          "date_fin": "2026-07-03",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "Réunion « premier dépôt » (visioconférence obligatoire avant tout dépôt)",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "non précisé explicitement dans le texte",
+          "lien_reservation": "https://www.demarches-simplifiees.fr/commencer/inscription-a-la-visioconference-reunion-premier-d"
+        }
+      ],
+      "conditions_eliminatoires": [
+        "Le dépôt doit se faire avec la dernière version du formulaire de demande, sinon la candidature ne pourra être prise en compte.",
+        "Une note sur le recours à l'intelligence artificielle (IA) dans le cadre du projet présenté doit être intégrée au dossier.",
+        "Concernant le dépôt en AVR1 et en fiction uniquement : numerus clausus, seules les 80 premières candidatures complètes seront prises en compte."
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "697302882c8d81bdde1696f4f358fd9b9be23925",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-27",
+    "clos": true
+  },
+  "9a46ed94549a2f93": {
+    "commission": {
+      "region": "National",
+      "fonds": "Aide avant réalisation à la production de films de court métrage (AVR2)",
+      "organisme": "CNC",
+      "typologie_oeuvre": "autres films de court métrage",
+      "etape_filiere": "production",
+      "session_label": "Session 1 - 2026",
+      "etapes": [
+        {
+          "label": "Réunion « premier dépôt »",
+          "date_debut": null,
+          "date_fin": "2025-11-03",
+          "heure_limite": "10:00"
+        },
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2025-11-17",
+          "heure_limite": "18:00"
+        },
+        {
+          "label": "Résultats comité de lecture",
+          "date_debut": null,
+          "date_fin": "2026-01-26",
+          "heure_limite": null
+        },
+        {
+          "label": "Commission plénière AVR2 - Janvier 2026",
+          "date_debut": null,
+          "date_fin": "2026-01-27",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "Réunion « premier dépôt » (visioconférence obligatoire avant tout dépôt)",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "non précisé explicitement dans le texte",
+          "lien_reservation": "https://www.demarches-simplifiees.fr/commencer/inscription-a-la-visioconference-reunion-premier-d"
+        }
+      ],
+      "conditions_eliminatoires": [
+        "Le dépôt doit se faire avec la dernière version du formulaire de demande, sinon la candidature ne pourra être prise en compte.",
+        "Une note sur le recours à l'intelligence artificielle (IA) dans le cadre du projet présenté doit être intégrée au dossier."
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "062f122c9caad306b95bc7565240aff07e79d94b",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-27",
+    "clos": true
+  },
+  "8574617594c17490": {
+    "commission": {
+      "region": "National",
+      "fonds": "Aide avant réalisation à la production de films de court métrage (AVR2)",
+      "organisme": "CNC",
+      "typologie_oeuvre": "autres films de court métrage",
+      "etape_filiere": "production",
+      "session_label": "Session 2 - 2026",
+      "etapes": [
+        {
+          "label": "Réunion « premier dépôt »",
+          "date_debut": null,
+          "date_fin": "2025-12-01",
+          "heure_limite": "10:00"
+        },
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2026-01-07",
+          "heure_limite": "18:00"
+        },
+        {
+          "label": "Résultats comité de lecture",
+          "date_debut": null,
+          "date_fin": "2026-03-23",
+          "heure_limite": null
+        },
+        {
+          "label": "Commission plénière AVR2 - Février 2026",
+          "date_debut": null,
+          "date_fin": "2026-02-24",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "Réunion « premier dépôt » (visioconférence obligatoire avant tout dépôt)",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "non précisé explicitement dans le texte",
+          "lien_reservation": "https://www.demarches-simplifiees.fr/commencer/inscription-a-la-visioconference-reunion-premier-d"
+        }
+      ],
+      "conditions_eliminatoires": [
+        "Le dépôt doit se faire avec la dernière version du formulaire de demande, sinon la candidature ne pourra être prise en compte.",
+        "Une note sur le recours à l'intelligence artificielle (IA) dans le cadre du projet présenté doit être intégrée au dossier."
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "616ecb0f1d348feac8e5b5e48edf70b92353c558",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-27",
+    "clos": true
+  },
+  "45d33e8f3507b276": {
+    "commission": {
+      "region": "National",
+      "fonds": "Aide avant réalisation à la production de films de court métrage (AVR2)",
+      "organisme": "CNC",
+      "typologie_oeuvre": "autres films de court métrage",
+      "etape_filiere": "production",
+      "session_label": "Session 3 - 2026",
+      "etapes": [
+        {
+          "label": "Réunion « premier dépôt »",
+          "date_debut": null,
+          "date_fin": "2026-01-09",
+          "heure_limite": "10:00"
+        },
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2026-02-17",
+          "heure_limite": "18:00"
+        },
+        {
+          "label": "Résultats comité de lecture",
+          "date_debut": null,
+          "date_fin": "2026-05-11",
+          "heure_limite": null
+        },
+        {
+          "label": "Commission plénière AVR2 - Mai 2026",
+          "date_debut": null,
+          "date_fin": "2026-05-11",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "Réunion « premier dépôt » (visioconférence obligatoire avant tout dépôt)",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "non précisé explicitement dans le texte",
+          "lien_reservation": "https://www.demarches-simplifiees.fr/commencer/inscription-a-la-visioconference-reunion-premier-d"
+        }
+      ],
+      "conditions_eliminatoires": [
+        "Le dépôt doit se faire avec la dernière version du formulaire de demande, sinon la candidature ne pourra être prise en compte.",
+        "Une note sur le recours à l'intelligence artificielle (IA) dans le cadre du projet présenté doit être intégrée au dossier."
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "1391f6fad7a847da07277fa04a5f64f438529b69",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-27",
+    "clos": true
+  },
+  "8981c5e10625b649": {
+    "commission": {
+      "region": "National",
+      "fonds": "Aide avant réalisation à la production de films de court métrage (AVR2)",
+      "organisme": "CNC",
+      "typologie_oeuvre": "autres films de court métrage",
+      "etape_filiere": "production",
+      "session_label": "Session 4 - 2026",
+      "etapes": [
+        {
+          "label": "Réunion « premier dépôt »",
+          "date_debut": null,
+          "date_fin": "2026-02-20",
+          "heure_limite": "10:00"
+        },
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2026-04-17",
+          "heure_limite": "18:00"
+        },
+        {
+          "label": "Résultats comité de lecture",
+          "date_debut": null,
+          "date_fin": "2026-07-15",
+          "heure_limite": null
+        },
+        {
+          "label": "Commission plénière AVR2 - Juillet 2026",
+          "date_debut": null,
+          "date_fin": "2026-07-16",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "Réunion « premier dépôt » (visioconférence obligatoire avant tout dépôt)",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "non précisé explicitement dans le texte",
+          "lien_reservation": "https://www.demarches-simplifiees.fr/commencer/inscription-a-la-visioconference-reunion-premier-d"
+        }
+      ],
+      "conditions_eliminatoires": [
+        "Le dépôt doit se faire avec la dernière version du formulaire de demande, sinon la candidature ne pourra être prise en compte.",
+        "Une note sur le recours à l'intelligence artificielle (IA) dans le cadre du projet présenté doit être intégrée au dossier."
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "2ddd5f2e97d193705cada48a6e1a058f5c96a5ba",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-27",
+    "clos": true
+  },
+  "8a6a8ecbeb2c28e6": {
+    "commission": {
+      "region": "National",
+      "fonds": "Aide avant réalisation à la production de films de court métrage (AVR2)",
+      "organisme": "CNC",
+      "typologie_oeuvre": "autres films de court métrage",
+      "etape_filiere": "production",
+      "session_label": "Session 1 - 2027",
+      "etapes": [
+        {
+          "label": "dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2026-11-16",
+          "heure_limite": "18:00"
+        },
+        {
+          "label": "résultats comité de lecture à partir du",
+          "date_debut": null,
+          "date_fin": "2027-01-25",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "postuler avec la dernière version du formulaire de demande, sinon la candidature ne pourra être prise en compte"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "35a12c27dda8775aeebd19dd8d85d40142f566b9",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "eb1a8fffd856f0d8": {
+    "commission": {
+      "region": "Normandie",
+      "fonds": "Fonds de soutien à la création et à la production cinéma et audiovisuel Région Normandie/CNC",
+      "organisme": "Normandie Images",
+      "typologie_oeuvre": "court métrage cinéma",
+      "etape_filiere": "production",
+      "session_label": "Session 1",
+      "etapes": [],
+      "actions_prealables": [
+        {
+          "type_action": "prise de rendez-vous préalable",
+          "condition_declenchement": "systématique",
+          "fenetre": {
+            "label": "rendez-vous préalables",
+            "date_debut": "2026-08-24",
+            "date_fin": "2026-09-04",
+            "heure_limite": null
+          },
+          "consequence_si_non_respect": "non précisé dans le texte (mais présentation du planning des rendez-vous préalables comme étape obligatoire avant dépôt)",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://www.normandieimages.fr/creation-production/fonds-d-aides/14-creation-et-production/fonds-d-aide/26-production-de-court-metrage-cinema",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "97d170e1550eee4afc0af065b78cda302a97674c",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "318eb66ef8b0632d": {
+    "commission": {
+      "region": "Normandie",
+      "fonds": "Fonds de soutien à la création et à la production cinéma et audiovisuel Région Normandie/CNC",
+      "organisme": "Normandie Images",
+      "typologie_oeuvre": "court métrage cinéma",
+      "etape_filiere": "production",
+      "session_label": "Session 2",
+      "etapes": [],
+      "actions_prealables": [
+        {
+          "type_action": "prise de rendez-vous préalable",
+          "condition_declenchement": "systématique",
+          "fenetre": {
+            "label": "rendez-vous préalables",
+            "date_debut": "2027-01-06",
+            "date_fin": "2027-01-22",
+            "heure_limite": null
+          },
+          "consequence_si_non_respect": "non précisé dans le texte (mais présentation du planning des rendez-vous préalables comme étape obligatoire avant dépôt)",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://www.normandieimages.fr/creation-production/fonds-d-aides/14-creation-et-production/fonds-d-aide/26-production-de-court-metrage-cinema",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "97d170e1550eee4afc0af065b78cda302a97674c",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "cff81b43e6455777": {
+    "commission": {
+      "region": "Normandie",
+      "fonds": "Fonds de soutien à la création et à la production cinéma et audiovisuel Région Normandie/CNC",
+      "organisme": "Normandie Images",
+      "typologie_oeuvre": "court métrage cinéma",
+      "etape_filiere": "production",
+      "session_label": "Session 3",
+      "etapes": [],
+      "actions_prealables": [
+        {
+          "type_action": "prise de rendez-vous préalable",
+          "condition_declenchement": "systématique",
+          "fenetre": {
+            "label": "rendez-vous préalables",
+            "date_debut": "2027-04-19",
+            "date_fin": "2027-04-30",
+            "heure_limite": null
+          },
+          "consequence_si_non_respect": "non précisé dans le texte (mais présentation du planning des rendez-vous préalables comme étape obligatoire avant dépôt)",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://www.normandieimages.fr/creation-production/fonds-d-aides/14-creation-et-production/fonds-d-aide/26-production-de-court-metrage-cinema",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "97d170e1550eee4afc0af065b78cda302a97674c",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "6aff707971950548": {
+    "commission": {
+      "region": "Paris",
+      "fonds": "Fonds de soutien au court métrage",
+      "organisme": "Mission Cinéma - Ville de Paris",
+      "typologie_oeuvre": "court métrage (tous genres)",
+      "etape_filiere": "production",
+      "session_label": "Première session 2026",
+      "etapes": [
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": "2026-01-01",
+          "date_fin": "2026-01-29",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de lecture",
+          "date_debut": null,
+          "date_fin": "2026-03-31",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de sélection",
+          "date_debut": null,
+          "date_fin": "2024-05-31",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Tous les films courts",
+        "Durée inférieure à 60 mn",
+        "Tournage prévu principalement à Paris",
+        "Le soutien à la production s'adresse à toute entreprise de production cinématographique ou audiovisuelle établie en France, intervenant au titre de producteur ou coproducteur majoritaire",
+        "Les projets portés par une association ou un candidat à titre individuel (auteur ou réalisateur) ne sont pas éligibles"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": 20000,
+      "lien_formulaire": "https://teleservices.paris.fr/courtmetrage/",
+      "url_source": "https://www.paris.fr/pages/les-actions-de-paris-pour-le-cinema-2313",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "acffb33f151c7e9c113f193009cb82f606a5d658",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "80b813f17860df3d": {
+    "commission": {
+      "region": "Paris",
+      "fonds": "Fonds de soutien au court métrage",
+      "organisme": "Mission Cinéma - Ville de Paris",
+      "typologie_oeuvre": "court métrage (tous genres)",
+      "etape_filiere": "production",
+      "session_label": "Deuxième session 2026",
+      "etapes": [
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": "2026-04-01",
+          "date_fin": "2026-04-30",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de lecture",
+          "date_debut": null,
+          "date_fin": "2024-06-30",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de sélection",
+          "date_debut": null,
+          "date_fin": "2024-07-31",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Tous les films courts",
+        "Durée inférieure à 60 mn",
+        "Tournage prévu principalement à Paris",
+        "Le soutien à la production s'adresse à toute entreprise de production cinématographique ou audiovisuelle établie en France, intervenant au titre de producteur ou coproducteur majoritaire",
+        "Les projets portés par une association ou un candidat à titre individuel (auteur ou réalisateur) ne sont pas éligibles"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": 20000,
+      "lien_formulaire": "https://teleservices.paris.fr/courtmetrage/",
+      "url_source": "https://www.paris.fr/pages/les-actions-de-paris-pour-le-cinema-2313",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "c9fbd612b523318bc5c76a804044c97d25021110",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "1b0f3656d32d2b55": {
+    "commission": {
+      "region": "Paris",
+      "fonds": "Fonds d'aide aux projets nouveaux médias",
+      "organisme": "Mission Cinéma - Ville de Paris",
+      "typologie_oeuvre": "nouveaux médias / transmédia (fiction, animation, documentaire, expérimental)",
+      "etape_filiere": "developpement",
+      "session_label": "Première session 2026",
+      "etapes": [],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Œuvres pour les nouveaux médias destinées à une diffusion sur un ou plusieurs supports numériques (internet, écrans mobiles, applications, etc.)",
+        "Toute entreprise de production établie en France ou ayant un établissement secondaire en France, intervenant au titre de producteur ou coproducteur délégué majoritaire (sur présentation du contrat)",
+        "Les projets portés par une association ou un candidat à titre individuel (auteur ou réalisateur) ne sont pas éligibles"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": 40000,
+      "lien_formulaire": "https://teleservices.paris.fr/nouveauxmedia/",
+      "url_source": "https://www.paris.fr/pages/les-actions-de-paris-pour-le-cinema-2313",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "97d170e1550eee4afc0af065b78cda302a97674c",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
+    "clos": true
+  },
+  "beb89125f439afff": {
+    "commission": {
+      "region": "Paris",
+      "fonds": "Fonds d'aide aux projets nouveaux médias",
+      "organisme": "Mission Cinéma - Ville de Paris",
+      "typologie_oeuvre": "nouveaux médias / transmédia (fiction, animation, documentaire, expérimental)",
+      "etape_filiere": "developpement",
+      "session_label": "Seconde session 2026",
+      "etapes": [],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Œuvres pour les nouveaux médias destinées à une diffusion sur un ou plusieurs supports numériques (internet, écrans mobiles, applications, etc.)",
+        "Toute entreprise de production établie en France ou ayant un établissement secondaire en France, intervenant au titre de producteur ou coproducteur délégué majoritaire (sur présentation du contrat)",
+        "Les projets portés par une association ou un candidat à titre individuel (auteur ou réalisateur) ne sont pas éligibles"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": 40000,
+      "lien_formulaire": "https://teleservices.paris.fr/nouveauxmedia/",
+      "url_source": "https://www.paris.fr/pages/les-actions-de-paris-pour-le-cinema-2313",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "97d170e1550eee4afc0af065b78cda302a97674c",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
+    "clos": true
+  },
+  "b533c7bd3d569887": {
+    "commission": {
+      "region": "Bourgogne-Franche-Comté",
+      "fonds": "Fonds d'aide à la création et à la production cinématographique et audiovisuelle",
+      "organisme": "Région Bourgogne-Franche-Comté",
+      "typologie_oeuvre": "court métrage de fiction, animation et documentaire",
+      "etape_filiere": "production",
+      "session_label": "2ème dépôt (juillet)",
+      "etapes": [
+        {
+          "label": "dépôt des dossiers",
+          "date_debut": "2026-07-01",
+          "date_fin": "2026-07-31",
+          "heure_limite": null
+        },
+        {
+          "label": "comité de lecture",
+          "date_debut": null,
+          "date_fin": "2026-09-30",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Le dossier doit respecter le règlement d'intervention téléchargeable sur la page, sous peine de ne pas être instruit.",
+        "Être une société de production cinématographique et audiovisuelle.",
+        "Produire et/ou tourner en Bourgogne-Franche-Comté un court métrage de fiction, d'animation ou documentaire."
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://subventions.bourgognefranchecomte.fr/sub/tiers/aides/details/?sigle=CINE-CM",
+      "url_source": "https://www.bourgognefranchecomte.fr/node/278",
+      "date_extraction": "2026-09-27"
+    },
+    "etapes_hash": "8da963ef626d3656e1ab0933e85101e2e62a12da",
+    "first_seen": "2026-09-27",
+    "last_updated": "2026-09-27",
+    "last_checked": "2026-09-28",
+    "clos": true
+  },
+  "4f2ee68826e230da": {
+    "commission": {
+      "region": "National",
+      "fonds": "Aide avant réalisation à la production de films de court métrage (AVR1)",
+      "organisme": "CNC",
+      "typologie_oeuvre": "court métrage - premiers films",
+      "etape_filiere": "production",
+      "session_label": "Session 6 - 2026",
+      "etapes": [
+        {
+          "label": "Réunion « premier dépôt » (visioconférence, créneau unique 09h00-10h00)",
+          "date_debut": null,
+          "date_fin": "2026-10-09",
+          "heure_limite": null
+        },
+        {
+          "label": "Dépôt des dossiers (comité de lecture AVR1)",
+          "date_debut": null,
+          "date_fin": "2026-09-04",
+          "heure_limite": "18:00"
+        },
+        {
+          "label": "Résultats à partir du (comité de lecture)",
+          "date_debut": null,
+          "date_fin": "2026-11-30",
+          "heure_limite": null
+        },
+        {
+          "label": "Commission plénière AVR1 - session décembre 2026, résultats à partir du",
+          "date_debut": null,
+          "date_fin": "2026-12-18",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "réunion « premier dépôt » en visioconférence préalable au dépôt",
+          "condition_declenchement": "systématique pour tout nouveau dépôt (avant chaque nouveau dépôt)",
+          "fenetre": {
+            "label": "Réunion « premier dépôt » (créneau unique 09h00-10h00)",
+            "date_debut": null,
+            "date_fin": "2026-10-09",
+            "heure_limite": "10:00"
+          },
+          "consequence_si_non_respect": "le dossier ne pourra pas être déposé / candidature non traitée",
+          "lien_reservation": "https://www.demarches-simplifiees.fr/commencer/inscription-a-la-visioconference-reunion-premier-d"
+        },
+        {
+          "type_action": "utilisation de la dernière version du formulaire de demande et intégration de la note sur le recours à l'intelligence artificielle (IA) au dossier",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "la candidature ne pourra pas être prise en compte / ne pourra être traitée",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [
+        "Le demandeur doit être un producteur ou un auteur-réalisateur",
+        "Postuler avec la dernière version du formulaire de demande, sinon la candidature ne pourra être prise en compte",
+        "La demande doit être constituée de deux fichiers : le formulaire de demande Excel + le dossier artistique PDF",
+        "Pour le dépôt en AVR1 et en fiction uniquement, numerus clausus : seules les 80 premières candidatures complètes seront prises en compte",
+        "Une note sur le recours à l'intelligence artificielle (IA) dans le cadre du projet présenté doit dorénavant être intégrée au dossier"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://depot.cnc.fr/index.php/s/a4oQSDq48ZT6BZ5",
+      "url_source": "https://www.cnc.fr/professionnels/aides-et-financements/court-metrage/production/aide-avant-realisation-a-la-production-de-films-de-court-metrage_191116",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "9356ac46beacdc4ec7a5c2db1f08c05a7f23d76b",
+    "first_seen": "2026-09-28",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": true
+  },
+  "5f68f107461838b6": {
+    "commission": {
+      "region": "Bourgogne-Franche-Comté",
+      "fonds": "Fonds d'aide à la création et à la production cinématographique et audiovisuelle - Aide à la production cinématographique de courts métrages",
+      "organisme": "Région Bourgogne-Franche-Comté",
+      "typologie_oeuvre": "court métrage de fiction, animation ou documentaire",
+      "etape_filiere": "production",
+      "session_label": "Session 1",
+      "etapes": [
+        {
+          "label": "dépôt des dossiers (1er dépôt)",
+          "date_debut": "2027-02-01",
+          "date_fin": "2027-02-28",
+          "heure_limite": null
+        },
+        {
+          "label": "dépôt des dossiers (2e dépôt)",
+          "date_debut": "2027-07-01",
+          "date_fin": "2027-07-31",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Le dossier doit respecter le règlement d'intervention (téléchargeable sur la page), faute de quoi il ne sera pas instruit",
+        "Être une société de production cinématographique et audiovisuelle",
+        "Œuvre concernée : court métrage de fiction, d'animation ou documentaire, produit et/ou tourné en Bourgogne-Franche-Comté"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://subventions.bourgognefranchecomte.fr/sub/tiers/aides/details/?sigle=CINE-CM",
+      "url_source": "https://www.bourgognefranchecomte.fr/node/278",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "f13835b5c470de6d42effaff50b9e772b4cc0454",
+    "first_seen": "2026-09-28",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": true
+  },
+  "fd67d730209abf97": {
+    "commission": {
+      "region": "Bourgogne-Franche-Comté",
+      "fonds": "Fonds d'aide à la création et à la production cinématographique et audiovisuelle - Aide à la production cinématographique de courts métrages",
+      "organisme": "Région Bourgogne-Franche-Comté",
+      "typologie_oeuvre": "court métrage de fiction, animation ou documentaire",
+      "etape_filiere": "production",
+      "session_label": "Session 2",
+      "etapes": [
+        {
+          "label": "dépôt des dossiers (1er dépôt)",
+          "date_debut": "2027-02-01",
+          "date_fin": "2027-02-28",
+          "heure_limite": null
+        },
+        {
+          "label": "dépôt des dossiers (2e dépôt)",
+          "date_debut": "2027-07-01",
+          "date_fin": "2027-07-31",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Le dossier doit respecter le règlement d'intervention (téléchargeable sur la page), faute de quoi il ne sera pas instruit",
+        "Être une société de production cinématographique et audiovisuelle",
+        "Œuvre concernée : court métrage de fiction, d'animation ou documentaire, produit et/ou tourné en Bourgogne-Franche-Comté"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://subventions.bourgognefranchecomte.fr/sub/tiers/aides/details/?sigle=CINE-CM",
+      "url_source": "https://www.bourgognefranchecomte.fr/node/278",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "f13835b5c470de6d42effaff50b9e772b4cc0454",
+    "first_seen": "2026-09-28",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": true
+  },
+  "ced733adfe805bd7": {
+    "commission": {
+      "region": "Occitanie",
+      "fonds": "Aide à la création audiovisuelle (développement, production, diffusion)",
+      "organisme": "Région Occitanie / Pyrénées-Méditerranée",
+      "typologie_oeuvre": "animation",
+      "etape_filiere": "developpement",
+      "session_label": "Animation (CM, LM, AV, XR) - 1er juin 2026",
+      "etapes": [],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Le projet doit présenter un lien culturel évident avec la région",
+        "Le projet doit être présenté par la production déléguée ou la coproduction déléguée",
+        "Pour le soutien en phase de pré-production ou de production, le tournage ne devra pas avoir commencé avant la date de dépôt de la demande (sauf documentaires nécessitant des prises de vues anticipées)",
+        "Seules les œuvres de création sont éligibles"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://mesaidesenligne.laregion.fr/aides/#/croccitanie/connecte/F_DCP_CREATAV/depot/simple",
+      "url_source": "https://www.laregion.fr/Cinema-Audiovisuel-Multimedia-Aide-a-la-creation-audiovisuelle",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "97d170e1550eee4afc0af065b78cda302a97674c",
+    "first_seen": "2026-09-28",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "c953e28d720aaee6": {
+    "commission": {
+      "region": "Occitanie",
+      "fonds": "Aide à la création audiovisuelle (développement, production, diffusion)",
+      "organisme": "Région Occitanie / Pyrénées-Méditerranée",
+      "typologie_oeuvre": "animation",
+      "etape_filiere": "developpement",
+      "session_label": "Animation (CM, LM, AV, XR) - 1er février 2027",
+      "etapes": [],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Le projet doit présenter un lien culturel évident avec la région",
+        "Le projet doit être présenté par la production déléguée ou la coproduction déléguée",
+        "Pour le soutien en phase de pré-production ou de production, le tournage ne devra pas avoir commencé avant la date de dépôt de la demande (sauf documentaires nécessitant des prises de vues anticipées)",
+        "Seules les œuvres de création sont éligibles"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://mesaidesenligne.laregion.fr/aides/#/croccitanie/connecte/F_DCP_CREATAV/depot/simple",
+      "url_source": "https://www.laregion.fr/Cinema-Audiovisuel-Multimedia-Aide-a-la-creation-audiovisuelle",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "97d170e1550eee4afc0af065b78cda302a97674c",
+    "first_seen": "2026-09-28",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "30988032813e6658": {
+    "commission": {
+      "region": "Occitanie",
+      "fonds": "Aide à la création audiovisuelle (développement, production, diffusion)",
+      "organisme": "Région Occitanie / Pyrénées-Méditerranée",
+      "typologie_oeuvre": "documentaire",
+      "etape_filiere": "developpement",
+      "session_label": "Documentaire (CM, LM, AV, XR) - 1er décembre 2026",
+      "etapes": [],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Le projet doit présenter un lien culturel évident avec la région",
+        "Le projet doit être présenté par la production déléguée ou la coproduction déléguée",
+        "Pour le soutien en phase de pré-production ou de production, le tournage ne devra pas avoir commencé avant la date de dépôt de la demande (sauf documentaires nécessitant des prises de vues anticipées)",
+        "Seules les œuvres de création sont éligibles"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://mesaidesenligne.laregion.fr/aides/#/croccitanie/connecte/F_DCP_CREATAV/depot/simple",
+      "url_source": "https://www.laregion.fr/Cinema-Audiovisuel-Multimedia-Aide-a-la-creation-audiovisuelle",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "97d170e1550eee4afc0af065b78cda302a97674c",
+    "first_seen": "2026-09-28",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "f75c31dc6216fa59": {
+    "commission": {
+      "region": "Occitanie",
+      "fonds": "Aide à la création audiovisuelle (développement, production, diffusion)",
+      "organisme": "Région Occitanie / Pyrénées-Méditerranée",
+      "typologie_oeuvre": "court métrage de fiction et narration spécifique (XR)",
+      "etape_filiere": "developpement",
+      "session_label": "Fiction (CM, XR) - 1er juin 2026",
+      "etapes": [],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Le projet doit présenter un lien culturel évident avec la région",
+        "Le projet doit être présenté par la production déléguée ou la coproduction déléguée",
+        "Pour le soutien en phase de pré-production ou de production, le tournage ne devra pas avoir commencé avant la date de dépôt de la demande (sauf documentaires nécessitant des prises de vues anticipées)",
+        "Seules les œuvres de création sont éligibles"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://mesaidesenligne.laregion.fr/aides/#/croccitanie/connecte/F_DCP_CREATAV/depot/simple",
+      "url_source": "https://www.laregion.fr/Cinema-Audiovisuel-Multimedia-Aide-a-la-creation-audiovisuelle",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "97d170e1550eee4afc0af065b78cda302a97674c",
+    "first_seen": "2026-09-28",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "4a86c9b9fe9196d7": {
+    "commission": {
+      "region": "Occitanie",
+      "fonds": "Aide à la création audiovisuelle (développement, production, diffusion)",
+      "organisme": "Région Occitanie / Pyrénées-Méditerranée",
+      "typologie_oeuvre": "court métrage de fiction et narration spécifique (XR)",
+      "etape_filiere": "developpement",
+      "session_label": "Fiction (CM, XR) - 15 décembre 2026",
+      "etapes": [],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Le projet doit présenter un lien culturel évident avec la région",
+        "Le projet doit être présenté par la production déléguée ou la coproduction déléguée",
+        "Pour le soutien en phase de pré-production ou de production, le tournage ne devra pas avoir commencé avant la date de dépôt de la demande (sauf documentaires nécessitant des prises de vues anticipées)",
+        "Seules les œuvres de création sont éligibles"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://mesaidesenligne.laregion.fr/aides/#/croccitanie/connecte/F_DCP_CREATAV/depot/simple",
+      "url_source": "https://www.laregion.fr/Cinema-Audiovisuel-Multimedia-Aide-a-la-creation-audiovisuelle",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "97d170e1550eee4afc0af065b78cda302a97674c",
+    "first_seen": "2026-09-28",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "26e100ca01a373a9": {
+    "commission": {
+      "region": "Occitanie",
+      "fonds": "Aide à la création audiovisuelle (développement, production, diffusion)",
+      "organisme": "Région Occitanie / Pyrénées-Méditerranée",
+      "typologie_oeuvre": "long métrage cinéma et œuvre audiovisuelle de fiction",
+      "etape_filiere": "developpement",
+      "session_label": "Fiction (LM-AV) - 1er juillet 2026",
+      "etapes": [],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Le projet doit présenter un lien culturel évident avec la région",
+        "Le projet doit être présenté par la production déléguée ou la coproduction déléguée",
+        "Pour le soutien en phase de pré-production ou de production, le tournage ne devra pas avoir commencé avant la date de dépôt de la demande (sauf documentaires nécessitant des prises de vues anticipées)",
+        "Seules les œuvres de création sont éligibles"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://mesaidesenligne.laregion.fr/aides/#/croccitanie/connecte/F_DCP_CREATAV/depot/simple",
+      "url_source": "https://www.laregion.fr/Cinema-Audiovisuel-Multimedia-Aide-a-la-creation-audiovisuelle",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "97d170e1550eee4afc0af065b78cda302a97674c",
+    "first_seen": "2026-09-28",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
+  },
+  "f166d19133066651": {
+    "commission": {
+      "region": "Occitanie",
+      "fonds": "Aide à la création audiovisuelle (développement, production, diffusion)",
+      "organisme": "Région Occitanie / Pyrénées-Méditerranée",
+      "typologie_oeuvre": "long métrage cinéma et œuvre audiovisuelle de fiction",
+      "etape_filiere": "developpement",
+      "session_label": "Fiction (LM-AV) - 1er décembre 2026",
+      "etapes": [],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Le projet doit présenter un lien culturel évident avec la région",
+        "Le projet doit être présenté par la production déléguée ou la coproduction déléguée",
+        "Pour le soutien en phase de pré-production ou de production, le tournage ne devra pas avoir commencé avant la date de dépôt de la demande (sauf documentaires nécessitant des prises de vues anticipées)",
+        "Seules les œuvres de création sont éligibles"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://mesaidesenligne.laregion.fr/aides/#/croccitanie/connecte/F_DCP_CREATAV/depot/simple",
+      "url_source": "https://www.laregion.fr/Cinema-Audiovisuel-Multimedia-Aide-a-la-creation-audiovisuelle",
+      "date_extraction": "2026-09-28"
+    },
+    "etapes_hash": "97d170e1550eee4afc0af065b78cda302a97674c",
+    "first_seen": "2026-09-28",
+    "last_updated": "2026-09-28",
+    "last_checked": "2026-09-28",
+    "clos": false
   }
 }

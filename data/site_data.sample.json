@@ -1,0 +1,268 @@
+{
+  "generated_at": "2026-09-27",
+  "aides": [
+    {
+      "id": "a1",
+      "region": "Provence-Alpes-Côte d'Azur",
+      "fonds": "Soutien à la production de court métrage de fiction",
+      "organisme": "Région Sud",
+      "typologie_oeuvre": "court métrage de fiction",
+      "etape_filiere": "production",
+      "session_label": null,
+      "etapes": [
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2026-11-30",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "RDV avec le chargé de mission",
+          "condition_declenchement": "si cumul d'aides",
+          "fenetre": null,
+          "consequence_si_non_respect": "dossier inéligible",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [
+        "Lien culturel ou géographique avec la région",
+        "Tournage non commencé au dépôt"
+      ],
+      "montant_min_eur": 15000,
+      "montant_max_eur": 30000,
+      "lien_formulaire": "https://aidesenligne.maregionsud.fr",
+      "url_source": "https://www.maregionsud.fr/x",
+      "date_extraction": "2026-09-27",
+      "first_seen": "2026-09-15",
+      "last_updated": "2026-09-27",
+      "clos": false
+    },
+    {
+      "id": "a2",
+      "region": "Hauts-de-France",
+      "fonds": "Fonds Court métrage",
+      "organisme": "Pictanovo",
+      "typologie_oeuvre": "court métrage (hors animation)",
+      "etape_filiere": "production",
+      "session_label": "#1 Comité de lecture Court Métrage 2027",
+      "etapes": [
+        {
+          "label": "Date limite de dépôt",
+          "date_debut": null,
+          "date_fin": "2027-01-19",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de lecture",
+          "date_debut": null,
+          "date_fin": "2027-02-23",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "Envoi pré-dossier + RDV",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "dossier non examiné",
+          "lien_reservation": null
+        }
+      ],
+      "conditions_eliminatoires": [],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": "https://pictabox.pcscloud.net/Pictanovo",
+      "url_source": "https://www.pictanovo.com/fond/court-metrage/",
+      "date_extraction": "2026-09-27",
+      "first_seen": "2026-09-27",
+      "last_updated": "2026-09-27",
+      "clos": false
+    },
+    {
+      "id": "a3",
+      "region": "Île-de-France",
+      "fonds": "Aide au film court en Seine-Saint-Denis",
+      "organisme": "Cinémas 93",
+      "typologie_oeuvre": "court métrage tous genres",
+      "etape_filiere": "post-production",
+      "session_label": "Session 2 - 2026",
+      "etapes": [
+        {
+          "label": "Date limite de dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2026-08-19",
+          "heure_limite": null
+        },
+        {
+          "label": "Commission plénière",
+          "date_debut": null,
+          "date_fin": "2026-10-18",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [
+        "Durée < 60 min"
+      ],
+      "montant_min_eur": null,
+      "montant_max_eur": 20000,
+      "lien_formulaire": "https://framaforms.org/x",
+      "url_source": "https://www.cinemas93.org/x",
+      "date_extraction": "2026-09-27",
+      "first_seen": "2026-09-15",
+      "last_updated": "2026-09-27",
+      "clos": false
+    },
+    {
+      "id": "a4",
+      "region": "Bretagne",
+      "fonds": "FACCA Production Court Métrage",
+      "organisme": "Région Bretagne",
+      "typologie_oeuvre": "court métrage fiction, animation, expérimental",
+      "etape_filiere": "production",
+      "session_label": null,
+      "etapes": [
+        {
+          "label": "Dépôt",
+          "date_debut": "2026-10-01",
+          "date_fin": "2026-10-10",
+          "heure_limite": "12:00"
+        }
+      ],
+      "actions_prealables": [
+        {
+          "type_action": "RDV téléphonique préalable",
+          "condition_declenchement": "systématique",
+          "fenetre": null,
+          "consequence_si_non_respect": "dépôt impossible",
+          "lien_reservation": "https://forms.gle/x"
+        }
+      ],
+      "conditions_eliminatoires": [],
+      "montant_min_eur": null,
+      "montant_max_eur": 40000,
+      "lien_formulaire": null,
+      "url_source": "https://www.bretagne.bzh/x",
+      "date_extraction": "2026-09-27",
+      "first_seen": "2026-09-27",
+      "last_updated": "2026-09-27",
+      "clos": false
+    },
+    {
+      "id": "a5",
+      "region": "National",
+      "fonds": "AVR2 — Aide avant réalisation (autres films)",
+      "organisme": "CNC",
+      "typologie_oeuvre": "court métrage",
+      "etape_filiere": "production",
+      "session_label": "Session 1 - 2027",
+      "etapes": [
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": null,
+          "date_fin": "2026-11-16",
+          "heure_limite": "18:00"
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://www.cnc.fr/x",
+      "date_extraction": "2026-09-27",
+      "first_seen": "2026-09-15",
+      "last_updated": "2026-09-27",
+      "clos": false
+    },
+    {
+      "id": "a6",
+      "region": "Occitanie",
+      "fonds": "Aide à la création audiovisuelle",
+      "organisme": "Région Occitanie",
+      "typologie_oeuvre": "animation, documentaire, fiction",
+      "etape_filiere": "developpement",
+      "session_label": null,
+      "etapes": [
+        {
+          "label": "Dépôt — Fiction CM",
+          "date_debut": null,
+          "date_fin": "2026-06-01",
+          "heure_limite": null
+        }
+      ],
+      "actions_prealables": [],
+      "conditions_eliminatoires": [],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "url_source": "https://www.laregion.fr/x",
+      "date_extraction": "2026-09-27",
+      "first_seen": "2026-09-15",
+      "last_updated": "2026-09-27",
+      "clos": true
+    },
+    {
+      "actions_prealables": [],
+      "conditions_eliminatoires": [],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "date_extraction": "2026-09-27",
+      "first_seen": "2026-09-15",
+      "last_updated": "2026-09-27",
+      "id": "a7",
+      "region": "Paris",
+      "fonds": "Fonds de soutien aux Nouveaux Médias",
+      "organisme": "Mission Cinéma",
+      "typologie_oeuvre": "nouveaux médias",
+      "etape_filiere": "developpement",
+      "session_label": "Seconde session",
+      "etapes": [
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": "2026-10-01",
+          "date_fin": "2026-10-29",
+          "heure_limite": null
+        },
+        {
+          "label": "Comité de lecture",
+          "date_debut": null,
+          "date_fin": "2026-11-30",
+          "heure_limite": null
+        }
+      ],
+      "url_source": "https://www.paris.fr/x",
+      "clos": true
+    },
+    {
+      "actions_prealables": [],
+      "conditions_eliminatoires": [],
+      "montant_min_eur": null,
+      "montant_max_eur": null,
+      "lien_formulaire": null,
+      "date_extraction": "2026-09-27",
+      "first_seen": "2026-09-15",
+      "last_updated": "2026-09-27",
+      "id": "a8",
+      "region": "Centre-Val de Loire",
+      "fonds": "COM Audiovisuel",
+      "organisme": "Ciclic",
+      "typologie_oeuvre": "documentaire, fiction",
+      "etape_filiere": "developpement",
+      "session_label": "3e dépôt",
+      "etapes": [
+        {
+          "label": "Dépôt des dossiers",
+          "date_debut": "2026-09-20",
+          "date_fin": "2026-10-05",
+          "heure_limite": "12:00"
+        }
+      ],
+      "url_source": "https://ciclic.fr/x",
+      "clos": false
+    }
+  ]
+}

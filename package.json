@@ -1,0 +1,11 @@
+{
+  "name": "veille-cinema-site",
+  "private": true,
+  "description": "Site statique du programme des aides au cinéma — dépendance de test uniquement (jsdom), aucun build requis pour déployer le site.",
+  "devDependencies": {
+    "jsdom": "^30.1.1"
+  },
+  "scripts": {
+    "test:site": "node test_site.js"
+  }
+}

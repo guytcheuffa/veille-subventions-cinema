@@ -1,180 +1,139 @@
-# French Film Grants Tracker — POC
+# Film Funding Deadlines Tracker
 
-Extraction pipeline skeleton for tracking application deadlines of French
-regional and national film production grants. This POC covers **10
-sources** (see `config.py`): the first 4 tested manually (Région Sud, AURA,
-Normandie x2), plus 6 added afterward (CNC — national, Paris, Bretagne,
-Grand Est, Pays de la Loire, Occitanie), spanning about ten different
-structural patterns.
+> 🇫🇷 Version française détaillée : [README.fr.md](README.fr.md)
 
-## What's done
+Automated tracker for **application deadlines of French regional and national film production grants**. An LLM extracts deadlines from official web pages into a strict schema, a deterministic layer checks the result against the source text, and a static website lets producers browse, filter and export deadlines to their calendar.
 
-- `schema.py` — Pydantic schema for structured output (`Commission`,
-  `PeriodeCle`, `ActionPrealable`, `ExtractionResult`), designed to cover:
-  simple recurring dates, multi-step sessions, date windows (`from X to
-  Y`), and total absence of dates in the HTML (pointing to a PDF instead).
-- `prompts.py` — system prompt that explicitly forbids the LLM from
-  hallucinating a date, distinguishes a single date from a window, and
-  detects mandatory prerequisite actions (appointments, etc.) as
-  conditional or systematic.
-- `extract.py` — API call (Anthropic or Qwen, see dedicated section below)
-  with a **forced tool call** on the Pydantic schema, plus a safety net
-  (`_reparer_structure`) that automatically fixes several structural
-  quirks observed in practice on Qwen Flash (misplaced fields, commissions
-  split into fragments, missing values).
-- `fetch.py` — content retrieval: direct fetch (`httpx`) or via **Jina
-  Reader** (`r.jina.ai`) for sites protected by an anti-bot WAF, plus a
-  native PDF text extraction fallback (`pypdf`).
-- `config.py` — registry of the **10 tested sources** (9 regional + the
-  CNC, a national grant outside the strict scope), each with: URL, whether
-  it needs Jina Reader, its offline fixture, and notes on the structural
-  pitfall it illustrates.
-- **`state.py`** — state management and deduplication: compares each
-  extraction to the last known state (`data/state.json`) and classifies
-  each commission as `nouveau` (new) / `modifie` (changed) / `inchange`
-  (unchanged) / `clos` (closed). Only the first 3 statuses (never
-  `inchange`) should trigger a notification — this was an explicit
-  requirement ("don't notify on unchanged or closed commissions"). Also
-  produces `data/site_data.json`, the clean, flat JSON base meant for the
-  future website (filters, selection, calendar export).
-- `test_extraction.py` — replays extraction on the 10 texts already
-  captured in `test_data/` (no request to the source sites, only to the
-  API) — **the entry point to run first** to validate the LLM.
-- **`test_state.py`** — tests the dedup logic, **100% offline, no API
-  call, zero cost** — can be run anytime to verify or evolve `state.py`
-  without depending on the LLM.
-- `main.py` — full pipeline (real fetch + extraction + state update +
-  writing `data/site_data.json`) across the 10 registry sources — to run
-  once extraction has been validated offline.
+**Live demo:** https://guytcheuffa.github.io/subvention-cinema/
 
-## Deliberately out of scope for this POC
+**Status:** working proof of concept. 13 of the 16 configured sources are read automatically; the pipeline is run by hand for now (a scheduled GitHub Actions run is the next step).
 
-These points are identified but not yet implemented (to do once
-extraction and dedup are validated):
+## What it does
 
-- PDF fallback wired automatically into `main.py` (the code exists in
-  `fetch.py`, but the conditional trigger isn't connected yet — affects at
-  least Normandie and Bretagne, which have no dates in their HTML).
-- Static website reading `data/site_data.json` (filters by
-  region/category, selection, client-side `.ics` export).
-- GitHub Actions workflow + GitHub Secrets.
-- Extension to the remaining metropolitan regions (ALCA Nouvelle-Aquitaine,
-  Pictanovo Hauts-de-France, Ciclic Centre-Val de Loire, etc.).
+- Fetches **16 pages from 15 funding bodies** (regions, cities, regional agencies and the national CNC), each with a different structure: recurring dates without a year, multi-step sessions, date windows, dates only in a linked PDF, one calendar per film genre.
+- Extracts, for each session: fund, work type, stage (writing, development, production…), every step with its date and cut-off time, mandatory preliminary actions (e.g. a compulsory meeting), eliminatory conditions and the application link.
+- Tracks state between runs so a session is reported as new, modified or gone.
+- Publishes a **static site** in French (its users are French producers; no server, no build step): chronological programme grouped by month, filters by region and stage, free-text search, a persistent selection, and **`.ics` export** generated in the browser.
 
-## Setup
+## Architecture
+
+```
+config.py (16 sources)
+   │
+   ▼
+fetch.py ── direct fetch / Jina Reader / PDF text ──► detects blocked or wrong pages
+   │
+   ▼
+extract.py ── forced tool call on a Pydantic schema (Anthropic or Qwen)
+   │            ├─ structural repair + field-level rescue
+   │            ├─ verify.py : dates checked against the source text
+   │            └─ one corrective second pass when needed
+   ▼
+state.py ── dedup / change tracking ──► data/state.json
+   │
+   ▼
+data/site_data.json ──► index.html + assets/ (GitHub Pages)
+```
+
+No CSS selectors are used anywhere: pages are converted to text and read by a compact LLM, so a site redesign does not break the pipeline.
+
+## Engineering notes: making LLM extraction trustworthy
+
+A small, cheap model is fine for this task, but its failures are quiet: the JSON is valid and the dates look plausible. Most of the work went into detecting and containing those failures, each one found on a real run.
+
+| Problem seen in production | What the code does |
+|---|---|
+| **Invented dates** (a source said "22/06/27", the model returned 16/06/2027) | `verify.py` checks every date against the source text in the formats a French page uses; unconfirmed dates are dropped and the source is re-asked once, telling the model which dates do not exist. |
+| **Wrong year** ("30 September every year" returned as 2027 when 30/09/2026 was two days away) | The source text wins when it gives one year; for calendars the page itself marks as recurring ("every year", "per year"), the next occurrence from today is used. Pages without such a cue are left alone. |
+| **Broken structure** (double-encoded JSON, `null` in required text fields, fragmented objects) | Structural repair, then a field-level rescue: only the smallest faulty part (a step, a window, a value) is removed instead of rejecting the whole source. |
+| **Same session returned three times**, or split differently from one run to the next | Identical commissions are merged; state matching uses an exact key with a fuzzy fallback on overlapping dates; stale superseded versions are hidden on the site. |
+| **Pages that are not the page** (Cloudflare challenge, home page served instead of the fund page) | Detected before any LLM call (zero cost); the source is reported as failed and its known data is left untouched. |
+| **Cost surprises** on a pay-as-you-go provider | A monthly budget guard estimates each call before sending it and blocks it if the cap would be exceeded. |
+
+Two design choices worth mentioning:
+
+- **The site derives session status from dates, not from pipeline flags.** "Opens on 01/10", "Application open", "Application closed", "Finished" are computed in the browser from the dates, so they stay correct between pipeline runs. A pipeline-side "not found on last run" flag used to be displayed as "closed", which was misleading.
+- **Failing loudly beats guessing.** Ambiguous cases (several different years for the same day, a date with no source support) keep the source's data or drop the item; nothing is invented.
+
+## Tests
+
+Everything below runs offline and costs nothing (LLM calls are simulated). Each test reproduces a real failure.
+
+```bash
+python test_state.py       # dedup, fuzzy matching, site data rules
+python test_verify.py      # date verification, year rules, label recovery
+python test_retry.py       # corrective second pass and its safeguards
+python test_robustesse.py  # malformed model output, empty replies, duplicates
+python test_fetch.py       # blocked pages; checks all 16 real pages are accepted
+python test_alerts.py      # per-date tracking
+npm install && npm run test:site   # website in jsdom, incl. the generated .ics
+```
+
+`test_extraction.py` replays the 16 saved pages through the real LLM (costs a few cents).
+
+## Getting started
+
+Requires Python 3.10+. Node.js is only needed for the website tests.
 
 ```bash
 python -m venv venv
-source venv/bin/activate  # or venv\Scripts\activate on Windows
+source venv/bin/activate        # Windows: venv\Scripts\activate
 pip install -r requirements.txt
-cp .env.example .env      # then fill in your key in .env
 ```
 
-The project doesn't load `.env` automatically (no `python-dotenv`, to
-keep things minimal) — export the variable before running the scripts:
+Choose a provider (Anthropic is the default):
 
 ```bash
-export ANTHROPIC_API_KEY=sk-ant-...        # macOS/Linux
-$env:ANTHROPIC_API_KEY="sk-ant-..."        # PowerShell
+export ANTHROPIC_API_KEY=...                     # PowerShell: $env:ANTHROPIC_API_KEY="..."
+# or
+export PROVIDER=qwen DASHSCOPE_API_KEY=...       # cheaper, pay-as-you-go
+export BUDGET_LIMIT_USD=2.0                      # monthly cap enforced in code (default 2.0)
 ```
 
-## Choosing the LLM provider (Anthropic or Qwen)
-
-The brief accepts "GPT-4o-mini or Claude Haiku"-type models — `extract.py`
-supports both, selectable via the `PROVIDER` variable:
-
-```powershell
-# Anthropic (default) — requires ANTHROPIC_API_KEY
-$env:PROVIDER="anthropic"
-$env:ANTHROPIC_API_KEY="sk-ant-..."
-
-# Qwen (QwenCloud/DashScope) — requires DASHSCOPE_API_KEY
-$env:PROVIDER="qwen"
-$env:DASHSCOPE_API_KEY="sk-ws-..."
-```
-
-Both go through a forced tool call on the same Pydantic schema
-(`schema.py`), so the output is structurally identical regardless of the
-chosen provider — handy for comparing extraction quality between the two
-on the same fixtures.
-
-## Running locally
-
-**0. Dry run (0 cost)** — checks the whole plumbing (fixture reading,
-prompt building, Pydantic validation) without calling the API. Also
-prints a rough cost estimate per call:
+Run the pipeline (a full run costs a few tens of cents with a compact model):
 
 ```bash
-export DRY_RUN=true
-python test_extraction.py
-unset DRY_RUN   # or $env:DRY_RUN="false" on PowerShell, before the next step
+export DRY_RUN=true  && python main.py    # plumbing check: no API call, nothing written
+export DRY_RUN=false && python main.py    # real run: writes data/*.json
+python rebuild_site.py                    # rebuild site_data.json from state.json, free
 ```
 
-**1. Test extraction offline (recommended first)** — replays the LLM on
-the 10 texts already captured, without depending on site availability:
+View the site locally (browsers block `fetch()` on `file://`):
 
 ```bash
-python test_extraction.py
+python -m http.server 8000                # then open http://localhost:8000/
 ```
 
-Compare the JSON output to what's described in `config.py`'s notes for
-each source — in particular:
-- Région Sud: the prerequisite appointment should come out as
-  **conditional**.
-- AURA: sessions with "date to be announced" must **not** get an invented
-  date.
-- Normandie (main page): `aucune_date_trouvee` (no date found) should be
-  `true`, with `lien_pdf_calendrier` filled in.
-- Normandie (subdomain): 3 sessions × 4 steps, with real **windows**
-  (`date_debut` + `date_fin`) for the appointment and the submission.
+To deploy: GitHub → Settings → Pages → *Deploy from a branch* → `main` / `/ (root)`. The site only needs `index.html`, `assets/` and `data/site_data.json`.
 
-**2. Test the dedup/state logic (recommended, zero cost)** — pure logic,
-no API call, checks the 4 statuses (new/changed/unchanged/closed) on
-synthetic data:
-
-```bash
-python test_state.py
-```
-
-**3. Test the full pipeline (real fetch + extraction + dedup)**:
-
-```bash
-python main.py
-```
-
-Writes/updates `data/state.json` (the persistent state, meant to be
-committed to the repo — it's the memory carried from one run to the next)
-and `data/site_data.json` (the clean, flat JSON base for the future
-website).
-
-## Structure
+## Project layout
 
 ```
-veille-cinema/
-├── config.py              # registry of the 10 tested sources
-├── schema.py               # Pydantic models
-├── prompts.py               # system prompt + user template
-├── extract.py                # Anthropic/Qwen API call (forced tool call)
-├── fetch.py                   # direct fetch / Jina Reader / PDF
-├── state.py                    # dedup/state + site_data.json generation
-├── main.py                      # full pipeline (network)
-├── test_extraction.py            # offline LLM test (fixtures, costs tokens)
-├── test_state.py                  # offline dedup test (0 cost, 0 API)
-├── test_data/                      # 10 manually captured pages
-│   ├── region_sud.txt
-│   ├── aura.txt
-│   ├── normandie_principale.txt
-│   ├── normandie_sousdomaine.txt
-│   ├── cnc_avr.txt
-│   ├── paris.txt
-│   ├── bretagne.txt
-│   ├── grand_est.txt
-│   ├── pays_de_la_loire.txt
-│   └── occitanie.txt
-├── data/                            # generated by main.py (to commit)
-│   ├── state.json                    # persistent state (run-to-run memory)
-│   └── site_data.json                # clean base for the future website
-├── requirements.txt
-├── .env.example
-└── .gitignore
+index.html, assets/          static site (HTML, CSS, vanilla JS, no dependencies)
+config.py                    the 16 sources
+fetch.py                     page / PDF retrieval, blocked-page detection
+extract.py                   LLM call, structural repair, rescue, second pass
+verify.py                    dates checked against the source text
+schema.py, prompts.py        Pydantic schema and system prompt
+state.py, alerts.py          change tracking, site data
+budget.py                    monthly cost guard
+main.py                      full pipeline
+rebuild_site.py              regenerate site data without any API call
+test_*.py, test_site.js      offline tests
+test_data/                   the 16 captured pages used as fixtures
+data/                        state.json, site_data.json, budget.json …
 ```
+
+## Known limitations
+
+- **Three sources cannot be read automatically**: Brittany, Grand Est (region) and Auvergne-Rhône-Alpes sit behind anti-bot protection (a Cloudflare challenge, or a redirect to the home page). They are detected and reported as failures rather than silently treated as empty. I deliberately did not build a workaround for the protection. Covering them needs manual input of the calendar text, or an agreement with the agencies.
+- **LLM variance**: the same page can be split differently between two runs. The dedup layer absorbs most of it; a few cards may still be reshuffled.
+- **Scope**: mostly short-film funds, plus the CNC; not an exhaustive list of French film aid.
+- Dates in "month year" form without a day are not handled specially.
+- Data comes from official pages and can lag or be wrong: always check the source before applying (the site says so).
+
+## Roadmap
+
+1. Weekly GitHub Actions run with the API key in GitHub Secrets, committing the updated `data/*.json`.
+2. Manual-input files for sources that block automation, with a staleness warning.
+3. More regions and funds.

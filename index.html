@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programme — Aides régionales et nationales au cinéma</title>
+<meta name="description" content="Calendrier des dates de dépôt des fonds d'aide au cinéma en France : régions, CNC, collectivités. Filtrez, sélectionnez, exportez vers votre agenda.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <div class="masthead-title">
+      <span class="masthead-kicker">Programme</span>
+      <h1>Aides au cinéma</h1>
+    </div>
+    <dl class="masthead-stats" id="masthead-stats" aria-live="polite">
+      <div><dt>Sessions à venir</dt><dd id="stat-total">—</dd></div>
+      <div><dt>Régions</dt><dd id="stat-regions">—</dd></div>
+      <div><dt>Mis à jour le</dt><dd id="stat-updated">—</dd></div>
+    </dl>
+  </div>
+</header>
+
+<div class="layout">
+
+  <button class="filters-toggle" id="filters-toggle" aria-expanded="false" aria-controls="filters">
+    Filtrer <span id="filters-toggle-count"></span>
+  </button>
+
+  <aside class="filters" id="filters">
+    <div class="filters-group">
+      <label class="filters-search-label" for="search">Recherche</label>
+      <input type="search" id="search" class="filters-search" placeholder="Fonds, organisme, région…" autocomplete="off">
+    </div>
+
+    <div class="filters-group">
+      <div class="filters-heading">Région</div>
+      <div class="filters-options" id="filter-region"></div>
+    </div>
+
+    <div class="filters-group">
+      <div class="filters-heading">Étape</div>
+      <div class="filters-options" id="filter-etape"></div>
+    </div>
+
+    <div class="filters-group filters-toggle-row">
+      <label class="filters-checkbox">
+        <input type="checkbox" id="hide-closed" checked>
+        <span>Masquer les sessions terminées</span>
+      </label>
+    </div>
+
+    <button class="filters-reset" id="filters-reset" type="button">Réinitialiser</button>
+  </aside>
+
+  <main class="programme" id="programme" aria-live="polite">
+    <!-- rempli par app.js -->
+  </main>
+
+  <aside class="selection" id="selection">
+    <div class="selection-head">
+      <div class="selection-head-title">
+        <h2>Ma sélection</h2>
+        <span class="selection-count" id="selection-count">0</span>
+      </div>
+      <button class="selection-close" id="selection-close" type="button" aria-label="Fermer">×</button>
+    </div>
+    <ul class="selection-list" id="selection-list"></ul>
+    <p class="selection-empty" id="selection-empty">Ajoutez des échéances avec le bouton <strong>+</strong> pour construire votre agenda.</p>
+    <button class="selection-export" id="selection-export" type="button" disabled>
+      Exporter vers mon agenda (.ics)
+    </button>
+  </aside>
+
+</div>
+
+<button class="mobile-selection-bar" id="mobile-selection-bar" type="button" hidden>
+  <span id="mobile-selection-count">0</span> échéance(s) sélectionnée(s) — voir
+</button>
+
+<footer class="site-footer">
+  <p>Données extraites automatiquement des sites officiels des organismes cités. Vérifiez toujours les conditions et dates auprès de la source avant de déposer un dossier.</p>
+</footer>
+
+<template id="tpl-entry">
+  <article class="entry">
+    <div class="entry-date">
+      <span class="entry-date-day"></span>
+      <span class="entry-date-month"></span>
+    </div>
+    <div class="entry-body">
+      <div class="entry-head">
+        <div class="entry-heading">
+          <h3 class="entry-fonds"></h3>
+          <p class="entry-meta"></p>
+        </div>
+        <button class="entry-add" type="button" aria-label="Ajouter à ma sélection">+</button>
+      </div>
+      <p class="entry-next-step"></p>
+      <button class="entry-expand" type="button">Détails</button>
+      <div class="entry-details" hidden>
+        <div class="entry-etapes"></div>
+        <div class="entry-actions-prealables"></div>
+        <div class="entry-conditions"></div>
+        <div class="entry-montant"></div>
+        <p class="entry-links"></p>
+      </div>
+    </div>
+  </article>
+</template>
+
+<script src="assets/app.js"></script>
+</body>
+</html>
