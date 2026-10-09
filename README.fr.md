@@ -39,7 +39,8 @@ périmètre strict) — une quinzaine de patterns structurels différents.
   c'est le point explicitement demandé par le cahier des charges ("ne pas
   notifier les commissions inchangées ou closes"). Produit aussi
   `data/site_data.json`, la base JSON propre et plate destinée au futur site
-  (filtres, sélection, export calendrier).
+  (filtres région / étape / type d'échéance — dépôt, décision, démarche, en couleurs —
+  / format / genre déduits des textes officiels, sélection, export calendrier).
 - `test_extraction.py` — rejoue l'extraction sur les 10 textes déjà capturés
   dans `test_data/` (aucune requête vers les sites sources, seulement vers
   l'API) — **c'est le point d'entrée à lancer en premier** pour valider le

@@ -20,7 +20,7 @@ const MOIS_FR = [
 
 const state = {
   aides: [],
-  filters: { region: new Set(), etape: new Set(), search: '', hideClosed: true },
+  filters: { region: new Set(), etape: new Set(), echeance: new Set(), format: new Set(), genre: new Set(), search: '', hideClosed: true },
   selection: loadSelection(),
 };
 
@@ -92,10 +92,13 @@ function formatDateShort(iso) {
 
 /** Étape la plus proche à venir (>= aujourd'hui) parmi les étapes d'une aide,
  *  ou la dernière étape connue si tout est déjà passé (pour affichage/tri
- *  cohérent des aides "closes" ou sans échéance future). */
-function etapeDeReference(aide) {
+ *  cohérent des aides "closes" ou sans échéance future).
+ *  `types` (Set, optionnel) restreint le choix aux étapes de ces types
+ *  (ex. {'depot'} : la prochaine date de dépôt, pas la prochaine commission). */
+function etapeDeReference(aide, types) {
   const today = todayISO();
-  const etapes = (aide.etapes || []).filter((e) => e.date_fin);
+  let etapes = (aide.etapes || []).filter((e) => e.date_fin);
+  if (types && types.size > 0) etapes = etapes.filter((e) => types.has(typeEcheance(e.label)));
   if (etapes.length === 0) return null;
   const aVenir = etapes.filter((e) => e.date_fin >= today).sort((a, b) => a.date_fin.localeCompare(b.date_fin));
   if (aVenir.length > 0) return aVenir[0];
@@ -111,7 +114,99 @@ function estUrgent(dateFin) {
   return diffJours >= 0 && diffJours <= 14;
 }
 
-const DEPOT_RE = /d[ée]p[oô]t|date limite|candidature|inscription/i;
+// ----------------------------------------------------------------------------
+// Nature d'une échéance : dépôt / décision / démarche
+// ----------------------------------------------------------------------------
+
+const TYPE_ECHEANCE_LABELS = {
+  depot: 'Dépôt',
+  decision: 'Décision',
+  demarche: 'Démarche',
+};
+
+/** Minuscules sans accents, pour des expressions régulières lisibles. */
+function norm(str) {
+  return String(str || '').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+}
+
+/** Nature d'une échéance, déduite de son libellé. L'ordre des tests compte :
+ *    demarche : réunion « premier dépôt », rendez-vous préalable, contact
+ *               recommandé avant le dépôt… (contiennent « dépôt » mais ne
+ *               sont PAS la date limite)
+ *    decision : résultats, annonce — même si le libellé cite la commission
+ *    depot    : date où il faut déposer (même « pour le comité de chiffrage »)
+ *    decision : comité, commission, jury, présélection (réunion qui tranche)
+ *    autre    : on ne sait pas — aucune couleur */
+function typeEcheance(label) {
+  const n = norm(label);
+  if (/reunion|rendez-vous|\brv\b|webinaire|contact recommande|accueil de tournage|pre-?dossier|inscription prealable|permanence|information collective/.test(n)) return 'demarche';
+  if (/resultat|annonce|notification|reponse/.test(n)) return 'decision';
+  if (/depot|date limite|candidature|cloture|inscription/.test(n)) return 'depot';
+  if (/comite|commission|jury|plenier|preselection|selection|chiffrage/.test(n)) return 'decision';
+  return 'autre';
+}
+
+// ----------------------------------------------------------------------------
+// Format et genre : déduits du TEXTE (aucun champ dédié dans les données)
+// ----------------------------------------------------------------------------
+
+const FORMAT_LABELS = {
+  court: 'Court métrage',
+  long: 'Long métrage',
+  audiovisuel: 'Série / audiovisuel',
+  numerique: 'Nouveaux médias / XR',
+};
+const GENRE_LABELS = {
+  fiction: 'Fiction',
+  documentaire: 'Documentaire',
+  animation: 'Animation',
+  experimental: 'Expérimental',
+};
+
+/** Format et genre d'un texte. Sets vides = non précisé (l'aide n'est alors
+ *  pas écartée par le filtre : mieux vaut un faux positif qu'une échéance
+ *  ratée). Gère les abréviations d'Occitanie (CM, LM, AV, XR), « tous
+ *  genres » et les négations (« hors animation »). */
+function tagsDepuisTexte(texte, { fondsGenerique = false } = {}) {
+  let n = norm(texte);
+  const formats = new Set();
+  const genres = new Set();
+
+  const exclus = new Set();
+  n = n.replace(/hors\s+(animation|documentaire|fiction|experimental)/g, (_, g) => { exclus.add(g); return ' '; });
+
+  if (/court[s]?[- ]?metrage|film court|\bcm\b/.test(n)) formats.add('court');
+  if (/long[s]?[- ]?metrage|\blm\b/.test(n)) formats.add('long');
+  if (/serie|television|\bav\b|\bunitaire/.test(n) || (!fondsGenerique && /audiovisuel/.test(n))) formats.add('audiovisuel');
+  if (/nouveaux? medias?|\bxr\b|transmedia|realite virtuelle|immersi|jeu video|numerique/.test(n)) formats.add('numerique');
+
+  if (/tous (les )?genres|toutes? (les )?formes/.test(n)) Object.keys(GENRE_LABELS).forEach((g) => genres.add(g));
+  if (/fiction/.test(n)) genres.add('fiction');
+  if (/documentaire/.test(n)) genres.add('documentaire');
+  if (/animation/.test(n)) genres.add('animation');
+  if (/experimental|art video/.test(n)) genres.add('experimental');
+  if (exclus.size > 0 && genres.size === 0) ['fiction', 'documentaire', 'animation', 'experimental'].forEach((g) => genres.add(g));
+  exclus.forEach((g) => genres.delete(g));
+
+  return { formats, genres };
+}
+
+/** Tags d'une aide : typologie + nom du fonds + libellé de session ; à défaut
+ *  (rien de précisé), on regarde les libellés d'étapes. Mis en cache. */
+function tagsAide(aide) {
+  if (aide._tags) return aide._tags;
+  const principal = tagsDepuisTexte(`${aide.typologie_oeuvre || ''} ${aide.session_label || ''}`);
+  const fonds = tagsDepuisTexte(aide.fonds || '', { fondsGenerique: true });
+  const formats = new Set([...principal.formats, ...fonds.formats]);
+  const genres = new Set([...principal.genres, ...fonds.genres]);
+  if (formats.size === 0 || genres.size === 0) {
+    const etapes = tagsDepuisTexte((aide.etapes || []).map((e) => e.label).join(' '));
+    if (formats.size === 0) etapes.formats.forEach((f) => formats.add(f));
+    if (genres.size === 0) etapes.genres.forEach((g) => genres.add(g));
+  }
+  aide._tags = { formats, genres };
+  return aide._tags;
+}
 
 /** Statut d'une aide déduit UNIQUEMENT de ses dates (des faits), jamais du
  *  drapeau `clos` du pipeline — qui signifie seulement "non retrouvée à la
@@ -127,7 +222,7 @@ function statutAide(aide) {
   if (etapes.length === 0) return { code: 'inconnu' };
   if (etapes.every((e) => e.date_fin < today)) return { code: 'terminee', label: 'Terminée' };
 
-  const depots = etapes.filter((e) => DEPOT_RE.test(e.label || ''));
+  const depots = etapes.filter((e) => typeEcheance(e.label) === 'depot');
   if (depots.length > 0) {
     const aVenir = depots.filter((e) => e.date_fin >= today).sort((a, b) => a.date_fin.localeCompare(b.date_fin));
     if (aVenir.length === 0) return { code: 'depot_clos', label: 'Dépôt clos' };
@@ -155,6 +250,26 @@ function buildFilters(aides) {
     regionEl.appendChild(buildCheckbox('region', region, region, count));
   });
 
+  // Type d'échéance : liste fixe (comptée sur les fiches ayant au moins une
+  // échéance de ce type à venir, pour que le chiffre ait un sens).
+  const echeanceEl = document.getElementById('filter-echeance');
+  Object.entries(TYPE_ECHEANCE_LABELS).forEach(([type, label]) => {
+    const count = aides.filter((a) => (a.etapes || []).some((e) => e.date_fin >= todayISO() && typeEcheance(e.label) === type)).length;
+    echeanceEl.appendChild(buildCheckbox('echeance', type, label, count, `type-dot type-${type}`));
+  });
+
+  const formatEl = document.getElementById('filter-format');
+  Object.entries(FORMAT_LABELS).forEach(([key, label]) => {
+    const count = aides.filter((a) => tagsAide(a).formats.has(key)).length;
+    if (count > 0) formatEl.appendChild(buildCheckbox('format', key, label, count));
+  });
+
+  const genreEl = document.getElementById('filter-genre');
+  Object.entries(GENRE_LABELS).forEach(([key, label]) => {
+    const count = aides.filter((a) => tagsAide(a).genres.has(key)).length;
+    if (count > 0) genreEl.appendChild(buildCheckbox('genre', key, label, count));
+  });
+
   const etapeEl = document.getElementById('filter-etape');
   [...etapeCounts.entries()].sort((a, b) => a[0].localeCompare(b[0])).forEach(([etape, count]) => {
     const label = ETAPE_LABELS[etape] || etape;
@@ -162,11 +277,12 @@ function buildFilters(aides) {
   });
 }
 
-function buildCheckbox(group, value, label, count) {
+function buildCheckbox(group, value, label, count, dotClass) {
   const wrap = document.createElement('label');
   wrap.className = 'filters-checkbox';
   wrap.innerHTML = `
     <input type="checkbox" data-group="${group}" value="${escapeAttr(value)}">
+    ${dotClass ? `<span class="${dotClass}" aria-hidden="true"></span>` : ''}
     <span>${escapeHTML(label)}</span>
     <span class="count">${count}</span>`;
   wrap.querySelector('input').addEventListener('change', (e) => {
@@ -182,6 +298,17 @@ function matchesFilters(aide) {
   if (f.region.size > 0 && !f.region.has(aide.region)) return false;
   if (f.etape.size > 0 && !f.etape.has(aide.etape_filiere)) return false;
   if (f.hideClosed && statutAide(aide).code === 'terminee') return false;
+  if (f.echeance.size > 0) {
+    // Au moins une échéance du type choisi ; si les sessions terminées sont
+    // masquées, encore à venir (« dépôt encore possible », « décision à venir »).
+    const today = todayISO();
+    const ok = (aide.etapes || []).some((e) => e.date_fin && f.echeance.has(typeEcheance(e.label)) && (!f.hideClosed || e.date_fin >= today));
+    if (!ok) return false;
+  }
+  // Format / genre : une aide sans information reste affichée (voir tagsDepuisTexte).
+  const tags = tagsAide(aide);
+  if (f.format.size > 0 && tags.formats.size > 0 && ![...f.format].some((x) => tags.formats.has(x))) return false;
+  if (f.genre.size > 0 && tags.genres.size > 0 && ![...f.genre].some((x) => tags.genres.has(x))) return false;
   if (f.search) {
     const haystack = `${aide.fonds} ${aide.organisme} ${aide.region} ${aide.typologie_oeuvre || ''}`.toLowerCase();
     if (!haystack.includes(f.search)) return false;
@@ -198,7 +325,7 @@ function render() {
   container.innerHTML = '';
 
   const visibles = state.aides
-    .map((aide) => ({ aide, ref: etapeDeReference(aide) }))
+    .map((aide) => ({ aide, ref: etapeDeReference(aide, state.filters.echeance) }))
     .filter(({ aide }) => matchesFilters(aide))
     .filter(({ ref }) => ref !== null)
     .sort((a, b) => a.ref.date_fin.localeCompare(b.ref.date_fin));
@@ -259,7 +386,7 @@ function buildEntry(aide, ref, dateRef) {
 
   const step = node.querySelector('.entry-next-step');
   const quand = ref.date_debut ? `${formatDateShort(ref.date_debut)} → ${formatDateShort(ref.date_fin)}` : formatDateShort(ref.date_fin);
-  step.innerHTML = `<span class="step-label">${escapeHTML(ref.label)} —</span> ${quand}${ref.heure_limite ? ' à ' + ref.heure_limite : ''}`;
+  step.innerHTML = `${typeChip(typeEcheance(ref.label))}<span class="step-label">${escapeHTML(ref.label)} —</span> ${quand}${ref.heure_limite ? ' à ' + ref.heure_limite : ''}`;
 
   const addBtn = node.querySelector('.entry-add');
   if (state.selection.has(aide.id)) addBtn.classList.add('is-added');
@@ -282,6 +409,10 @@ function buildEntry(aide, ref, dateRef) {
   return node;
 }
 
+function typeChip(type) {
+  return TYPE_ECHEANCE_LABELS[type] ? `<span class="type-chip type-${type}">${TYPE_ECHEANCE_LABELS[type]}</span>` : '';
+}
+
 function fillDetails(container, aide) {
   if (container.dataset.filled) return;
   container.dataset.filled = '1';
@@ -289,8 +420,8 @@ function fillDetails(container, aide) {
   const etapesEl = container.querySelector('.entry-etapes');
   if (aide.etapes && aide.etapes.length) {
     etapesEl.innerHTML = '<h4>Calendrier</h4>' + aide.etapes.map((e) => `
-      <div class="etape-row">
-        <span>${escapeHTML(e.label)}</span>
+      <div class="etape-row type-${typeEcheance(e.label)}${e.date_fin && e.date_fin < todayISO() ? ' is-past' : ''}">
+        <span>${typeChip(typeEcheance(e.label))}${escapeHTML(e.label)}</span>
         <span class="etape-date">${e.date_debut ? formatDateShort(e.date_debut) + ' → ' : ''}${formatDateShort(e.date_fin)}${e.heure_limite ? ' (' + e.heure_limite + ')' : ''}</span>
       </div>`).join('');
   }
@@ -478,6 +609,9 @@ function bindGlobalEvents() {
   document.getElementById('filters-reset').addEventListener('click', () => {
     state.filters.region.clear();
     state.filters.etape.clear();
+    state.filters.echeance.clear();
+    state.filters.format.clear();
+    state.filters.genre.clear();
     state.filters.search = '';
     state.filters.hideClosed = true;
     document.getElementById('search').value = '';

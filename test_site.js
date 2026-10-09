@@ -161,6 +161,65 @@ async function main() {
   assert(capturedBlobContent.trim().endsWith('END:VCALENDAR'), 'le fichier .ics se termine par END:VCALENDAR');
   assert(capturedBlobContent.includes('\r\n'), 'le fichier .ics utilise bien des retours à la ligne CRLF (norme iCalendar)');
 
+  console.log('\n--- Bouton « Masquer » ---');
+  // jsdom ne reproduit pas la cascade d'un vrai navigateur (où un `display:`
+  // d'auteur écrase le [hidden] par défaut) : on vérifie donc la règle CSS elle-même.
+  const css = fs.readFileSync(path.join(__dirname, 'assets/style.css'), 'utf-8');
+  assert(/\[hidden\]\s*\{\s*display:\s*none\s*!important/.test(css), 'style.css force display:none sur [hidden] (sinon .entry-details en flex reste visible)');
+  assert(!window.document.getElementById('mobile-selection-bar').hasAttribute('hidden'), 'la barre mobile ne dépend plus de [hidden] (désormais prioritaire)');
+  expandBtn.dispatchEvent(new window.Event('click'));
+  assert(details.hasAttribute('hidden') && expandBtn.textContent === 'Détails', '2e clic : détails remasqués et bouton redevient « Détails »');
+  expandBtn.dispatchEvent(new window.Event('click'));
+  assert(!details.hasAttribute('hidden') && expandBtn.textContent === 'Masquer', '3e clic : détails de nouveau visibles, bouton « Masquer »');
+  expandBtn.dispatchEvent(new window.Event('click'));
+
+  console.log('\n--- Nature des échéances (libellés réels) ---');
+  const cas = {
+    depot: ['Dépôt des dossiers', 'Date limite de dépôt', 'dépôt des dossiers (comité de lecture AVR2)', 'Comité de chiffrage NOVEMBRE 2026 - Date unique de dépôt',
+      'Date unique de dépôt pour le comité de chiffrage', 'dépôt des demandes', 'Dépôt des dossiers - Animation (CM, LM, AV, XR)', 'dépôt des dossiers (calendrier permanent)'],
+    decision: ['Commission plénière', 'commission de présélection', 'Comité de lecture', 'Comité de chiffrage NOVEMBRE 2026', 'Annonce des résultats de la présélection',
+      'Annonce des résultats définitifs', 'Résultats à partir du (comité de lecture)', 'Commission plénière AVR1 - session octobre 2026, résultats à partir du', 'Plénière', 'Présélection'],
+    demarche: ['Réunion « premier dépôt »', 'Réunion « premier dépôt » (visioconférence, créneau unique 09h00-10h00)', 'RV préalables', 'contact recommandé des services instructeurs avant le dépôt', 'Rendez-vous préalable'],
+  };
+  Object.entries(cas).forEach(([attendu, labels]) => labels.forEach((l) => assert(window.typeEcheance(l) === attendu, `« ${l} » -> ${attendu} (obtenu ${window.typeEcheance(l)})`)));
+
+  console.log('\n--- Format et genre déduits du texte ---');
+  const tags = (o) => { const t = window.tagsAide(Object.assign({ etapes: [] }, o)); return `${[...t.formats].sort()}|${[...t.genres].sort()}`; };
+  assert(tags({ fonds: 'Aide à la création', typologie_oeuvre: 'Animation (CM, LM, AV, XR)' }) === 'audiovisuel,court,long,numerique|animation', 'Occitanie « Animation (CM, LM, AV, XR) » -> 4 formats, animation');
+  assert(tags({ fonds: 'x', typologie_oeuvre: 'Fiction (LM-AV)' }) === 'audiovisuel,long|fiction', 'Occitanie « Fiction (LM-AV) » -> long + audiovisuel, fiction');
+  assert(tags({ fonds: 'x', typologie_oeuvre: 'Fiction (CM, XR)' }) === 'court,numerique|fiction', 'Occitanie « Fiction (CM, XR) » -> court + numérique');
+  assert(tags({ fonds: 'x', typologie_oeuvre: 'Documentaire (CM, LM, AV, XR)' }) === 'audiovisuel,court,long,numerique|documentaire', 'Occitanie documentaire');
+  assert(tags({ fonds: 'Fonds Court métrage', typologie_oeuvre: 'court métrage (hors animation)' }) === 'court|documentaire,experimental,fiction', 'Pictanovo « hors animation » exclut l\'animation sans la tagger');
+  assert(tags({ fonds: 'Aide au film court', typologie_oeuvre: 'court métrage tous genres' }) === 'court|animation,documentaire,experimental,fiction', '« tous genres » -> tous les genres');
+  assert(tags({ fonds: 'Fonds de soutien à la création et à la production cinéma et audiovisuel', typologie_oeuvre: 'long métrage' }) === 'long|', 'le nom générique « cinéma et audiovisuel » n\'ajoute pas le format audiovisuel');
+  assert(tags({ fonds: 'Fonds', typologie_oeuvre: '' }) === '|', 'rien de précisé -> ensembles vides (aide jamais écartée par erreur)');
+
+  console.log('\n--- Filtres type d\'échéance / format / genre (interface) ---');
+  const cb = (id, v) => [...window.document.querySelectorAll(`#${id} input`)].find((c) => c.value === v);
+  const cocher = (c, on = true) => { c.checked = on; c.dispatchEvent(new window.Event('change')); };
+  const noms = () => [...window.document.querySelectorAll('.entry-fonds')].map((e) => e.textContent);
+  assert(!!cb('filter-echeance', 'depot') && !!cb('filter-echeance', 'decision') && !!cb('filter-echeance', 'demarche'), 'les 3 cases dépôt / décision / démarche existent');
+  cocher(cb('filter-echeance', 'decision'));
+  assert(noms().some((n) => n.includes('Aide au film court')) && !noms().some((n) => n.includes('Soutien à la production')), 'filtre « Décision » : garde Cinémas 93 (plénière à venir), écarte une aide qui n\'a qu\'un dépôt');
+  const ref93 = [...window.document.querySelectorAll('.entry')].find((e) => e.querySelector('.entry-fonds').textContent.includes('Aide au film court'));
+  assert(ref93.querySelector('.entry-next-step .type-decision'), 'la ligne d\'échéance affiche la pastille « Décision » (couleur verte)');
+  cocher(cb('filter-echeance', 'decision'), false);
+  cocher(cb('filter-echeance', 'depot'));
+  assert(!noms().some((n) => n.includes('Aide au film court')), 'filtre « Dépôt » : Cinémas 93 (dépôt passé) disparaît = « dépôt encore possible »');
+  assert(noms().length >= 4, 'filtre « Dépôt » : les aides au dépôt à venir restent');
+  cocher(cb('filter-echeance', 'depot'), false);
+  const chipDepot = window.document.querySelector('.entry-next-step .type-depot');
+  assert(!!chipDepot, 'une échéance de dépôt porte la pastille « Dépôt »');
+
+  cocher(cb('filter-genre', 'animation'));
+  assert(noms().some((n) => n.includes('Fonds Court métrage')) === false, 'genre « Animation » écarte Pictanovo (« hors animation »)');
+  assert(noms().some((n) => n.includes('Aide au film court')), 'genre « Animation » garde « tous genres » (Cinémas 93)');
+  cocher(cb('filter-genre', 'animation'), false);
+  cocher(cb('filter-format', 'numerique'));
+  assert(noms().some((n) => n.includes('Nouveaux Médias')) && !noms().some((n) => n.includes('Soutien à la production')), 'format « Nouveaux médias » : garde Paris NM, écarte le court métrage de fiction');
+  cocher(cb('filter-format', 'numerique'), false);
+  assert(window.document.querySelectorAll('.entry').length === 7, 'décocher les filtres ramène à 7 entrées');
+
   console.log('\n--- Réinitialisation des filtres ---');
   regionCheckbox.checked = true;
   regionCheckbox.dispatchEvent(new window.Event('change'));

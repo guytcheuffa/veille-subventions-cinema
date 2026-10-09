@@ -13,6 +13,8 @@
   --green-soft: #E4EAE3;
   --rust: #C74B27;
   --rust-soft: #F6E4DB;
+  --amber: #A9710F;
+  --amber-soft: #F5ECD6;
 
   --font-display: 'Fraunces', Georgia, serif;
   --font-body: 'Archivo', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -40,6 +42,11 @@ h1, h2, h3 { font-family: var(--font-display); font-weight: 500; margin: 0; }
 
 a { color: var(--green); }
 a:hover { color: var(--rust); }
+
+/* Le navigateur masque [hidden] avec une règle de feuille par défaut, que tout
+   `display:` défini ici écrase (ex. .entry-details en flex) : on la rétablit,
+   sinon le bouton « Masquer » ne cache rien. */
+[hidden] { display: none !important; }
 
 button {
   font-family: var(--font-body);
@@ -587,3 +594,41 @@ button {
   max-width: 640px;
   line-height: 1.5;
 }
+
+/* ==========================================================================
+   Nature des échéances : dépôt (à faire) / décision (information) / démarche
+   ========================================================================== */
+.type-chip {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 0 7px;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  vertical-align: 1px;
+  border: 1px solid currentColor;
+}
+.type-chip.type-depot { background: var(--rust); border-color: var(--rust); color: var(--paper-raised); }
+.type-chip.type-decision { color: var(--green); background: var(--green-soft); }
+.type-chip.type-demarche { color: var(--amber); background: var(--amber-soft); }
+
+.type-dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.type-dot.type-depot { background: var(--rust); }
+.type-dot.type-decision { background: var(--green); }
+.type-dot.type-demarche { background: var(--amber); }
+
+.etape-row { border-left: 3px solid transparent; padding-left: 8px; }
+.etape-row.type-depot { border-left-color: var(--rust); }
+.etape-row.type-decision { border-left-color: var(--green); }
+.etape-row.type-demarche { border-left-color: var(--amber); }
+.etape-row.is-past { opacity: 0.5; }
+
+.filters-note { margin: 8px 0 0; font-size: 0.72rem; color: var(--muted); line-height: 1.35; }

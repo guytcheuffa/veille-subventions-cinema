@@ -13,7 +13,7 @@ Automated tracker for **application deadlines of French regional and national fi
 - Fetches **16 pages from 15 funding bodies** (regions, cities, regional agencies and the national CNC), each with a different structure: recurring dates without a year, multi-step sessions, date windows, dates only in a linked PDF, one calendar per film genre.
 - Extracts, for each session: fund, work type, stage (writing, development, production…), every step with its date and cut-off time, mandatory preliminary actions (e.g. a compulsory meeting), eliminatory conditions and the application link.
 - Tracks state between runs so a session is reported as new, modified or gone.
-- Publishes a **static site** in French (its users are French producers; no server, no build step): chronological programme grouped by month, filters by region and stage, free-text search, a persistent selection, and **`.ics` export** generated in the browser.
+- Publishes a **static site** in French (its users are French producers; no server, no build step): chronological programme grouped by month, filters by region, stage, **deadline type** (deposit / decision / preliminary step, colour-coded), **format and genre** (inferred from the official texts; aids that don't specify stay visible), free-text search, a persistent selection, and **`.ics` export** generated in the browser.
 
 ## Architecture
 
