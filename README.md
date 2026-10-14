@@ -4,7 +4,7 @@
 
 Automated tracker for **application deadlines of French regional and national film production grants**. An LLM extracts deadlines from official web pages into a strict schema, a deterministic layer checks the result against the source text, and a static website lets producers browse, filter and export deadlines to their calendar.
 
-**Live demo:** https://guytcheuffa.github.io/subvention-cinema/
+**Live demo:** [https://guytcheuffa.github.io/subvention-cinema/](https://guytcheuffa.github.io/veille-subventions-cinema/)
 
 **Status:** working proof of concept. 13 of the 16 configured sources are read automatically; the pipeline is run by hand for now (a scheduled GitHub Actions run is the next step).
 
